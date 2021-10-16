@@ -1,0 +1,59 @@
+name: CI - Publish Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish-release:
+
+    #    runs-on: ubuntu-latest
+    runs-on: [ self-hosted, macos ]
+
+    strategy:
+      matrix:
+        api-level: [ 30 ]
+
+    env:
+      GITHUB_PACKAGE_DOWNLOAD_USER: ${{ secrets.GH_PACKAGE_DOWNLOAD_USER }}
+      GITHUB_PACKAGE_DOWNLOAD_KEY: ${{ secrets.GH_PACKAGE_DOWNLOAD_KEY }}
+      GITHUB_PACKAGE_UPLOAD_USER: ${{ secrets.GH_PACKAGE_UPLOAD_USER }}
+      GITHUB_PACKAGE_UPLOAD_KEY: ${{ secrets.GH_PACKAGE_UPLOAD_KEY }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Version
+        run: ./gradlew --no-daemon versionInfo
+
+      - name: Build project
+        run: ./gradlew --no-daemon build
+
+      - name: Run Android Device Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: google_apis
+          arch: x86_64
+          profile: Nexus 5
+          avd-name: blueprint-${{ matrix.api-level }}
+          force-avd-creation: false
+          emulator-options: -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: ./gradlew --no-daemon connectedCheck
+
+      - name: Publish Release Version
+        run: echo "TODO"

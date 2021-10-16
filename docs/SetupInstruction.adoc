@@ -1,0 +1,71 @@
+= Setup Instruction
+:link-repository: https://github.com/wmontwe/mobile-project-blueprint
+:doctype: article
+:toc: macro
+:toclevels: 2
+:toc-title:
+:icons: font
+:imagesdir: assets/images
+ifdef::env-github[]
+:warning-caption: :warning:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+endif::[]
+
+[discrete]
+==== Table Of Contents
+
+toc::[]
+
+== Installation
+
+=== Java & Kotlin
+
+You could use link:https://brew.sh/[Homebrew] to install on mac
+
+[source,bash]
+----
+brew tap adoptopenjdk/openjdk
+brew install adoptopenjdk8
+brew install kotlin
+----
+
+OR The easiest way to install Java and Kotlin is to use link:https://sdkman.io/[SDK MAN]
+
+Just open your terminal and enter:
+
+[source,bash]
+----
+curl -s "https://get.sdkman.io" | bash
+----
+
+Follow the setup instructions and verify that your installation works:
+
+[source,bash]
+----
+sdk version
+----
+
+If it shows you something like `5.13.0` then your good to continue.
+
+Just install the mentioned dependencies:
+
+[source,bash]
+----
+sdk install java 11.0.11.hs-adpt
+sdk install kotlin 1.5.31
+----
+
+Check your installation by:
+
+[source,bash]
+----
+java -version
+kotlin -version
+----
+
+=== Android Studio
+
+For better interop with iOS you may install the link:https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile[Kotlin Multiplaform Mobile (KMM) plugin for Android Studio]. It let's you run, test and debug shared code on Android and iOS without switching the IDEs.

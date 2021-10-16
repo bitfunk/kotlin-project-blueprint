@@ -1,8 +1,9 @@
-
 # Gradle
 .gradle/
 build/
 local.properties
+gen/
+build-cache/
 
 # IDEA/Android Studio ignores
 *iml
@@ -16,10 +17,19 @@ local.properties
 !.idea/codeStyles/
 !.idea/encoding.xml
 !.idea/copyright/
-!.idea/compiler.xml
 !.idea/externalDependencies.xml
+
+# Android
+# see app-android/.gitignore
+
+# Swift & Xcode
+# see app-ios/.gitignore
 
 # Others
 captures/
 
+## Asciidoctor
+.asciidoctor/
+
+## OS X Finder
 .DS_Store

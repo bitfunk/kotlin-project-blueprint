@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>MagicNumber:VersionConfigurationPlugin.kt$VersionConfigurationPlugin$100</ID>
+    <ID>UnusedPrivateMember:build.gradle.kts$val androidMain by getting</ID>
+    <ID>UnusedPrivateMember:build.gradle.kts$val androidTest by getting</ID>
+    <ID>UnusedPrivateMember:build.gradle.kts$val commonMain by getting</ID>
+    <ID>UnusedPrivateMember:build.gradle.kts$val commonTest by getting</ID>
+    <ID>UnusedPrivateMember:build.gradle.kts$val iosMain by getting</ID>
+    <ID>UnusedPrivateMember:build.gradle.kts$val iosTest by getting</ID>
+  </CurrentIssues>
+</SmellBaseline>

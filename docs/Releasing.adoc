@@ -1,0 +1,34 @@
+= Release
+:link-repository: https://github.com/wmontwe/mobile-project-blueprint
+:doctype: article
+:toc: macro
+:toclevels: 2
+:toc-title:
+:icons: font
+:imagesdir: assets/images
+ifdef::env-github[]
+:warning-caption: :warning:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+endif::[]
+
+[discrete]
+==== Table Of Contents
+
+toc::[]
+
+== Release Preparation
+
+Create a release branches of from `main` branch with following pattern:
+
+* `release/{major}.{minor}/prepare-{major}.{minor}.{patch}`
+
+Add following changes:
+
+* Update CHANGELOG.adoc by creating a new Unreleased section and change current unreleased to release version
+* Update README.adoc `project-version` to release version
+* Update the latest release badge link:../assets/images/badges.adoc[HowTo]
+
+Releases are automatically created when a tag in the form of `v{major}.{minor}.{patch}` is added.

@@ -1,0 +1,34 @@
+build:
+  - .github/**/*
+
+configuration:
+  - gradlePlugin/blueprint-configuration/**/*
+  - gradlePlugin/blueprint-quality/**/*
+
+dependencies:
+  - gradlePlugin/blueprint-dependency/**/*
+
+documentation:
+  - docs/**/*
+  - README.adoc
+  - LICENSE
+  - CHANGELOG.adoc
+  - CONTRIBUTION.adoc
+
+# App
+app-android:
+  - app-android/**/*
+app-ios:
+  - app-ios/**/*
+app-desktop:
+  - app-desktop/**/*
+app-web:
+  - app-web/**/*
+
+# Feature
+feature:
+  - feature/**/*
+
+# Library
+library:
+  - library/**/*
