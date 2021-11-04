@@ -310,7 +310,7 @@ object Version {
         /**
          * [Kakao Compose](https://github.com/KakaoCup/Compose)
          */
-        const val kakaoCompose = "1.5.30"
+        const val kakaoCompose = "0.0.2"
     }
 
     object EndToEndTest {

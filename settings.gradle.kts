@@ -7,6 +7,7 @@ pluginManagement {
         gradlePluginPortal()
         mavenCentral()
         google()
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
     }
 }
 
@@ -22,7 +23,8 @@ includeBuild("gradlePlugin/blueprint-tools")
 
 // App
 include(
-    ":app-android"
+    ":app-android",
+    ":app-ios"
 )
 
 // Feature
