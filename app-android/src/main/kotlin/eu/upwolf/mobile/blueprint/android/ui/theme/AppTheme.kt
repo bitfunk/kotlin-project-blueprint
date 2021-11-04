@@ -93,4 +93,3 @@ fun ProvideAppTheme(
         content = content
     )
 }
-

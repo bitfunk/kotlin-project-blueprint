@@ -244,7 +244,8 @@ object Dependency {
                     "com.google.accompanist:accompanist-swiperefresh:${Version.Android.AndroidX.Compose.accompanist}"
 
                 const val accompanistSystemUiController =
-                    "com.google.accompanist:accompanist-systemuicontroller:${Version.Android.AndroidX.Compose.accompanist}"
+                    "com.google.accompanist:accompanist-systemuicontroller:" +
+                        Version.Android.AndroidX.Compose.accompanist
 
                 const val accompanistInsets =
                     "com.google.accompanist:accompanist-insets:${Version.Android.AndroidX.Compose.accompanist}"

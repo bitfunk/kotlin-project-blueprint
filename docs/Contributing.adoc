@@ -89,4 +89,3 @@ Contributing code and introducing dependencies into the repository from other pr
 * link:https://opensource.org/licenses/Apache-2.0[Apache 2.0]
 
 Any other contribution needs to be signed off by the project owners.
-
