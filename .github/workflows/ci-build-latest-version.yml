@@ -38,10 +38,10 @@ jobs:
         uses: android-actions/setup-android@v2
 
       - name: Version
-        run: ./gradlew --no-daemon versionInfo
+        run: ./gradlew --no-daemon --stacktrace versionInfo
 
       - name: Build
-        run: ./gradlew --no-daemon build
+        run: ./gradlew --no-daemon --stacktrace build
 
       - name: Run Android Device Tests
         uses: reactivecircus/android-emulator-runner@v2
@@ -54,7 +54,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: ./gradlew --no-daemon connectedCheck
+          script: ./gradlew --no-daemon --stacktrace connectedCheck
 
       - name: Publish Lastest Version
         run: echo "TODO"
