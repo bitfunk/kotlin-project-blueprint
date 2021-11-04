@@ -54,6 +54,9 @@ dependencies {
     implementation(Dependency.android.androidX.compose.accompanistInsetsUi)
     implementation(Dependency.android.androidX.compose.accompanistSystemUiController)
 
+    implementation("com.arkivanov.decompose:decompose:_")
+    implementation("com.arkivanov.decompose:extensions-compose-jetpack:_")
+
     testImplementation(Testing.junit4)
 
     androidTestImplementation(AndroidX.test.ext.junit)
