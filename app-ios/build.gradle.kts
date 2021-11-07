@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("org.jetbrains.gradle.apple.applePlugin") version "212.4638.14-0.13.1"
+    id("eu.upwolf.gradle.blueprint.configuration.ios.app")
 }
 
 apple {

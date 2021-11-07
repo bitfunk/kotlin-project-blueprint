@@ -9,7 +9,6 @@ import eu.upwolf.gradle.blueprint.dependency.Version
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
@@ -72,11 +71,7 @@ class KmpConfigurationPlugin : Plugin<Project> {
 
     private fun setupIosTarget(project: Project) {
         project.kotlin {
-            ios {
-                binaries {
-                    framework()
-                }
-            }
+            ios { }
 
             sourceSets {
                 maybeCreate("iosMain").dependencies {
