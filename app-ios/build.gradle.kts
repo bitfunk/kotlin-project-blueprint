@@ -10,14 +10,11 @@ apple {
     iosApp {
         productName = "Blueprint"
 
-        sceneDelegateClass = "SceneDelegate"
-        launchStoryboard = "LaunchScreen"
-
         // productInfo["NSAppTransportSecurity"] = mapOf("NSAllowsArbitraryLoads" to true)
         // buildSettings.OTHER_LDFLAGS("")
 
         dependencies {
-            // implementation(project(":shared"))
+            implementation(project(":feature:home"))
         }
     }
 }
