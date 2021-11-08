@@ -24,7 +24,7 @@ includeBuild("gradlePlugin/blueprint-tools")
 // App
 include(
     ":app-android",
-    ":app-ios"
+    ":app-ios",
 )
 
 // Feature
@@ -32,4 +32,4 @@ include(
     ":feature:home"
 )
 
-rootProject.name = "Mobile Project Blueprint"
+rootProject.name = "MobileProjectBlueprint"
