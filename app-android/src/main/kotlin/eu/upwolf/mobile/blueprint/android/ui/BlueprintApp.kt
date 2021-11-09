@@ -5,52 +5,35 @@
 package eu.upwolf.mobile.blueprint.android.ui
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.compose.rememberNavController
-import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.ProvideWindowInsets
-import com.google.accompanist.insets.rememberInsetsPaddingValues
-import com.google.accompanist.insets.ui.TopAppBar
-import eu.upwolf.mobile.blueprint.android.R
+import eu.upwolf.mobile.blueprint.android.ui.component.counter.Counter
+import eu.upwolf.mobile.blueprint.android.ui.component.counter.CounterUi
+import eu.upwolf.mobile.blueprint.android.ui.reuse.BlueprintScaffold
 import eu.upwolf.mobile.blueprint.android.ui.theme.AppTheme
 import eu.upwolf.mobile.blueprint.android.ui.theme.BlueprintTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BlueprintApp(finishActivity: () -> Unit = {}) {
-    val navController = rememberNavController()
-
-    BlueprintTheme {
-        ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
-            Scaffold(
-                topBar = {
-                    TopAppBar(
-                        contentPadding = rememberInsetsPaddingValues(
-                            insets = LocalWindowInsets.current.statusBars
-                        ),
-                        backgroundColor = AppTheme.colorScheme.primary,
-                        title = {
-                            Text(
-                                text = stringResource(id = R.string.blueprint_app_name),
-                                color = AppTheme.colorScheme.onPrimary
-                            )
-                        }
-                    )
-                }
-            ) {
+    ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
+        BlueprintTheme {
+            BlueprintScaffold {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = AppTheme.colorScheme.background
                 ) {
-                    Greeting(name = "Hello")
+                    Column {
+                        Greeting(name = "Hello")
+                        CounterUi(counter = Counter())
+                    }
                 }
             }
         }

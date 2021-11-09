@@ -16,6 +16,8 @@ class MainActivity : ComponentActivity() {
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
+        // val root = RootComponent()
+
         setContent {
             BlueprintApp { finish() }
         }
