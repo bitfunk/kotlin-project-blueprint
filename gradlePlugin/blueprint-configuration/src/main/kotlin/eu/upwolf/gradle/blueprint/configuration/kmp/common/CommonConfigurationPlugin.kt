@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.kmp.base
+package eu.upwolf.gradle.blueprint.configuration.kmp.common
 
 import eu.upwolf.gradle.blueprint.dependency.Dependency
 import eu.upwolf.gradle.blueprint.dependency.Version
@@ -13,7 +13,7 @@ import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-class KmpConfigurationPlugin : Plugin<Project> {
+class CommonConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.pluginManager.apply("org.jetbrains.kotlin.multiplatform")

@@ -15,9 +15,6 @@ object PluginDependency {
     const val kotlinSerialization =
         "org.jetbrains.kotlin:kotlin-serialization:${Version.GradlePlugin.kotlin}"
 
-    const val sqlDelight =
-        "com.squareup.sqldelight:gradle-plugin:${Version.GradlePlugin.sqlDelight}"
-
     // Android
     const val android = "com.android.tools.build:gradle:${Version.GradlePlugin.android}"
 

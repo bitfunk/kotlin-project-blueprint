@@ -15,7 +15,7 @@ import java.util.Locale
 class FeatureConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        target.pluginManager.apply("eu.upwolf.gradle.blueprint.configuration.kmp.base")
+        target.pluginManager.apply("eu.upwolf.gradle.blueprint.configuration.kmp.common")
         target.pluginManager.apply("kotlinx-serialization")
 
         setupMultiplatformLibrary(target)

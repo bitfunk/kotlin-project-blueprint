@@ -44,7 +44,36 @@ class DetektConfigurationPlugin : Plugin<Project> {
         }
 
         project.tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
-            exclude("**/build/**", ".github/**", "**/.idea/**", "**/.gradle/**", "gradle/**")
+            exclude(
+                "**/.gradle/**",
+                "**/.idea/**",
+                "**/build/**",
+                ".github/**",
+                "gradle/**",
+            )
+        }
+        project.tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configureEach {
+            exclude(
+                "**/.gradle/**",
+                "**/.idea/**",
+                "**/build/**",
+                ".github/**",
+                "assets/**",
+                "app-ios/**",
+                "docs/**",
+                "gradle/**",
+                "**/*.adoc",
+                "**/gradlew",
+                "**/LICENSE",
+                "**/.java-version",
+                "**/gradlew.bat",
+                "**/*.png",
+                "**/*.properties",
+                "**/*.pro",
+                "**/*.sq",
+                "**/*.xml",
+                "**/*.yml",
+            )
         }
     }
 

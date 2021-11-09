@@ -30,11 +30,6 @@ object Version {
 
         const val kotlin = Version.kotlin
 
-        /**
-         * [Gradle SQLDelight Plugin](https://github.com/cashapp/sqldelight)
-         */
-        const val sqlDelight = Version.sqlDelight
-
         // Versions
         /**
          * [Gradle Git Version Plugin](https://github.com/wmontwe/gradle-git-version)
@@ -99,11 +94,6 @@ object Version {
          * [Koin](https://github.com/InsertKoinIO/koin)
          */
         const val koin = "3.0.2"
-
-        /**
-         * [SqlDelight](https://github.com/cashapp/sqldelight)
-         */
-        const val sqlDelight = Version.sqlDelight
 
         /**
          * [klock](https://github.com/korlibs/klock)

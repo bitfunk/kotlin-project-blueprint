@@ -82,20 +82,21 @@ object Dependency {
             const val mock = "io.ktor:ktor-client-mock:${Version.Multiplatform.ktor}"
         }
 
+        /**
+         * [SqlDelight](https://github.com/cashapp/sqldelight)
+         */
         object SqlDelight {
-            const val runtime =
-                "com.squareup.sqldelight:runtime:${Version.Multiplatform.sqlDelight}"
-            const val jdk =
-                "com.squareup.sqldelight:sqlite-driver:${Version.Multiplatform.sqlDelight}"
-            const val coroutines =
-                "com.squareup.sqldelight:coroutines-extensions:${Version.Multiplatform.sqlDelight}"
+            private const val VERSION = "_"
 
-            const val js =
-                "com.squareup.sqldelight:sqljs-driver:${Version.Multiplatform.sqlDelight}"
-            const val driverIos =
-                "com.squareup.sqldelight:native-driver:${Version.Multiplatform.sqlDelight}"
-            const val driverAndroid =
-                "com.squareup.sqldelight:android-driver:${Version.Multiplatform.sqlDelight}"
+            const val gradlePlugin = "com.squareup.sqldelight:gradle-plugin:$VERSION"
+
+            const val runtime = "com.squareup.sqldelight:runtime:$VERSION"
+            const val coroutines = "com.squareup.sqldelight:coroutines-extensions:$VERSION"
+
+            const val driverJvm = "com.squareup.sqldelight:sqlite-driver:$VERSION"
+            const val driverJs = "com.squareup.sqldelight:sqljs-driver:$VERSION"
+            const val driverIos = "com.squareup.sqldelight:native-driver:$VERSION"
+            const val driverAndroid = "com.squareup.sqldelight:android-driver:$VERSION"
         }
 
         object Koin {

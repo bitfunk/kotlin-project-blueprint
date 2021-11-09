@@ -27,9 +27,14 @@ include(
     ":app-ios",
 )
 
+// Common
+include(
+    ":common:database",
+)
+
 // Feature
 include(
-    ":feature:home"
+    ":feature:home",
 )
 
 rootProject.name = "MobileProjectBlueprint"

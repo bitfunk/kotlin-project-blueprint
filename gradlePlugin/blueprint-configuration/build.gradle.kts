@@ -45,9 +45,9 @@ gradlePlugin {
     }
 
     // Kotlin Multiplatform
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.base") {
-        id = "eu.upwolf.gradle.blueprint.configuration.kmp.base"
-        implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.base.KmpConfigurationPlugin"
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common") {
+        id = "eu.upwolf.gradle.blueprint.configuration.kmp.common"
+        implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.common.CommonConfigurationPlugin"
     }
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.feature") {
         id = "eu.upwolf.gradle.blueprint.configuration.kmp.feature"
