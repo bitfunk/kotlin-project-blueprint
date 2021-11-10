@@ -23,14 +23,12 @@ class SpotlessConfigurationPlugin : Plugin<Project> {
             kotlin {
                 target("**/*.kt")
                 targetExclude("**/build/")
-                ktlint(ktlintVersion)
                 trimTrailingWhitespace()
                 indentWithSpaces()
                 endWithNewline()
             }
             kotlinGradle {
                 target("**/*.gradle.kts", "**/*.df.kts")
-                ktlint(ktlintVersion)
                 trimTrailingWhitespace()
                 indentWithSpaces()
                 endWithNewline()
@@ -46,9 +44,5 @@ class SpotlessConfigurationPlugin : Plugin<Project> {
 
     private fun Project.spotless(action: Action<SpotlessExtension>) {
         extensions.configure(SpotlessExtension::class.java, action)
-    }
-
-    companion object {
-        const val ktlintVersion = "0.42.1"
     }
 }

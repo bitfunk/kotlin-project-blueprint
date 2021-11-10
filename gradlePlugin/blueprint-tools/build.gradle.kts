@@ -26,9 +26,6 @@ repositories {
 }
 
 dependencies {
-    // implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.kotlin)
-    // implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.android)
-
     implementation("eu.upwolf.gradle.blueprint.dependency:blueprint-dependency:1.0.0-SNAPSHOT")
 
     // Publish
@@ -38,7 +35,7 @@ dependencies {
     // Quality
     // -> Spotless
     implementation("com.diffplug.spotless:spotless-plugin-gradle:_")
-    implementation("com.pinterest:ktlint:_")
+    implementation("com.pinterest:ktlint:0.42.1")
     // -> Detekt
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:_")
 
