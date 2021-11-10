@@ -45,6 +45,7 @@ dependencies {
     implementation(AndroidX.compose.ui)
     implementation(AndroidX.compose.material)
     implementation("androidx.compose.material3:material3:_")
+    implementation("androidx.compose.ui:ui-tooling-preview:_")
     implementation(Dependency.android.androidX.compose.navigation)
     implementation(AndroidX.compose.ui.toolingPreview)
     implementation(AndroidX.lifecycle.runtimeKtx)

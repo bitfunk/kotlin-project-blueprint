@@ -2,7 +2,7 @@ package eu.upwolf.mobile.blueprint.android
 
 import android.app.Application
 
-class BlueprintApplication : Application() {
+class MainApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

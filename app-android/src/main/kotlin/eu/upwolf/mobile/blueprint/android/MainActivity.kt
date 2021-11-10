@@ -8,7 +8,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
-import eu.upwolf.mobile.blueprint.android.ui.BlueprintApp
+import eu.upwolf.mobile.blueprint.android.ui.MainApp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         // val root = RootComponent()
 
         setContent {
-            BlueprintApp { finish() }
+            MainApp { finish() }
         }
     }
 }

@@ -16,16 +16,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.google.accompanist.insets.ProvideWindowInsets
 import eu.upwolf.mobile.blueprint.android.ui.component.counter.Counter
 import eu.upwolf.mobile.blueprint.android.ui.component.counter.CounterUi
-import eu.upwolf.mobile.blueprint.android.ui.reuse.BlueprintScaffold
+import eu.upwolf.mobile.blueprint.android.ui.reuse.AppScaffold
 import eu.upwolf.mobile.blueprint.android.ui.theme.AppTheme
-import eu.upwolf.mobile.blueprint.android.ui.theme.BlueprintTheme
+import eu.upwolf.mobile.blueprint.android.ui.theme.MainTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BlueprintApp(finishActivity: () -> Unit = {}) {
+fun MainApp(finishActivity: () -> Unit = {}) {
     ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
-        BlueprintTheme {
-            BlueprintScaffold {
+        MainTheme {
+            AppScaffold {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = AppTheme.colorScheme.background
@@ -51,7 +51,7 @@ fun BlueprintApp(finishActivity: () -> Unit = {}) {
 )
 @Composable
 fun DefaultPreview() {
-    BlueprintApp()
+    MainApp()
 }
 
 @Composable

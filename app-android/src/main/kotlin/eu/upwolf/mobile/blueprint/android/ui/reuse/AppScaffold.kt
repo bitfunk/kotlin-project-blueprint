@@ -19,7 +19,7 @@ import eu.upwolf.mobile.blueprint.android.ui.theme.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BlueprintScaffold(
+fun AppScaffold(
     content: @Composable () -> Unit
 ) {
     // val navController = rememberNavController()
@@ -33,7 +33,7 @@ fun BlueprintScaffold(
                 backgroundColor = AppTheme.colorScheme.primary,
                 title = {
                     Text(
-                        text = stringResource(id = R.string.blueprint_app_name),
+                        text = stringResource(id = R.string.app_name),
                         color = AppTheme.colorScheme.onPrimary
                     )
                 }
@@ -55,7 +55,7 @@ fun BlueprintScaffold(
 )
 @Composable
 fun DefaultPreview() {
-    BlueprintScaffold {
+    AppScaffold {
         Text(text = "Hello")
     }
 }

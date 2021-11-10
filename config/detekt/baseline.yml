@@ -11,7 +11,6 @@
     <ID>MagicNumber:Dangerfile.df.kts$600</ID>
     <ID>MagicNumber:VersionConfigurationPlugin.kt$VersionConfigurationPlugin$100</ID>
     <ID>UnusedPrivateMember:AppTheme.kt$darkTheme: Boolean</ID>
-    <ID>UnusedPrivateMember:BlueprintApp.kt$finishActivity: () -> Unit = {}</ID>
-    <ID>UnusedPrivateMember:BlueprintApp.kt$val navController = rememberNavController()</ID>
+    <ID>UnusedPrivateMember:MainApp.kt$finishActivity: () -> Unit = {}</ID>
   </CurrentIssues>
 </SmellBaseline>

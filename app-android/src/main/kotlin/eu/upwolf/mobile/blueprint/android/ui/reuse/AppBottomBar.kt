@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.runtime.Composable
 
 @Composable
-fun BlueprintBottomBar() {
+fun AppBottomBar() {
     Column {
     }
 }
