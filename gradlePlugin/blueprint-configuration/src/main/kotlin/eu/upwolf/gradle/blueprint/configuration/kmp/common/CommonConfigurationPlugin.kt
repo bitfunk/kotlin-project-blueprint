@@ -27,13 +27,13 @@ class CommonConfigurationPlugin : Plugin<Project> {
         project.kotlin {
             sourceSets {
                 maybeCreate("commonMain").dependencies {
-                    implementation(Dependency.multiplatform.kotlin.stdLib.common)
-                    implementation(Dependency.multiplatform.kotlin.coroutines.common)
+                    implementation(Dependency.Kotlin.StdLib.common)
+                    implementation(Dependency.Kotlin.Coroutines.common)
                 }
 
                 maybeCreate("commonTest").dependencies {
-                    implementation(Dependency.multiplatformTest.kotlin.common)
-                    implementation(Dependency.multiplatformTest.kotlin.commonAnnotations)
+                    implementation(Dependency.Kotlin.Test.common)
+                    implementation(Dependency.Kotlin.Test.commonAnnotations)
                 }
             }
         }
@@ -58,12 +58,12 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("androidMain").dependencies {
-                    implementation(Dependency.multiplatform.kotlin.stdLib.android)
-                    implementation(Dependency.multiplatform.kotlin.coroutines.android)
+                    implementation(Dependency.Kotlin.StdLib.android)
+                    implementation(Dependency.Kotlin.Coroutines.android)
                 }
                 maybeCreate("androidTest").dependencies {
-                    implementation(Dependency.multiplatformTest.kotlin.jvmJunit)
-                    implementation(Dependency.multiplatform.kotlin.coroutines.test)
+                    implementation(Dependency.Kotlin.Test.jvmJunit)
+                    implementation(Dependency.Kotlin.Coroutines.test)
                 }
             }
         }
@@ -75,11 +75,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("iosMain").dependencies {
-                    implementation(Dependency.multiplatform.kotlin.coroutines.common) {
-                        version {
-                            strictly(Version.multiplatform.kotlin.coroutines)
-                        }
-                    }
+                    implementation(Dependency.Kotlin.Coroutines.common)
                 }
             }
         }

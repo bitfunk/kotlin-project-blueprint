@@ -2,12 +2,19 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
+import eu.upwolf.gradle.blueprint.dependency.Dependency
+import eu.upwolf.gradle.blueprint.dependency.PluginDependency
+
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
 
     id("eu.upwolf.gradle.blueprint.dependency")
 }
+
+// To make it available as direct dependency
+group = "eu.upwolf.gradle.blueprint.configuration"
+version = "1.0.0-SNAPSHOT"
 
 repositories {
     gradlePluginPortal()
@@ -16,11 +23,11 @@ repositories {
 }
 
 dependencies {
-    implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.kotlin)
-    implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.kotlinSerialization)
-    implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.android)
+    implementation(Dependency.Kotlin.gradlePlugin)
+    implementation(Dependency.Kotlin.Serialization.gradlePlugin)
+    implementation(PluginDependency.android)
 
-    implementation("org.jetbrains.gradle.apple:applePlugin:212.4638.14-0.13.1")
+    implementation("org.jetbrains.gradle.apple:applePlugin:_")
 
     implementation("eu.upwolf.gradle.blueprint.dependency:blueprint-dependency:1.0.0-SNAPSHOT")
 }
