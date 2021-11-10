@@ -148,12 +148,12 @@ Releases use this format: `{major}.{minor}.{patch}`
 
 You want to help or share a proposal? You have a specific problem? Read the following:
 
-* link:CONTRIBUTING.adoc[Contributing] for details about how to report bugs and propose features.
-* link:DEVELOPING.adoc[Developing] for details about our development process and how to build and test the project.
+* link:docs/Contributing.adoc[Contributing] for details about how to report bugs and propose features.
+* link:docs/Developing.adoc[Developing] for details about our development process and how to build and test the project.
 
 == Releasing
 
-See link:RELEASING.adoc[changelog]
+See link:docs/Releasing.adoc[changelog]
 
 == Copyright And License
 

@@ -3,13 +3,13 @@
   color: d73a4a
 - name: ci
   description: CI/CD
-  color: dce775
+  color: e0e7a1
 - name: build
   description: build tools
-  color: dce775
+  color: e0e7a1ff
 - name: dependencies
   description: Pull requests that update a dependency file
-  color: dce775
+  color: e0e7a1
 - name: configuration
   description: Gradle configuration changes
   color: ffc999
@@ -69,6 +69,11 @@
   description: App Web
   color: 1664c0
 
+# Common
+- name: common
+  description: Common feature changes
+  color: a7983d
+
 # Feature
 - name: feature
   description: Feature changes
@@ -76,5 +81,5 @@
 
 # Library
 - name: library
-  description: KMP Library changes
+  description: Library changes
   color: 0f46a1
