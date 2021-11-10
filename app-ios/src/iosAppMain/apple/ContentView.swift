@@ -1,9 +1,8 @@
 import SwiftUI
-//import shared
+import FeatureHome
 
 func greet() -> String {
-//    return Greeting().greeting()
-    return "Greeting"
+    return Greeting().greet()
 }
 
 struct ContentView: View {

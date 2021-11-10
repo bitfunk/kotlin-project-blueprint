@@ -18,12 +18,12 @@ repositories {
 }
 
 gradlePlugin {
-    plugins.register("gradleBlueprintDependency") {
+    plugins.register("blueprint-dependency") {
         id = "eu.upwolf.gradle.blueprint.dependency"
         implementationClass = "eu.upwolf.gradle.blueprint.dependency.DependencyPlugin"
     }
 }
 
 dependencies {
-    implementation("com.github.ben-manes:gradle-versions-plugin:0.38.0")
+    implementation("com.github.ben-manes:gradle-versions-plugin:_")
 }

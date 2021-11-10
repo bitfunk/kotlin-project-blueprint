@@ -29,8 +29,8 @@ android {
     packagingOptions {
         resources {
             excludes += setOf(
+                "META-INF/AL2.0",
                 "META-INF/LGPL2.1",
-                "META-INF/AL2.0"
             )
         }
     }
@@ -41,18 +41,23 @@ dependencies {
 
     implementation(AndroidX.core.ktx)
     implementation(AndroidX.appCompat)
-    implementation(Google.android.material)
     implementation(AndroidX.compose.ui)
     implementation(AndroidX.compose.material)
     implementation("androidx.compose.material3:material3:_")
-    implementation(Dependency.android.androidX.compose.navigation)
+    implementation(AndroidX.compose.ui.toolingPreview)
+    implementation(AndroidX.navigation.compose)
     implementation(AndroidX.compose.ui.toolingPreview)
     implementation(AndroidX.lifecycle.runtimeKtx)
     implementation(AndroidX.activity.compose)
 
+    implementation(Google.android.material)
+
     implementation(Dependency.android.androidX.compose.accompanistInsets)
     implementation(Dependency.android.androidX.compose.accompanistInsetsUi)
     implementation(Dependency.android.androidX.compose.accompanistSystemUiController)
+
+    implementation("com.arkivanov.decompose:decompose:_")
+    implementation("com.arkivanov.decompose:extensions-compose-jetpack:_")
 
     testImplementation(Testing.junit4)
 
@@ -76,6 +81,4 @@ dependencies {
     androidTestImplementation(AndroidX.test.runner)
     androidTestImplementation(AndroidX.test.rules)
     androidTestImplementation(AndroidX.test.orchestrator)
-
-    androidTestImplementation(Dependency.androidTest.kakao)
 }

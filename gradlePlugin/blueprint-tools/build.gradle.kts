@@ -4,6 +4,7 @@
 
 import eu.upwolf.gradle.blueprint.dependency.byEnv
 import eu.upwolf.gradle.blueprint.dependency.byProperty
+import eu.upwolf.gradle.blueprint.dependency.Dependency
 
 plugins {
     `kotlin-dsl`
@@ -24,27 +25,9 @@ repositories {
         }
     }
 }
-
-dependencies {
-    // implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.kotlin)
-    // implementation(eu.upwolf.gradle.blueprint.dependency.PluginDependency.android)
-
-    implementation("eu.upwolf.gradle.blueprint.dependency:blueprint-dependency:1.0.0-SNAPSHOT")
-
-    // Publish
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.5.0")
-    implementation("org.jetbrains.dokka:dokka-core:1.5.0")
-
-    // Quality
-    // -> Spotless
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:5.14.3")
-    implementation("com.pinterest:ktlint:0.42.1")
-    // -> Detekt
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1")
-
-    // Version
-    implementation("eu.upwolf.gradle.gitversion:gradle-git-version:0.12.6")
-}
+// To make it available as direct dependency
+group = "eu.upwolf.gradle.blueprint.tools"
+version = "1.0.0-SNAPSHOT"
 
 gradlePlugin {
     // Publish
@@ -66,4 +49,22 @@ gradlePlugin {
         id = "eu.upwolf.gradle.blueprint.version"
         implementationClass = "eu.upwolf.gradle.blueprint.version.VersionConfigurationPlugin"
     }
+}
+
+dependencies {
+    implementation(Dependency.GradlePlugin.projectDependency)
+
+    // Publish
+    implementation("org.jetbrains.dokka:dokka-gradle-plugin:_")
+    implementation("org.jetbrains.dokka:dokka-core:_")
+
+    // Quality
+    // -> Spotless
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:_")
+    implementation("com.pinterest:ktlint:_")
+    // -> Detekt
+    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:_")
+
+    // Version
+    implementation(Dependency.GradlePlugin.gitVersion)
 }

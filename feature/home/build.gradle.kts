@@ -8,11 +8,36 @@ plugins {
 
 kotlin {
     sourceSets {
-        val commonMain by getting
-        val commonTest by getting
-        val androidMain by getting
-        val androidTest by getting
-        val iosMain by getting
-        val iosTest by getting
+        commonMain {
+            // No addition
+        }
+        commonTest {
+            // No addition
+        }
+
+        androidMain {
+            // No addition
+        }
+        androidTest {
+            // No addition
+        }
+
+        iosMain {
+            // No addition
+        }
+        iosTest {
+            // No addition
+        }
+    }
+}
+
+android {
+    packagingOptions {
+        resources {
+            excludes += setOf(
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1",
+            )
+        }
     }
 }

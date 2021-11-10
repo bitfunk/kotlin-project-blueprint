@@ -2,35 +2,38 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
+@file:Repository("https://repo.maven.apache.org")
+
 import systems.danger.kotlin.danger
 import systems.danger.kotlin.fail
+import systems.danger.kotlin.message
 import systems.danger.kotlin.onGitHub
 import systems.danger.kotlin.warn
 
-const val regexFeatureBranch =
-    "(?:feature\\/(?:[A-Z]{2,8}-\\d{1,6}\\/)?(?:add|change|remove|fix|bump|security)-[a-z0-9-.]*)"
-        .toRegex()
-const val regexReleaseBranch =
-    "(?:release\\/(?:\\d{1,3}\\.\\d{1,3}(?:\\.\\d{1,3})?)(?:\\/prepare-\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})?)"
-        .toRegex()
-const val regexDependabotBranch =
-    "dependabot/(.*)"
-        .toRegex()
-
-const val regexFeatureTitle =
-    "(?:(?:\\[[A-Z]{2,8}-\\d{1,6}\\]\\s)?(?:Add|Change|Remove|Fix|Bump|Security)\\s.*)"
-        .toRegex()
-const val regexReleaseTitle =
-    "(?:(?:Prepare )?Release \\d{1,3}\\.\\d{1,3}\\.\\d{1,3})"
-        .toRegex()
-
-const val lineCountInform = 300
-const val lineCountWarn = 600
-const val lineCountFail = 1200
-
-const val pullRequestBodyMinLines = 20
-
 danger(args) {
+    val regexFeatureBranch =
+        "(?:feature\\/(?:[A-Z]{2,8}-\\d{1,6}\\/)?(?:add|change|remove|fix|bump|security)-[a-z0-9-.]*)"
+            .toRegex()
+    val regexReleaseBranch =
+        "(?:release\\/(?:\\d{1,3}\\.\\d{1,3}(?:\\.\\d{1,3})?)(?:\\/prepare-\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})?)"
+            .toRegex()
+    val regexDependabotBranch =
+        "dependabot/(.*)"
+            .toRegex()
+
+    val regexFeatureTitle =
+        "(?:(?:\\[[A-Z]{2,8}-\\d{1,6}\\]\\s)?(?:Add|Change|Remove|Fix|Bump|Security)\\s.*)"
+            .toRegex()
+    val regexReleaseTitle =
+        "(?:(?:Prepare )?Release \\d{1,3}\\.\\d{1,3}\\.\\d{1,3})"
+            .toRegex()
+
+    val lineCountInform = 300
+    val lineCountWarn = 600
+    val lineCountFail = 1200
+
+    val pullRequestBodyMinLines = 20
+
     val allSourceFiles = git.modifiedFiles + git.createdFiles
     val isChangelogUpdated = allSourceFiles.contains("CHANGELOG.adoc")
 
@@ -78,7 +81,7 @@ danger(args) {
             warn("Set a milestone please")
         }
 
-        if (pullRequest.body.length < pullRequestBodyMinLines) {
+        if (pullRequest.body!!.length < pullRequestBodyMinLines) {
             warn("Please include a description of your PR changes")
         }
 
@@ -94,7 +97,7 @@ danger(args) {
         } else if (changes > lineCountWarn) {
             warn("Too Big Pull-Request, keep changes smaller!")
         } else if (changes > lineCountInform) {
-            info("Large Pull-Request, try to keep changes smaller if you can")
+            message("Large Pull-Request, try to keep changes smaller if you can")
         }
     }
 }

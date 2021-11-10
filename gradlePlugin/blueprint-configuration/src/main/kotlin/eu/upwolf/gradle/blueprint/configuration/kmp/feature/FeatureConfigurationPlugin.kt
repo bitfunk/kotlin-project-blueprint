@@ -10,11 +10,12 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import java.util.Locale
 
 class FeatureConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        target.pluginManager.apply("eu.upwolf.gradle.blueprint.configuration.kmp.base")
+        target.pluginManager.apply("eu.upwolf.gradle.blueprint.configuration.kmp.common")
         target.pluginManager.apply("kotlinx-serialization")
 
         setupMultiplatformLibrary(target)
@@ -55,6 +56,12 @@ class FeatureConfigurationPlugin : Plugin<Project> {
 
     private fun setupIosTarget(project: Project) {
         project.kotlin {
+            ios {
+                binaries {
+                    framework("Feature${project.name.capitalize(Locale.ENGLISH)}")
+                }
+            }
+
             sourceSets {
                 maybeCreate("iosMain").dependencies {
                     // Nothing to add

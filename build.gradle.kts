@@ -21,6 +21,7 @@ buildscript {
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:_")
         classpath("com.android.tools.build:gradle:_")
+        classpath(Square.sqlDelight.gradlePlugin)
     }
 }
 
@@ -36,6 +37,14 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+    }
+
+    configurations.all {
+        resolutionStrategy.eachDependency {
+            if ("org.jacoco" == requested.group) {
+                useVersion("0.8.7")
+            }
+        }
     }
 }
 

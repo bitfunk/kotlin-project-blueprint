@@ -3,7 +3,7 @@ build:
 
 configuration:
   - gradlePlugin/blueprint-configuration/**/*
-  - gradlePlugin/blueprint-quality/**/*
+  - gradlePlugin/blueprint-tools/**/*
 
 dependencies:
   - gradlePlugin/blueprint-dependency/**/*
@@ -28,6 +28,10 @@ app-web:
 # Feature
 feature:
   - feature/**/*
+
+# Common
+common:
+  - common/**/*
 
 # Library
 library:

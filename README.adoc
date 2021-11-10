@@ -89,7 +89,7 @@ It's supporting:
 * Java 11
 * Gradle 7.2
 * Android Studio Arctic Fox 2020.3.1 Patch 3, but better Bumblebee for Apple Silicon
-* Jetpack Compose 1.0.4
+* Jetpack Compose 1.0.5
 
 === Installation
 
