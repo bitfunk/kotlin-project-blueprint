@@ -13,6 +13,15 @@ object Dependency {
     val android = Android
     val androidTest = AndroidTest
 
+    object GradlePlugin {
+        const val projectDependency = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency:1.0.0-SNAPSHOT"
+
+        /**
+         * [Gradle Git Version Plugin](https://github.com/wmontwe/gradle-git-version)
+         */
+        const val gitVersion = "eu.upwolf.gradle.gitversion:gradle-git-version:0.12.6"
+    }
+
     /**
      * [Kotlin](https://github.com/JetBrains/kotlin)
      */
@@ -230,9 +239,6 @@ object Android {
                 "androidx.compose.material:material-icons-core:${Version.Android.AndroidX.Compose.core}"
             const val materialExt =
                 "androidx.compose.material:material-icons-extended:${Version.Android.AndroidX.Compose.core}"
-
-            // Navigation
-            const val navigation = "androidx.navigation:navigation-compose:2.4.0-beta02"
 
             // Tooling support (Previews, etc.)
             const val tooling =

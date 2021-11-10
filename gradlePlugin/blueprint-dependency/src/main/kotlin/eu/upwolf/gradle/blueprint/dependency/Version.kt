@@ -21,17 +21,6 @@ object Version {
     const val sqlDelight = "1.5.1"
 
     object GradlePlugin {
-        // Versions
-        /**
-         * [Gradle Git Version Plugin](https://github.com/wmontwe/gradle-git-version)
-         */
-        const val gitVersion = "0.12.6"
-
-        /**
-         * [Gradle Versions Plugin](https://github.com/ben-manes/gradle-versions-plugin)
-         */
-        const val gradleVersions = "0.38.0"
-
         // Android
         /**
          * [Android Gradle Plugin](https://developer.android.com/studio)

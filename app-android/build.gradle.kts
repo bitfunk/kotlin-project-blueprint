@@ -41,15 +41,16 @@ dependencies {
 
     implementation(AndroidX.core.ktx)
     implementation(AndroidX.appCompat)
-    implementation(Google.android.material)
     implementation(AndroidX.compose.ui)
     implementation(AndroidX.compose.material)
     implementation("androidx.compose.material3:material3:_")
     implementation(AndroidX.compose.ui.toolingPreview)
-    implementation(Dependency.android.androidX.compose.navigation)
+    implementation(AndroidX.navigation.compose)
     implementation(AndroidX.compose.ui.toolingPreview)
     implementation(AndroidX.lifecycle.runtimeKtx)
     implementation(AndroidX.activity.compose)
+
+    implementation(Google.android.material)
 
     implementation(Dependency.android.androidX.compose.accompanistInsets)
     implementation(Dependency.android.androidX.compose.accompanistInsetsUi)

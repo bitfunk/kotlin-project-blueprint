@@ -22,16 +22,6 @@ repositories {
     google()
 }
 
-dependencies {
-    implementation(Dependency.Kotlin.gradlePlugin)
-    implementation(Dependency.Kotlin.Serialization.gradlePlugin)
-    implementation(PluginDependency.android)
-
-    implementation("org.jetbrains.gradle.apple:applePlugin:_")
-
-    implementation("eu.upwolf.gradle.blueprint.dependency:blueprint-dependency:1.0.0-SNAPSHOT")
-}
-
 gradlePlugin {
     // Android
     plugins.register("eu.upwolf.gradle.blueprint.configuration.android.app") {
@@ -61,3 +51,15 @@ gradlePlugin {
         implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.feature.FeatureConfigurationPlugin"
     }
 }
+
+dependencies {
+    implementation(Dependency.GradlePlugin.projectDependency)
+
+    implementation(Dependency.Kotlin.gradlePlugin)
+    implementation(Dependency.Kotlin.Serialization.gradlePlugin)
+    implementation(PluginDependency.android)
+
+    implementation("org.jetbrains.gradle.apple:applePlugin:_")
+
+}
+
