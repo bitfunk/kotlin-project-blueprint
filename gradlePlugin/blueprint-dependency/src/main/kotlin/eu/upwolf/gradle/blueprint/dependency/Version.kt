@@ -13,7 +13,6 @@ object Version {
     val jvmTest = JvmTest
     val android = Android
     val androidTest = AndroidTest
-    val endToEndTest = EndToEndTest
 
     /**
      * [SQLDelight](https://github.com/cashapp/sqldelight)
@@ -101,7 +100,6 @@ object Version {
     object Android {
 
         val androidX = AndroidX
-        val ui = Ui
 
         /**
          * [Android Desugar](https://developer.android.com/studio/write/java8-support)
@@ -133,27 +131,13 @@ object Version {
                  */
                 const val core = "1.0.4"
 
-                const val activity = "1.3.1"
-
                 const val lifecycleViewModel = "1.0.0"
-
-                /**
-                 * [Accompanist](https://google.github.io/accompanist/)
-                 */
-                const val accompanist = "0.20.1"
 
                 /**
                  * [Coil (Compose Image Loader)](https://coil-kt.github.io/coil/compose/)
                  */
                 const val coil = "1.3.2"
             }
-        }
-
-        object Ui {
-            /**
-             * [Material Android](https://github.com/material-components/material-components-android)
-             */
-            const val material = "1.4.0"
         }
 
         /**
@@ -191,32 +175,5 @@ object Version {
          * [Robolectric](https://github.com/robolectric/robolectric)
          */
         const val robolectric = "4.5.1"
-
-        /**
-         * [Kakao Compose](https://github.com/KakaoCup/Compose)
-         */
-        const val kakaoCompose = "0.0.3"
-    }
-
-    object EndToEndTest {
-        /**
-         * [Appium](https://github.com/appium/java-client)
-         */
-        const val appium = "6.0.0"
-
-        /**
-         * [Selenide](https://github.com/selenide/selenide)
-         */
-        const val selenide = "5.2.4"
-
-        /**
-         * [JUnit5 Jupiter](https://github.com/junit-team/junit5/)
-         */
-        const val junitJupiter = "5.5.1"
-
-        /**
-         * [JUnit5 PlatformRunner](https://github.com/junit-team/junit5/)
-         */
-        const val junitPlatformRunner = "1.5.2"
     }
 }

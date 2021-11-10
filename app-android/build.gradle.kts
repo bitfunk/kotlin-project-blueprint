@@ -2,7 +2,6 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-import eu.upwolf.gradle.blueprint.dependency.Dependency
 import eu.upwolf.gradle.blueprint.version.version
 import eu.upwolf.gradle.blueprint.version.versionCode
 
@@ -44,20 +43,20 @@ dependencies {
     implementation(AndroidX.compose.ui)
     implementation(AndroidX.compose.material)
     implementation("androidx.compose.material3:material3:_")
-    implementation(AndroidX.compose.ui.toolingPreview)
     implementation(AndroidX.navigation.compose)
-    implementation(AndroidX.compose.ui.toolingPreview)
     implementation(AndroidX.lifecycle.runtimeKtx)
     implementation(AndroidX.activity.compose)
 
     implementation(Google.android.material)
-
-    implementation(Dependency.android.androidX.compose.accompanistInsets)
-    implementation(Dependency.android.androidX.compose.accompanistInsetsUi)
-    implementation(Dependency.android.androidX.compose.accompanistSystemUiController)
+    implementation(Google.accompanist.insets)
+    implementation(Google.accompanist.insets.ui)
+    implementation(Google.accompanist.systemuicontroller)
 
     implementation("com.arkivanov.decompose:decompose:_")
     implementation("com.arkivanov.decompose:extensions-compose-jetpack:_")
+
+    debugImplementation(AndroidX.compose.ui.tooling)
+    debugImplementation(AndroidX.compose.ui.toolingPreview)
 
     testImplementation(Testing.junit4)
 
@@ -70,9 +69,7 @@ dependencies {
     androidTestImplementation(AndroidX.test.uiAutomator)
 
     androidTestImplementation(AndroidX.compose.ui.testJunit4)
-    androidTestImplementation(Dependency.androidTest.kakaoCompose)
-
-    debugImplementation(AndroidX.compose.ui.tooling)
+    androidTestImplementation("io.github.kakaocup:compose:_")
 
     // old
     implementation(AndroidX.lifecycle.extensions)

@@ -173,7 +173,6 @@ object JvmTest {
 object Android {
 
     val androidX = AndroidX
-    val ui = Ui
 
     // Android
     const val desugar = "com.android.tools:desugar_jdk_libs:${Version.Android.androidDesugar}"
@@ -224,56 +223,8 @@ object Android {
         }
 
         object Compose {
-            const val ui = "androidx.compose.ui:ui:${Version.Android.AndroidX.Compose.core}"
-
-            // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-            const val foundation =
-                "androidx.compose.foundation:foundation:${Version.Android.AndroidX.Compose.core}"
-
-            // Material Design
-            const val material =
-                "androidx.compose.material:material:${Version.Android.AndroidX.Compose.core}"
-
-            // Material design icons
-            const val materialIcons =
-                "androidx.compose.material:material-icons-core:${Version.Android.AndroidX.Compose.core}"
-            const val materialExt =
-                "androidx.compose.material:material-icons-extended:${Version.Android.AndroidX.Compose.core}"
-
-            // Tooling support (Previews, etc.)
-            const val tooling =
-                "androidx.compose.ui:ui-tooling:${Version.Android.AndroidX.Compose.core}"
-
-            // Integration with ViewModels
-            const val viewmodel =
-                "androidx.lifecycle:lifecycle-viewmodel-compose:" +
-                    Version.Android.AndroidX.Compose.lifecycleViewModel
-
-            // Integration with observables
-            const val livedata =
-                "androidx.compose.runtime:runtime-livedata:${Version.Android.AndroidX.Compose.core}"
-
-            // Support
-            const val accompanistSwipeToRefresh =
-                "com.google.accompanist:accompanist-swiperefresh:${Version.Android.AndroidX.Compose.accompanist}"
-
-            const val accompanistSystemUiController =
-                "com.google.accompanist:accompanist-systemuicontroller:" +
-                    Version.Android.AndroidX.Compose.accompanist
-
-            const val accompanistInsets =
-                "com.google.accompanist:accompanist-insets:${Version.Android.AndroidX.Compose.accompanist}"
-            const val accompanistInsetsUi =
-                "com.google.accompanist:accompanist-insets-ui:${Version.Android.AndroidX.Compose.accompanist}"
-
             const val coil = "io.coil-kt:coil-compose:${Version.Android.AndroidX.Compose.coil}"
         }
-    }
-
-    object Ui {
-        // Material
-        const val material =
-            "com.google.android.material:material:${Version.Android.Ui.material}"
     }
 
     const val threeTenABP =
@@ -308,8 +259,6 @@ object AndroidTest {
         "androidx.test.uiautomator:uiautomator:${Version.AndroidTest.androidXUiAutomator}"
 
     const val robolectric = "org.robolectric:robolectric:${Version.AndroidTest.robolectric}"
-
-    const val kakaoCompose = "io.github.kakaocup:compose:${Version.AndroidTest.kakaoCompose}"
 
     object Espresso {
         const val core =
