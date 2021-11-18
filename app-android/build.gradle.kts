@@ -41,8 +41,8 @@ dependencies {
     implementation(AndroidX.core.ktx)
     implementation(AndroidX.appCompat)
     implementation(AndroidX.compose.ui)
-    implementation(AndroidX.compose.material)
     implementation("androidx.compose.material3:material3:_")
+    implementation(AndroidX.compose.material)
     implementation(AndroidX.navigation.compose)
     implementation(AndroidX.lifecycle.runtimeKtx)
     implementation(AndroidX.activity.compose)
@@ -55,8 +55,9 @@ dependencies {
     implementation("com.arkivanov.decompose:decompose:_")
     implementation("com.arkivanov.decompose:extensions-compose-jetpack:_")
 
+    implementation(AndroidX.compose.ui.toolingPreview)
+
     debugImplementation(AndroidX.compose.ui.tooling)
-    debugImplementation(AndroidX.compose.ui.toolingPreview)
 
     testImplementation(Testing.junit4)
 

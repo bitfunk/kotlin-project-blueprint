@@ -16,6 +16,10 @@ plugins {
     id("de.fayard.refreshVersions") version "0.23.0"
 }
 
+refreshVersions {
+    versionsPropertiesFile = settings.rootDir.resolve("config/refreshVersions/versions.properties")
+}
+
 // Gradle Plugin
 includeBuild("gradlePlugin/blueprint-dependency")
 includeBuild("gradlePlugin/blueprint-configuration")

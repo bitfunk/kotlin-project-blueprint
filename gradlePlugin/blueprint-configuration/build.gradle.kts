@@ -62,4 +62,3 @@ dependencies {
     implementation("org.jetbrains.gradle.apple:applePlugin:_")
 
 }
-
