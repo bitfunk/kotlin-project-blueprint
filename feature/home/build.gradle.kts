@@ -30,14 +30,3 @@ kotlin {
         }
     }
 }
-
-android {
-    packagingOptions {
-        resources {
-            excludes += setOf(
-                "META-INF/AL2.0",
-                "META-INF/LGPL2.1",
-            )
-        }
-    }
-}

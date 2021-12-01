@@ -24,15 +24,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = eu.upwolf.gradle.blueprint.dependency.Version.android.androidX.compose.core
     }
-
-    packagingOptions {
-        resources {
-            excludes += setOf(
-                "META-INF/AL2.0",
-                "META-INF/LGPL2.1",
-            )
-        }
-    }
 }
 
 dependencies {
