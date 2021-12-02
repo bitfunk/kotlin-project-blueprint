@@ -1,4 +1,4 @@
-package eu.upwolf.mobile.blueprint.android.ui.theme
+package eu.upwolf.mobile.blueprint.common.theme
 
 import androidx.compose.ui.graphics.Color
 
@@ -56,7 +56,7 @@ internal val md_theme_dark_outline = Color(0xFF8c9199)
 internal val md_theme_dark_inverseOnSurface = Color(0xFF1a1c1e)
 internal val md_theme_dark_inverseSurface = Color(0xFFe2e2e6)
 
-internal val seed = Color(0xFF00629f)
-internal val error = Color(0xFFba1b1b)
+internal val themeSeed = Color(0xFF00629f)
+internal val themeError = Color(0xFFba1b1b)
 
-internal val app_theme_debug = Color.Magenta
+internal val themeDebugColor = Color.Magenta

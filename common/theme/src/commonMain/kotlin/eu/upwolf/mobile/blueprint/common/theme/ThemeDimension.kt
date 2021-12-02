@@ -2,13 +2,13 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.mobile.blueprint.android.ui.theme
+package eu.upwolf.mobile.blueprint.common.theme
 
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-data class AppDimension(
+data class ThemeDimension(
     val spacingQuarter: Dp = 2.dp,
     val spacingHalf: Dp = 4.dp,
     val spacingSingle: Dp = 8.dp,
@@ -18,4 +18,4 @@ data class AppDimension(
     val spacingQuadruple: Dp = 32.dp,
 )
 
-internal val LocalDimension = staticCompositionLocalOf { AppDimension() }
+internal val LocalDimension = staticCompositionLocalOf { ThemeDimension() }

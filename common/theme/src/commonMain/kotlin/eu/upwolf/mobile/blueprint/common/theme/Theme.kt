@@ -1,14 +1,15 @@
-package eu.upwolf.mobile.blueprint.android.ui.theme
+/*
+ * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
+ */
+
+package eu.upwolf.mobile.blueprint.common.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
-import androidx.compose.ui.graphics.Color
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun MainTheme(
@@ -16,51 +17,47 @@ fun MainTheme(
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) {
-        DarkAppColorScheme
+        ThemeColorSchemeDark
     } else {
-        LightAppColorScheme
+        ThemeColorSchemeLight
     }
 
-    AppTheme(
+    Theme(
         colorScheme = colorScheme,
         content = content,
-        darkTheme = darkTheme
     )
 }
 
-object AppTheme {
-    val colorScheme: AppColorScheme
+object Theme {
+    val colorScheme: ThemeColorScheme
         @Composable
         @ReadOnlyComposable
         get() = LocalColorScheme.current
 
-    val typography: AppTypography
+    val typography: ThemeTypography
         @Composable
         @ReadOnlyComposable
         get() = LocalTypography.current
 
-    val dimension: AppDimension
+    val dimension: ThemeDimension
         @Composable
         @ReadOnlyComposable
         get() = LocalDimension.current
 }
 
 @Composable
-fun AppTheme(
-    colorScheme: AppColorScheme = AppTheme.colorScheme,
-    typography: AppTypography = AppTheme.typography,
-    dimension: AppDimension = AppTheme.dimension,
-    darkTheme: Boolean,
+expect fun PlatformThemeSetup()
+
+@Composable
+fun Theme(
+    colorScheme: ThemeColorScheme = Theme.colorScheme,
+    typography: ThemeTypography = Theme.typography,
+    dimension: ThemeDimension = Theme.dimension,
     content: @Composable () -> Unit
 ) {
-    val systemUiController = rememberSystemUiController()
-    SideEffect {
-        systemUiController.setSystemBarsColor(
-            color = Color.Transparent
-        )
-    }
+    PlatformThemeSetup()
 
-    ProvideAppTheme(
+    ProvideTheme(
         colorScheme,
         dimension,
         typography,
@@ -74,10 +71,10 @@ fun AppTheme(
 }
 
 @Composable
-fun ProvideAppTheme(
-    colorScheme: AppColorScheme,
-    dimension: AppDimension,
-    typography: AppTypography,
+fun ProvideTheme(
+    colorScheme: ThemeColorScheme,
+    dimension: ThemeDimension,
+    typography: ThemeTypography,
     content: @Composable () -> Unit
 ) {
     val rememberedColorScheme = remember {

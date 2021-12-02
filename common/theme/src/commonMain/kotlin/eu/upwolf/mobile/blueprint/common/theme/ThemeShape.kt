@@ -1,10 +1,11 @@
-package eu.upwolf.mobile.blueprint.android.ui.theme
+package eu.upwolf.mobile.blueprint.common.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
 import androidx.compose.ui.unit.dp
 
-val Shapes = Shapes(
+// FIXME needed?
+val ThemeShape = Shapes(
     small = RoundedCornerShape(4.dp),
     medium = RoundedCornerShape(4.dp),
     large = RoundedCornerShape(0.dp)

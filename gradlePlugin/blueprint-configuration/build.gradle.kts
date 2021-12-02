@@ -41,11 +41,17 @@ gradlePlugin {
             "eu.upwolf.gradle.blueprint.configuration.ios.app.IosAppConfigurationPlugin"
     }
 
-    // Kotlin Multiplatform
+    // KMP - Common
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common") {
         id = "eu.upwolf.gradle.blueprint.configuration.kmp.common"
         implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.common.CommonConfigurationPlugin"
     }
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common.compose") {
+        id = "eu.upwolf.gradle.blueprint.configuration.kmp.common.compose"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.kmp.common.compose.CommonComposeConfigurationPlugin"
+    }
+    // KMP - Feature
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.feature") {
         id = "eu.upwolf.gradle.blueprint.configuration.kmp.feature"
         implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.feature.FeatureConfigurationPlugin"
@@ -58,6 +64,8 @@ dependencies {
     implementation(Dependency.Kotlin.gradlePlugin)
     implementation(Dependency.Kotlin.Serialization.gradlePlugin)
     implementation(PluginDependency.android)
+
+    implementation("org.jetbrains.compose:compose-gradle-plugin:_")
 
     implementation("org.jetbrains.gradle.apple:applePlugin:_")
 }

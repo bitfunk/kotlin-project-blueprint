@@ -15,7 +15,7 @@ import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
 import com.google.accompanist.insets.ui.TopAppBar
 import eu.upwolf.mobile.blueprint.android.R
-import eu.upwolf.mobile.blueprint.android.ui.theme.AppTheme
+import eu.upwolf.mobile.blueprint.common.theme.Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -30,11 +30,11 @@ fun AppScaffold(
                 contentPadding = rememberInsetsPaddingValues(
                     insets = LocalWindowInsets.current.statusBars
                 ),
-                backgroundColor = AppTheme.colorScheme.primary,
+                backgroundColor = Theme.colorScheme.primary,
                 title = {
                     Text(
                         text = stringResource(id = R.string.app_name),
-                        color = AppTheme.colorScheme.onPrimary
+                        color = Theme.colorScheme.onPrimary
                     )
                 }
             )

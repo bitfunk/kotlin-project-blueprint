@@ -34,6 +34,7 @@ include(
 // Common
 include(
     ":common:database",
+    ":common:theme",
 )
 
 // Feature

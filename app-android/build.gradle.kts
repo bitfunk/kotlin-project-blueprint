@@ -27,6 +27,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":common:theme"))
+
     implementation(Kotlin.stdlib.jdk7)
 
     implementation(AndroidX.core.ktx)
@@ -41,7 +43,6 @@ dependencies {
     implementation(Google.android.material)
     implementation(Google.accompanist.insets)
     implementation(Google.accompanist.insets.ui)
-    implementation(Google.accompanist.systemuicontroller)
 
     implementation("com.arkivanov.decompose:decompose:_")
     implementation("com.arkivanov.decompose:extensions-compose-jetpack:_")
@@ -52,6 +53,9 @@ dependencies {
 
     testImplementation(Testing.junit4)
 
+    androidTestImplementation(AndroidX.test.runner)
+    androidTestImplementation(AndroidX.test.rules)
+    androidTestImplementation(AndroidX.test.orchestrator)
     androidTestImplementation(AndroidX.test.ext.junit)
 
     androidTestImplementation(AndroidX.test.espresso.core)
@@ -62,12 +66,4 @@ dependencies {
 
     androidTestImplementation(AndroidX.compose.ui.testJunit4)
     androidTestImplementation("io.github.kakaocup:compose:_")
-
-    // old
-    implementation(AndroidX.lifecycle.extensions)
-    implementation(AndroidX.lifecycle.commonJava8)
-
-    androidTestImplementation(AndroidX.test.runner)
-    androidTestImplementation(AndroidX.test.rules)
-    androidTestImplementation(AndroidX.test.orchestrator)
 }

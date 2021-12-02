@@ -2,37 +2,52 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.kmp.common
+package eu.upwolf.gradle.blueprint.configuration.kmp.common.compose
 
 import eu.upwolf.gradle.blueprint.dependency.Dependency
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
+import org.gradle.kotlin.dsl.maven
+import org.gradle.kotlin.dsl.repositories
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.compose.ExperimentalComposeLibrary
+import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-class CommonConfigurationPlugin : Plugin<Project> {
+class CommonComposeConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.pluginManager.apply("org.jetbrains.kotlin.multiplatform")
         target.pluginManager.apply("eu.upwolf.gradle.blueprint.configuration.android.library")
+        target.pluginManager.apply("org.jetbrains.compose")
+
+        target.repositories {
+            mavenCentral()
+            google()
+            maven(url = "https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        }
 
         setupMultiplatformLibrary(target)
         setupTargets(target)
     }
 
+    @OptIn(ExperimentalComposeLibrary::class)
     private fun setupMultiplatformLibrary(project: Project) {
         project.kotlin {
             sourceSets {
-                maybeCreate("commonMain").dependencies {
-                    implementation(Dependency.Kotlin.StdLib.common)
-                    implementation(Dependency.Kotlin.Coroutines.common)
+                all {
+                    all {
+                        languageSettings.optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
+                    }
                 }
 
-                maybeCreate("commonTest").dependencies {
-                    implementation(Dependency.Kotlin.Test.common)
-                    implementation(Dependency.Kotlin.Test.commonAnnotations)
+                maybeCreate("commonMain").dependencies {
+                    api(compose.runtime)
+                    api(compose.foundation)
+                    api(compose.material)
+                    api(compose.material3)
                 }
             }
         }
@@ -44,7 +59,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
     private fun setupTargets(project: Project) {
         setupAndroidTarget(project)
-        setupIosTarget(project)
+        setupDesktopTarget(project)
     }
 
     private fun setupAndroidTarget(project: Project) {
@@ -66,13 +81,18 @@ class CommonConfigurationPlugin : Plugin<Project> {
         }
     }
 
-    private fun setupIosTarget(project: Project) {
+    private fun setupDesktopTarget(project: Project) {
         project.kotlin {
-            ios { }
+            jvm {
+
+            }
 
             sourceSets {
-                maybeCreate("iosMain").dependencies {
-                    implementation(Dependency.Kotlin.Coroutines.common)
+                maybeCreate("jvmMain").dependencies {
+                    // nothing to add
+                }
+                maybeCreate("jvmTest").dependencies {
+                    // nothing to add
                 }
             }
         }

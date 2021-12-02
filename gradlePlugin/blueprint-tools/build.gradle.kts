@@ -25,6 +25,7 @@ repositories {
         }
     }
 }
+
 // To make it available as direct dependency
 group = "eu.upwolf.gradle.blueprint.tools"
 version = "1.0.0-SNAPSHOT"

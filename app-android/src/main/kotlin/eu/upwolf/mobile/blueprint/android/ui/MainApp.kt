@@ -17,8 +17,8 @@ import com.google.accompanist.insets.ProvideWindowInsets
 import eu.upwolf.mobile.blueprint.android.ui.component.counter.Counter
 import eu.upwolf.mobile.blueprint.android.ui.component.counter.CounterUi
 import eu.upwolf.mobile.blueprint.android.ui.reuse.AppScaffold
-import eu.upwolf.mobile.blueprint.android.ui.theme.AppTheme
-import eu.upwolf.mobile.blueprint.android.ui.theme.MainTheme
+import eu.upwolf.mobile.blueprint.common.theme.MainTheme
+import eu.upwolf.mobile.blueprint.common.theme.Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -28,7 +28,7 @@ fun MainApp(finishActivity: () -> Unit = {}) {
             AppScaffold {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = AppTheme.colorScheme.background
+                    color = Theme.colorScheme.background
                 ) {
                     Column {
                         Greeting(name = "Hello")
@@ -58,6 +58,6 @@ fun DefaultPreview() {
 fun Greeting(name: String) {
     Text(
         text = "Hello $name!",
-        color = AppTheme.colorScheme.onBackground
+        color = Theme.colorScheme.onBackground
     )
 }
