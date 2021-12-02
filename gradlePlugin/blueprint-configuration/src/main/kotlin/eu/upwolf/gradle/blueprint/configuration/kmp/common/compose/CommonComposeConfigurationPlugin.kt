@@ -33,16 +33,16 @@ class CommonComposeConfigurationPlugin : Plugin<Project> {
         setupTargets(target)
     }
 
-    @OptIn(ExperimentalComposeLibrary::class)
     private fun setupMultiplatformLibrary(project: Project) {
         project.kotlin {
             sourceSets {
                 all {
-                    all {
-                        languageSettings.optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
+                    languageSettings.apply {
+                        optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
                     }
                 }
 
+                @OptIn(ExperimentalComposeLibrary::class)
                 maybeCreate("commonMain").dependencies {
                     api(compose.runtime)
                     api(compose.foundation)

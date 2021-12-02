@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.mobile.blueprint.common.theme
+package eu.upwolf.mobile.blueprint.common.ui.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Stable
@@ -14,7 +14,7 @@ import androidx.compose.runtime.structuralEqualityPolicy
 import androidx.compose.ui.graphics.Color
 
 @Stable
-class ThemeColorScheme(
+class AppThemeColorScheme(
     primary: Color,
     onPrimary: Color,
     primaryContainer: Color,
@@ -122,7 +122,7 @@ class ThemeColorScheme(
         errorContainer: Color = this.errorContainer,
         onErrorContainer: Color = this.onErrorContainer,
         outline: Color = this.outline,
-    ): ThemeColorScheme = ThemeColorScheme(
+    ): AppThemeColorScheme = AppThemeColorScheme(
         primary = primary,
         onPrimary = onPrimary,
         primaryContainer = primaryContainer,
@@ -151,7 +151,7 @@ class ThemeColorScheme(
         outline = outline,
     )
 
-    fun update(other: ThemeColorScheme) {
+    fun update(other: AppThemeColorScheme) {
         primary = other.primary
         onPrimary = other.onPrimary
         primaryContainer = other.primaryContainer
@@ -212,7 +212,7 @@ class ThemeColorScheme(
     }
 }
 
-internal val ThemeColorSchemeLight = ThemeColorScheme(
+internal val AppThemeColorSchemeLight = AppThemeColorScheme(
     primary = md_theme_light_primary,
     onPrimary = md_theme_light_onPrimary,
     primaryContainer = md_theme_light_primaryContainer,
@@ -241,7 +241,7 @@ internal val ThemeColorSchemeLight = ThemeColorScheme(
     outline = md_theme_light_outline,
 )
 
-internal val ThemeColorSchemeDark = ThemeColorScheme(
+internal val AppThemeColorSchemeDark = AppThemeColorScheme(
     primary = md_theme_dark_primary,
     onPrimary = md_theme_dark_onPrimary,
     primaryContainer = md_theme_dark_primaryContainer,
@@ -271,36 +271,36 @@ internal val ThemeColorSchemeDark = ThemeColorScheme(
 )
 
 /**
- * A Material [ColorScheme] implementation which sets all colors to [themeDebugColor] to discourage usage of
- * [MaterialTheme.colorScheme] in preference to [Theme.colorScheme].
+ * A Material [ColorScheme] implementation which sets all colors to [appThemeDebugColor] to discourage usage of
+ * [MaterialTheme.colorScheme] in preference to [AppTheme.colorScheme].
  */
 internal val DebugColorScheme = ColorScheme(
-    primary = themeDebugColor,
-    onPrimary = themeDebugColor,
-    primaryContainer = themeDebugColor,
-    onPrimaryContainer = themeDebugColor,
-    inversePrimary = themeDebugColor,
-    secondary = themeDebugColor,
-    onSecondary = themeDebugColor,
-    secondaryContainer = themeDebugColor,
-    onSecondaryContainer = themeDebugColor,
-    tertiary = themeDebugColor,
-    onTertiary = themeDebugColor,
-    tertiaryContainer = themeDebugColor,
-    onTertiaryContainer = themeDebugColor,
-    background = themeDebugColor,
-    onBackground = themeDebugColor,
-    surface = themeDebugColor,
-    onSurface = themeDebugColor,
-    surfaceVariant = themeDebugColor,
-    onSurfaceVariant = themeDebugColor,
-    inverseSurface = themeDebugColor,
-    inverseOnSurface = themeDebugColor,
-    error = themeDebugColor,
-    onError = themeDebugColor,
-    errorContainer = themeDebugColor,
-    onErrorContainer = themeDebugColor,
-    outline = themeDebugColor,
+    primary = appThemeDebugColor,
+    onPrimary = appThemeDebugColor,
+    primaryContainer = appThemeDebugColor,
+    onPrimaryContainer = appThemeDebugColor,
+    inversePrimary = appThemeDebugColor,
+    secondary = appThemeDebugColor,
+    onSecondary = appThemeDebugColor,
+    secondaryContainer = appThemeDebugColor,
+    onSecondaryContainer = appThemeDebugColor,
+    tertiary = appThemeDebugColor,
+    onTertiary = appThemeDebugColor,
+    tertiaryContainer = appThemeDebugColor,
+    onTertiaryContainer = appThemeDebugColor,
+    background = appThemeDebugColor,
+    onBackground = appThemeDebugColor,
+    surface = appThemeDebugColor,
+    onSurface = appThemeDebugColor,
+    surfaceVariant = appThemeDebugColor,
+    onSurfaceVariant = appThemeDebugColor,
+    inverseSurface = appThemeDebugColor,
+    inverseOnSurface = appThemeDebugColor,
+    error = appThemeDebugColor,
+    onError = appThemeDebugColor,
+    errorContainer = appThemeDebugColor,
+    onErrorContainer = appThemeDebugColor,
+    outline = appThemeDebugColor,
 )
 
-internal val LocalColorScheme = staticCompositionLocalOf<ThemeColorScheme> { ThemeColorSchemeLight }
+internal val LocalColorScheme = staticCompositionLocalOf<AppThemeColorScheme> { AppThemeColorSchemeLight }

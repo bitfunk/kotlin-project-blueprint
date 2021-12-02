@@ -6,11 +6,11 @@ package eu.upwolf.mobile.blueprint.desktop.ui
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import eu.upwolf.mobile.blueprint.common.theme.MainTheme
+import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeMain
 
 @Composable
 fun MainApp() {
-    MainTheme {
+    AppThemeMain {
         Text(text = "Test")
     }
 }

@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.mobile.blueprint.common.theme
+package eu.upwolf.mobile.blueprint.common.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 
 private val Roboto = FontFamily.Default
 
-data class ThemeTypography(
+data class AppThemeTypography(
     val displayLarge: TextStyle = TextStyle(
         fontFamily = Roboto,
         fontWeight = FontWeight.W400,
@@ -139,4 +139,4 @@ data class ThemeTypography(
     )
 }
 
-internal val LocalTypography = staticCompositionLocalOf { ThemeTypography() }
+internal val LocalTypography = staticCompositionLocalOf { AppThemeTypography() }

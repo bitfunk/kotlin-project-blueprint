@@ -30,12 +30,6 @@ object Version {
          * [Gradle Google Play Publisher Plugin](https://github.com/Triple-T/gradle-play-publisher)
          */
         const val playPublisher = "3.6.0"
-
-        // Quality
-        /**
-         * [Detekt](https://github.com/detekt/detekt)
-         */
-        const val detekt = "1.18.1"
     }
 
     object Multiplatform {

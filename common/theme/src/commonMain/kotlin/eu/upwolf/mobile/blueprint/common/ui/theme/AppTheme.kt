@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.mobile.blueprint.common.theme
+package eu.upwolf.mobile.blueprint.common.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
@@ -12,52 +12,52 @@ import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.remember
 
 @Composable
-fun MainTheme(
+fun AppThemeMain(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) {
-        ThemeColorSchemeDark
+        AppThemeColorSchemeDark
     } else {
-        ThemeColorSchemeLight
+        AppThemeColorSchemeLight
     }
 
-    Theme(
+    AppTheme(
         colorScheme = colorScheme,
         content = content,
     )
 }
 
-object Theme {
-    val colorScheme: ThemeColorScheme
+object AppTheme {
+    val colorScheme: AppThemeColorScheme
         @Composable
         @ReadOnlyComposable
         get() = LocalColorScheme.current
 
-    val typography: ThemeTypography
+    val typography: AppThemeTypography
         @Composable
         @ReadOnlyComposable
         get() = LocalTypography.current
 
-    val dimension: ThemeDimension
+    val dimension: AppThemeDimension
         @Composable
         @ReadOnlyComposable
         get() = LocalDimension.current
 }
 
 @Composable
-expect fun PlatformThemeSetup()
+expect fun AppThemePlatformSetup()
 
 @Composable
-fun Theme(
-    colorScheme: ThemeColorScheme = Theme.colorScheme,
-    typography: ThemeTypography = Theme.typography,
-    dimension: ThemeDimension = Theme.dimension,
+fun AppTheme(
+    colorScheme: AppThemeColorScheme = AppTheme.colorScheme,
+    typography: AppThemeTypography = AppTheme.typography,
+    dimension: AppThemeDimension = AppTheme.dimension,
     content: @Composable () -> Unit
 ) {
-    PlatformThemeSetup()
+    AppThemePlatformSetup()
 
-    ProvideTheme(
+    ProvideAppTheme(
         colorScheme,
         dimension,
         typography,
@@ -71,10 +71,10 @@ fun Theme(
 }
 
 @Composable
-fun ProvideTheme(
-    colorScheme: ThemeColorScheme,
-    dimension: ThemeDimension,
-    typography: ThemeTypography,
+fun ProvideAppTheme(
+    colorScheme: AppThemeColorScheme,
+    dimension: AppThemeDimension,
+    typography: AppThemeTypography,
     content: @Composable () -> Unit
 ) {
     val rememberedColorScheme = remember {

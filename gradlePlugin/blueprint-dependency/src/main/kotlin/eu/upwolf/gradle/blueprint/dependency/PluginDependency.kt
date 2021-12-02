@@ -10,7 +10,4 @@ object PluginDependency {
 
     const val playPublisher =
         "com.github.triplet.gradle:play-publisher:${Version.GradlePlugin.playPublisher}"
-
-    // Quality
-    const val detekt = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${Version.GradlePlugin.detekt}"
 }
