@@ -60,5 +60,4 @@ dependencies {
     implementation(PluginDependency.android)
 
     implementation("org.jetbrains.gradle.apple:applePlugin:_")
-
 }
