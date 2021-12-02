@@ -43,6 +43,11 @@ object AppTheme {
         @Composable
         @ReadOnlyComposable
         get() = LocalDimension.current
+
+    val size: AppThemeSize
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalSize.current
 }
 
 @Composable
@@ -53,6 +58,7 @@ fun AppTheme(
     colorScheme: AppThemeColorScheme = AppTheme.colorScheme,
     typography: AppThemeTypography = AppTheme.typography,
     dimension: AppThemeDimension = AppTheme.dimension,
+    size: AppThemeSize = AppTheme.size,
     content: @Composable () -> Unit
 ) {
     AppThemePlatformSetup()
@@ -61,6 +67,7 @@ fun AppTheme(
         colorScheme,
         dimension,
         typography,
+        size,
     ) {
         MaterialTheme(
             colorScheme = DebugColorScheme,
@@ -75,6 +82,7 @@ fun ProvideAppTheme(
     colorScheme: AppThemeColorScheme,
     dimension: AppThemeDimension,
     typography: AppThemeTypography,
+    size: AppThemeSize,
     content: @Composable () -> Unit
 ) {
     val rememberedColorScheme = remember {
@@ -87,6 +95,8 @@ fun ProvideAppTheme(
         LocalColorScheme provides rememberedColorScheme,
         LocalDimension provides dimension,
         LocalTypography provides typography,
-        content = content
-    )
+        LocalSize provides size,
+    ) {
+        content()
+    }
 }

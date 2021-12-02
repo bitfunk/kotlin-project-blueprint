@@ -212,7 +212,7 @@ class AppThemeColorScheme(
     }
 }
 
-internal val AppThemeColorSchemeLight = AppThemeColorScheme(
+val AppThemeColorSchemeLight = AppThemeColorScheme(
     primary = md_theme_light_primary,
     onPrimary = md_theme_light_onPrimary,
     primaryContainer = md_theme_light_primaryContainer,
@@ -241,7 +241,7 @@ internal val AppThemeColorSchemeLight = AppThemeColorScheme(
     outline = md_theme_light_outline,
 )
 
-internal val AppThemeColorSchemeDark = AppThemeColorScheme(
+val AppThemeColorSchemeDark = AppThemeColorScheme(
     primary = md_theme_dark_primary,
     onPrimary = md_theme_dark_onPrimary,
     primaryContainer = md_theme_dark_primaryContainer,

@@ -13,7 +13,7 @@ kotlin {
     sourceSets {
         jvmMain {
             dependencies {
-                implementation(project(":common:theme"))
+                implementation(project(":common:component"))
             }
         }
     }

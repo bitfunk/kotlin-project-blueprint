@@ -34,6 +34,7 @@ include(
 
 // Common
 include(
+    ":common:component",
     ":common:database",
     ":common:theme",
 )
