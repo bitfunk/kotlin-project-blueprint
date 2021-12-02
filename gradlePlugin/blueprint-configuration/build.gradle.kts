@@ -34,6 +34,13 @@ gradlePlugin {
             "eu.upwolf.gradle.blueprint.configuration.android.library.AndroidLibraryConfigurationPlugin"
     }
 
+    // Desktop
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.desktop.app") {
+        id = "eu.upwolf.gradle.blueprint.configuration.desktop.app"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.desktop.app.DesktopAppConfigurationPlugin"
+    }
+
     // iOS
     plugins.register("eu.upwolf.gradle.blueprint.configuration.ios.app") {
         id = "eu.upwolf.gradle.blueprint.configuration.ios.app"

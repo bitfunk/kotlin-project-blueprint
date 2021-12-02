@@ -28,6 +28,7 @@ includeBuild("gradlePlugin/blueprint-tools")
 // App
 include(
     ":app-android",
+    ":app-desktop",
     ":app-ios",
 )
 

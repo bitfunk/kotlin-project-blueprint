@@ -134,5 +134,13 @@ class VersionConfigurationPlugin : Plugin<Project> {
 }
 
 fun Project.version(): String = this.version as String
+fun Project.versionCleaned(): String {
+    return if (version().endsWith("-SNAPSHOT")) {
+        version().removeSuffix("-SNAPSHOT")
+    } else {
+        version()
+    }
+}
+
 fun Project.versionCode(): Int = this.extra.get("versionCode") as Int
 fun Project.versionCodeFeature(): Int = this.extra.get("versionCodeFeature") as Int
