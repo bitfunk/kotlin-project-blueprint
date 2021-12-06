@@ -5,8 +5,9 @@
 import eu.upwolf.gradle.blueprint.version.versionCleaned
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("eu.upwolf.gradle.blueprint.configuration.desktop.app")
+    alias(libs.plugins.gradleBlueprintConfigurationDesktopApp)
 }
 
 kotlin {

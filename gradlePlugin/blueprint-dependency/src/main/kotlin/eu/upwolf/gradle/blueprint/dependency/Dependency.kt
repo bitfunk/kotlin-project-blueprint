@@ -13,22 +13,11 @@ object Dependency {
     val android = Android
     val androidTest = AndroidTest
 
-    object GradlePlugin {
-        const val projectDependency = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency:1.0.0-SNAPSHOT"
-
-        /**
-         * [Gradle Git Version Plugin](https://github.com/wmontwe/gradle-git-version)
-         */
-        const val gitVersion = "eu.upwolf.gradle.gitversion:gradle-git-version:0.12.6"
-    }
-
     /**
      * [Kotlin](https://github.com/JetBrains/kotlin)
      */
     object Kotlin {
         private const val VERSION = "1.5.31"
-
-        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$VERSION"
 
         object StdLib {
             const val common = "org.jetbrains.kotlin:kotlin-stdlib-common:$VERSION"
@@ -57,9 +46,9 @@ object Dependency {
          * [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
          */
         object Coroutines {
-            const val common = "org.jetbrains.kotlinx:kotlinx-coroutines-core:_"
-            const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:_"
-            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:_"
+            const val common = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+            const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2"
         }
 
         /**
@@ -67,8 +56,6 @@ object Dependency {
          */
         object Serialization {
             private const val VERSION = "1.2.2"
-
-            const val gradlePlugin = "org.jetbrains.kotlin:kotlin-serialization:${Kotlin.VERSION}"
 
             const val common = "org.jetbrains.kotlinx:kotlinx-serialization-core:$VERSION"
             const val json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$VERSION"
@@ -110,17 +97,12 @@ object Multiplatform {
      * [SqlDelight](https://github.com/cashapp/sqldelight)
      */
     object SqlDelight {
-        private const val VERSION = "_"
+        private const val VERSION = "1.5.3"
 
         const val gradlePlugin = "com.squareup.sqldelight:gradle-plugin:$VERSION"
 
         const val runtime = "com.squareup.sqldelight:runtime:$VERSION"
         const val coroutines = "com.squareup.sqldelight:coroutines-extensions:$VERSION"
-
-        const val driverJvm = "com.squareup.sqldelight:sqlite-driver:$VERSION"
-        const val driverJs = "com.squareup.sqldelight:sqljs-driver:$VERSION"
-        const val driverIos = "com.squareup.sqldelight:native-driver:$VERSION"
-        const val driverAndroid = "com.squareup.sqldelight:android-driver:$VERSION"
     }
 
     object Koin {
@@ -210,16 +192,10 @@ object Android {
         }
 
         object Lifecycle {
-            const val commonJava8 =
-                "androidx.lifecycle:lifecycle-common-java8:${Version.Android.AndroidX.lifecycle}"
             const val extensions =
                 "androidx.lifecycle:lifecycle-extensions:${Version.Android.AndroidX.lifecycle}"
-            const val livedata =
-                "androidx.lifecycle:lifecycle-livedata-ktx:${Version.Android.AndroidX.lifecycle}"
             const val runtime =
                 "androidx.lifecycle:lifecycle-runtime-ktx:${Version.Android.AndroidX.lifecycle}"
-            const val viewModel =
-                "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.Android.AndroidX.lifecycle}"
         }
 
         object Compose {
@@ -249,11 +225,6 @@ object AndroidTest {
 
     const val architectureCore =
         "androidx.arch.core:core-testing:${Version.AndroidTest.androidXArchitectureCoreTesting}"
-
-    const val composeTestJunit4 =
-        "androidx.compose.ui:ui-test-junit4:${Version.AndroidTest.androidXCompose}"
-    const val composeTestManifest =
-        "androidx.compose.ui:ui-test-manifest:${Version.AndroidTest.androidXCompose}"
 
     const val uiAutomator =
         "androidx.test.uiautomator:uiautomator:${Version.AndroidTest.androidXUiAutomator}"

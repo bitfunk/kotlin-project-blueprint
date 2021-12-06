@@ -9,21 +9,15 @@ pluginManagement {
         google()
         maven("https://maven.pkg.jetbrains.space/kotlin/p/kotlin/dev")
     }
+
+    includeBuild("gradlePlugin/blueprint-dependency")
+    includeBuild("gradlePlugin/blueprint-configuration")
+    includeBuild("gradlePlugin/blueprint-tools")
 }
 
-plugins {
-    // See https://jmfayard.github.io/refreshVersions
-    id("de.fayard.refreshVersions") version "0.23.0"
-}
-
-refreshVersions {
-    versionsPropertiesFile = settings.rootDir.resolve("config/refreshVersions/versions.properties")
-}
+enableFeaturePreview("VERSION_CATALOGS")
 
 // Gradle Plugin
-includeBuild("gradlePlugin/blueprint-dependency")
-includeBuild("gradlePlugin/blueprint-configuration")
-includeBuild("gradlePlugin/blueprint-tools")
 
 // App
 include(

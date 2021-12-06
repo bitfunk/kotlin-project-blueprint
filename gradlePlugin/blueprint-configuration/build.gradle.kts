@@ -2,14 +2,12 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-import eu.upwolf.gradle.blueprint.dependency.Dependency
-import eu.upwolf.gradle.blueprint.dependency.PluginDependency
-
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
 
-    id("eu.upwolf.gradle.blueprint.dependency")
+    alias(libs.plugins.gradleBlueprintDependency)
 }
 
 // To make it available as direct dependency
@@ -66,13 +64,19 @@ gradlePlugin {
 }
 
 dependencies {
-    implementation(Dependency.GradlePlugin.projectDependency)
+    implementation(libs.gradleBlueprintDependencyPlugin)
 
-    implementation(Dependency.Kotlin.gradlePlugin)
-    implementation(Dependency.Kotlin.Serialization.gradlePlugin)
-    implementation(PluginDependency.android)
+    implementation(libs.gradleAndroidPlugin)
 
-    implementation("org.jetbrains.compose:compose-gradle-plugin:_")
+    implementation(libs.gradleKotlinPlugin)
+    implementation(libs.gradleKotlinSerializationPlugin)
 
-    implementation("org.jetbrains.gradle.apple:applePlugin:_")
+    implementation(libs.gradleJetbrainsComposePlugin)
+
+    implementation(libs.gradleJetbrainsApplePlugin)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }

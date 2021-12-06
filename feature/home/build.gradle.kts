@@ -2,8 +2,9 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("eu.upwolf.gradle.blueprint.configuration.kmp.feature")
+    alias(libs.plugins.gradleBlueprintConfigurationKmpFeature)
 }
 
 kotlin {

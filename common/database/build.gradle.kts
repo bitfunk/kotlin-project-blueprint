@@ -2,10 +2,9 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-import eu.upwolf.gradle.blueprint.dependency.Dependency
-
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("eu.upwolf.gradle.blueprint.configuration.kmp.common")
+    alias(libs.plugins.gradleBlueprintConfigurationKmpCommon)
     id("com.squareup.sqldelight")
 }
 
@@ -26,18 +25,18 @@ kotlin {
 
         androidMain {
             dependencies {
-                implementation(Dependency.multiplatform.sqlDelight.driverAndroid)
+                implementation(libs.sqldelight.androidDriver)
             }
         }
         androidTest {
             dependencies {
-                implementation(Dependency.multiplatform.sqlDelight.driverJvm)
+                implementation(libs.sqldelight.sqliteDriver)
             }
         }
 
         iosMain {
             dependencies {
-                implementation(Dependency.multiplatform.sqlDelight.driverIos)
+                implementation(libs.sqldelight.nativeDriver)
             }
         }
         iosTest {

@@ -19,18 +19,19 @@ buildscript {
     }
 
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:_")
-        classpath("com.android.tools.build:gradle:_")
-        classpath(Square.sqlDelight.gradlePlugin)
+        classpath(libs.gradleKotlinPlugin)
+        classpath(libs.gradleAndroidPlugin)
+        classpath(libs.gradleSqlDelightPlugin)
     }
 }
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("eu.upwolf.gradle.blueprint.dependency")
+    alias(libs.plugins.gradleBlueprintDependency)
 
-    id("eu.upwolf.gradle.blueprint.quality.spotless")
-    id("eu.upwolf.gradle.blueprint.quality.detekt")
-    id("eu.upwolf.gradle.blueprint.version")
+    alias(libs.plugins.gradleBlueprintQualitySpotless)
+    alias(libs.plugins.gradleBlueprintQualityDetekt)
+    alias(libs.plugins.gradleBlueprintVersion)
 }
 
 allprojects {
@@ -42,7 +43,7 @@ allprojects {
     configurations.all {
         resolutionStrategy.eachDependency {
             if ("org.jacoco" == requested.group) {
-                useVersion("0.8.7")
+                useVersion(libs.versions.jacoco.get())
             }
         }
     }
@@ -51,4 +52,14 @@ allprojects {
 tasks.named<Wrapper>("wrapper") {
     gradleVersion = "7.3.1"
     distributionType = Wrapper.DistributionType.ALL
+}
+
+tasks.register("dependencyUpdatesAll") {
+    dependsOn("dependencyUpdates")
+    dependsOn(gradle.includedBuilds.map { it.task(":dependencyUpdates") })
+}
+
+tasks.register("versionCatalogUpdateAll") {
+    dependsOn("versionCatalogUpdate")
+    dependsOn(gradle.includedBuilds.map { it.task(":versionCatalogUpdate") })
 }

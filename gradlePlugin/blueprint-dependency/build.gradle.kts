@@ -2,9 +2,13 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
+
+    alias(libs.plugins.gradleVersionUpdate)
+    alias(libs.plugins.gradleVersionCatalogUpdate)
 }
 
 // To make it available as direct dependency
@@ -25,5 +29,11 @@ gradlePlugin {
 }
 
 dependencies {
-    implementation("com.github.ben-manes:gradle-versions-plugin:_")
+    implementation(libs.gradleVersionUpdatePlugin)
+    implementation(libs.gradleVersionCatalogUpdatePlugin)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }

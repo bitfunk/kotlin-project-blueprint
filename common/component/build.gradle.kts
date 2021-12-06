@@ -2,10 +2,9 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-import eu.upwolf.gradle.blueprint.dependency.Dependency
-
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("eu.upwolf.gradle.blueprint.configuration.kmp.common.compose")
+    alias(libs.plugins.gradleBlueprintConfigurationKmpCommonCompose)
 }
 
 kotlin {
@@ -18,7 +17,7 @@ kotlin {
 
         androidMain {
             dependencies {
-                implementation(AndroidX.compose.ui.toolingPreview)
+                implementation(libs.androidx.compose.ui.uiToolingPreview)
             }
         }
     }

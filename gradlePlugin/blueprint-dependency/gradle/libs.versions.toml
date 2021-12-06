@@ -1,0 +1,13 @@
+[versions]
+# https://github.com/ben-manes/gradle-versions-plugin
+gradleVersionUpdate = "0.39.0"
+# https://github.com/littlerobots/version-catalog-update-plugin
+gradleVersionCatalogUpdate = "0.2.1"
+
+[libraries]
+gradleVersionUpdatePlugin = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradleVersionUpdate" }
+gradleVersionCatalogUpdatePlugin = { module = "nl.littlerobots.vcu:plugin", version.ref = "gradleVersionCatalogUpdate" }
+
+[plugins]
+gradleVersionUpdate = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionUpdate" }
+gradleVersionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradleVersionCatalogUpdate" }

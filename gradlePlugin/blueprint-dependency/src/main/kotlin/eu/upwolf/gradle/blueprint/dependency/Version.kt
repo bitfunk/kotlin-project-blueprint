@@ -6,31 +6,11 @@ package eu.upwolf.gradle.blueprint.dependency
 
 object Version {
 
-    val gradlePlugin = GradlePlugin
     val multiplatform = Multiplatform
     val multiplatformTest = MultiplatformTest
-    val jvm = Jvm
     val jvmTest = JvmTest
     val android = Android
     val androidTest = AndroidTest
-
-    /**
-     * [SQLDelight](https://github.com/cashapp/sqldelight)
-     */
-    const val sqlDelight = "1.5.1"
-
-    object GradlePlugin {
-        // Android
-        /**
-         * [Android Gradle Plugin](https://developer.android.com/studio)
-         */
-        const val android = "7.0.3"
-
-        /**
-         * [Gradle Google Play Publisher Plugin](https://github.com/Triple-T/gradle-play-publisher)
-         */
-        const val playPublisher = "3.6.0"
-    }
 
     object Multiplatform {
 
@@ -78,17 +58,8 @@ object Version {
         const val karmok = "0.1.8"
     }
 
-    object Jvm {
-        /**
-         * [GSON](https://github.com/google/gson)
-         */
-        const val gson = "2.8.6"
-    }
-
     object JvmTest {
         const val jUnit = "4.13.2"
-
-        const val jsonAssert = "1.5.0"
     }
 
     object Android {
@@ -108,8 +79,8 @@ object Version {
              * [AndroidX](https://developer.android.com/jetpack/androidx)
              */
             const val core = "1.1.0"
-            const val coreKtx = "1.6.0"
-            const val appCompat = "1.3.1"
+            const val coreKtx = "1.7.0"
+            const val appCompat = "1.4.0"
             const val browser = "1.3.0"
 
             const val activity = "1.3.1"
@@ -120,10 +91,6 @@ object Version {
             const val workManager = "2.5.0"
 
             object Compose {
-                /**
-                 * [Compsoe](https://developer.android.com/jetpack/compose/setup)
-                 */
-                const val core = "1.0.4"
 
                 const val lifecycleViewModel = "1.0.0"
 
@@ -158,8 +125,6 @@ object Version {
         const val androidXJunit = "1.1.3"
         const val androidXEspresso = "3.4.0"
         const val androidXUiAutomator = "2.2.0"
-
-        const val androidXCompose = Android.AndroidX.Compose.core
 
         const val androidXArchitectureCoreTesting = "2.1.0"
 

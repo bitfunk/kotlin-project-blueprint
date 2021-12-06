@@ -4,13 +4,13 @@
 
 import eu.upwolf.gradle.blueprint.dependency.byEnv
 import eu.upwolf.gradle.blueprint.dependency.byProperty
-import eu.upwolf.gradle.blueprint.dependency.Dependency
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
 
-    id("eu.upwolf.gradle.blueprint.dependency")
+    alias(libs.plugins.gradleBlueprintDependency)
 }
 
 repositories {
@@ -53,19 +53,20 @@ gradlePlugin {
 }
 
 dependencies {
-    implementation(Dependency.GradlePlugin.projectDependency)
-
-    // Publish
-    implementation("org.jetbrains.dokka:dokka-gradle-plugin:_")
-    implementation("org.jetbrains.dokka:dokka-core:_")
+    implementation(libs.gradleBlueprintDependencyPlugin)
 
     // Quality
-    // -> Spotless
-    implementation("com.diffplug.spotless:spotless-plugin-gradle:_")
-    implementation("com.pinterest:ktlint:_")
     // -> Detekt
-    implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:_")
+    implementation(libs.gradleDetektPlugin)
+    // -> Spotless
+    implementation(libs.gradleSpotlessPlugin)
+    implementation(libs.gradleKtlintPlugin)
 
     // Version
-    implementation(Dependency.GradlePlugin.gitVersion)
+    implementation(libs.gradleGitVersionPlugin)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }

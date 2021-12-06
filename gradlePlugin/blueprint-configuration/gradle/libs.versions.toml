@@ -1,0 +1,18 @@
+[versions]
+# https://github.com/JetBrains/kotlin
+kotlin = "1.5.31"
+android = "7.1.0-beta04"
+blueprintDependency = "1.0.0-SNAPSHOT"
+jetbrainsCompose = "1.0.0"
+jetbrainsApple = "212.4638.14-0.14"
+
+[libraries]
+gradleBlueprintDependencyPlugin = { module = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency", version.ref = "blueprintDependency" }
+gradleAndroidPlugin = { module = "com.android.tools.build:gradle", version.ref = "android" }
+gradleKotlinPlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradleKotlinSerializationPlugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+gradleJetbrainsComposePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "jetbrainsCompose" }
+gradleJetbrainsApplePlugin = { module = "org.jetbrains.gradle.apple:applePlugin", version.ref = "jetbrainsApple" }
+
+[plugins]
+gradleBlueprintDependency = { id = "eu.upwolf.gradle.blueprint.dependency", version.ref = "blueprintDependency" }

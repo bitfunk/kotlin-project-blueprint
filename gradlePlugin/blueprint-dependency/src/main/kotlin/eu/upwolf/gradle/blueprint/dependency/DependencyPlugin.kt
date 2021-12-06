@@ -14,6 +14,7 @@ class DependencyPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.apply(plugin = "com.github.ben-manes.versions")
+        target.apply(plugin = "nl.littlerobots.version-catalog-update")
 
         target.tasks.named<DependencyUpdatesTask>("dependencyUpdates")
             .configure {

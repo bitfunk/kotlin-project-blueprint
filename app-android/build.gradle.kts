@@ -5,8 +5,9 @@
 import eu.upwolf.gradle.blueprint.version.version
 import eu.upwolf.gradle.blueprint.version.versionCode
 
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("eu.upwolf.gradle.blueprint.configuration.android.app")
+    alias(libs.plugins.gradleBlueprintConfigurationAndroidApp)
 }
 
 android {
@@ -22,48 +23,48 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = eu.upwolf.gradle.blueprint.dependency.Version.android.androidX.compose.core
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
     }
 }
 
 dependencies {
     implementation(project(":common:theme"))
 
-    implementation(Kotlin.stdlib.jdk7)
+    implementation(libs.kotlin.android)
 
-    implementation(AndroidX.core.ktx)
-    implementation(AndroidX.appCompat)
-    implementation(AndroidX.compose.ui)
-    implementation("androidx.compose.material3:material3:_")
-    implementation(AndroidX.compose.material)
-    implementation(AndroidX.navigation.compose)
-    implementation(AndroidX.lifecycle.runtimeKtx)
-    implementation(AndroidX.activity.compose)
+    implementation(libs.androidx.appCompat)
+    implementation(libs.androidx.activityCompose)
 
-    implementation(Google.android.material)
-    implementation(Google.accompanist.insets)
-    implementation(Google.accompanist.insets.ui)
+    implementation(libs.google.android.material)
+    implementation(libs.androidx.compose.material)
+    implementation(libs.androidx.compose.material3)
 
-    implementation("com.arkivanov.decompose:decompose:_")
-    implementation("com.arkivanov.decompose:extensions-compose-jetpack:_")
+    implementation(libs.accompanist.insets)
+    implementation(libs.accompanist.insetsUi)
 
-    implementation(AndroidX.compose.ui.toolingPreview)
+    implementation(libs.decompose)
+    implementation(libs.decomposeExtensionJetpackCompose)
 
-    debugImplementation(AndroidX.compose.ui.tooling)
+    // old
+    implementation("androidx.compose.ui:ui:1.1.0-beta04")
 
-    testImplementation(Testing.junit4)
+    implementation("androidx.compose.ui:ui-tooling-preview:1.1.0-beta04")
 
-    androidTestImplementation(AndroidX.test.runner)
-    androidTestImplementation(AndroidX.test.rules)
-    androidTestImplementation(AndroidX.test.orchestrator)
-    androidTestImplementation(AndroidX.test.ext.junit)
+    debugImplementation("androidx.compose.ui:ui-tooling:1.1.0-beta04")
 
-    androidTestImplementation(AndroidX.test.espresso.core)
-    androidTestImplementation(AndroidX.test.espresso.intents)
-    androidTestImplementation(AndroidX.test.espresso.web)
+    testImplementation("junit:junit:4.13.2")
 
-    androidTestImplementation(AndroidX.test.uiAutomator)
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test:rules:1.4.0")
+    androidTestImplementation("androidx.test:orchestrator:1.4.0")
+    androidTestImplementation("androidx.test.ext:junit-ktx:1.1.3")
 
-    androidTestImplementation(AndroidX.compose.ui.testJunit4)
-    androidTestImplementation("io.github.kakaocup:compose:_")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.4.0")
+    androidTestImplementation("androidx.test.espresso:espresso-web:3.4.0")
+
+    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
+
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0-beta04")
+    androidTestImplementation("io.github.kakaocup:compose:0.0.6")
 }
