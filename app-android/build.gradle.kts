@@ -45,26 +45,21 @@ dependencies {
     implementation(libs.decompose)
     implementation(libs.decomposeExtensionJetpackCompose)
 
-    // old
-    implementation("androidx.compose.ui:ui:1.1.0-beta04")
+    implementation(libs.androidx.compose.ui.uiToolingPreview)
 
-    implementation("androidx.compose.ui:ui-tooling-preview:1.1.0-beta04")
+    testImplementation(libs.test.junit)
 
-    debugImplementation("androidx.compose.ui:ui-tooling:1.1.0-beta04")
+    androidTestImplementation(libs.test.androidx.runner)
+    androidTestImplementation(libs.test.androidx.rules)
+    androidTestImplementation(libs.test.androidx.orchestrator)
+    androidTestImplementation(libs.test.androidx.extJunitKtx)
 
-    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation(libs.test.androidx.espresso.core)
+    androidTestImplementation(libs.test.androidx.espresso.intents)
+    androidTestImplementation(libs.test.androidx.espresso.web)
 
-    androidTestImplementation("androidx.test:runner:1.4.0")
-    androidTestImplementation("androidx.test:rules:1.4.0")
-    androidTestImplementation("androidx.test:orchestrator:1.4.0")
-    androidTestImplementation("androidx.test.ext:junit-ktx:1.1.3")
+    androidTestImplementation(libs.test.androidx.uiautomator)
 
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.test.espresso:espresso-intents:3.4.0")
-    androidTestImplementation("androidx.test.espresso:espresso-web:3.4.0")
-
-    androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
-
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.1.0-beta04")
-    androidTestImplementation("io.github.kakaocup:compose:0.0.6")
+    androidTestImplementation(libs.test.androidx.compose.ui.junit4)
+    androidTestImplementation(libs.test.android.kakaocup.compose)
 }

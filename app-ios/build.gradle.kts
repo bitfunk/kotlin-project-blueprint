@@ -11,9 +11,6 @@ apple {
     iosApp {
         productName = "Blueprint"
 
-        // productInfo["NSAppTransportSecurity"] = mapOf("NSAllowsArbitraryLoads" to true)
-        // buildSettings.OTHER_LDFLAGS("")
-
         dependencies {
             implementation(project(":feature:home"))
         }
