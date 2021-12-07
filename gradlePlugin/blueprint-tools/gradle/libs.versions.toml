@@ -1,7 +1,7 @@
 [versions]
 blueprintDependency = "1.0.0-SNAPSHOT"
 # https://github.com/detekt/detekt
-detekt = "1.18.1"
+detekt = "1.19.0"
 # https://github.com/wmontwe/gradle-git-version
 gitVersion = "0.12.6"
 # https://github.com/pinterest/ktlint

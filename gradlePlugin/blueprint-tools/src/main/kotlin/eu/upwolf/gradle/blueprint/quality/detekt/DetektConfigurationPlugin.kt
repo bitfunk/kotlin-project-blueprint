@@ -35,12 +35,6 @@ class DetektConfigurationPlugin : Plugin<Project> {
 
             config = project.rootProject.files("config/detekt/config.yml")
             baseline = project.rootProject.file("config/detekt/baseline.yml")
-
-            reports {
-                html.enabled = true
-                xml.enabled = true
-                txt.enabled = false
-            }
         }
 
         project.tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
@@ -51,6 +45,10 @@ class DetektConfigurationPlugin : Plugin<Project> {
                 ".github/**",
                 "gradle/**",
             )
+            reports {
+                xml.required.set(true)
+                html.required.set(true)
+            }
         }
         project.tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configureEach {
             exclude(
