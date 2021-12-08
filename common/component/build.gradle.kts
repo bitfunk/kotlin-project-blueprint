@@ -4,7 +4,7 @@
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.gradleBlueprintConfigurationKmpCommonCompose)
+    alias(libs.plugins.gradleBlueprintConfigurationKmpCompose)
 }
 
 kotlin {

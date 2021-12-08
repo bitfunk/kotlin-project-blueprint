@@ -64,6 +64,9 @@ sqldelight-nativeDriver = { module = "com.squareup.sqldelight:native-driver", ve
 sqldelight-sqliteDriver = { module = "com.squareup.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
 
 koin = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androix-compose = { module = "io.insert-koin:oin-androidx-compose", version.ref = "koin" }
 test-koin = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 
 test-junit = "junit:junit:4.13.2"
@@ -88,12 +91,8 @@ gradleBlueprintVersion = { id = "eu.upwolf.gradle.blueprint.version", version.re
 
 gradleBlueprintConfigurationAndroidApp = { id = "eu.upwolf.gradle.blueprint.configuration.android.app", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationAndroidLibrary = { id = "eu.upwolf.gradle.blueprint.configuration.android.library", version.ref = "blueprintConfiguration" }
-
 gradleBlueprintConfigurationDesktopApp = { id = "eu.upwolf.gradle.blueprint.configuration.desktop.app", version.ref = "blueprintConfiguration" }
-
 gradleBlueprintConfigurationIosApp = { id = "eu.upwolf.gradle.blueprint.configuration.ios.app", version.ref = "blueprintConfiguration" }
-
 gradleBlueprintConfigurationKmpCommon = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.common", version.ref = "blueprintConfiguration" }
-gradleBlueprintConfigurationKmpCommonCompose = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.common.compose", version.ref = "blueprintConfiguration" }
-
+gradleBlueprintConfigurationKmpCompose = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.compose", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpFeature = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.feature", version.ref = "blueprintConfiguration" }

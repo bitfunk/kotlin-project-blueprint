@@ -11,6 +11,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.File
 
@@ -23,6 +24,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
         setupAndroidApplication(target)
         setupAndroidKotlinCompatibility(target)
+        setupDependencies(target)
     }
 
     private fun setupAndroidApplication(project: Project) {
@@ -99,6 +101,12 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
             kotlinOptions {
                 jvmTarget = JavaVersion.VERSION_1_8.toString()
             }
+        }
+    }
+
+    private fun setupDependencies(project: Project) {
+        project.dependencies {
+            // TODO
         }
     }
 

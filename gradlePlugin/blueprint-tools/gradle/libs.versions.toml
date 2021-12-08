@@ -7,7 +7,7 @@ gitVersion = "0.12.6"
 # https://github.com/pinterest/ktlint
 ktlint = "0.43.2"
 # https://github.com/diffplug/spotless
-spotless = "6.0.2"
+spotless = "6.0.4"
 
 [libraries]
 gradleBlueprintDependencyPlugin = { module = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency", version.ref = "blueprintDependency" }

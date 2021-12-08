@@ -51,10 +51,10 @@ gradlePlugin {
         id = "eu.upwolf.gradle.blueprint.configuration.kmp.common"
         implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.common.CommonConfigurationPlugin"
     }
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common.compose") {
-        id = "eu.upwolf.gradle.blueprint.configuration.kmp.common.compose"
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.compose") {
+        id = "eu.upwolf.gradle.blueprint.configuration.kmp.compose"
         implementationClass =
-            "eu.upwolf.gradle.blueprint.configuration.kmp.common.compose.CommonComposeConfigurationPlugin"
+            "eu.upwolf.gradle.blueprint.configuration.kmp.compose.ComposeConfigurationPlugin"
     }
     // KMP - Feature
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.feature") {

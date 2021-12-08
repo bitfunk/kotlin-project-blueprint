@@ -22,7 +22,7 @@ object Version {
         /**
          * [Koin](https://github.com/InsertKoinIO/koin)
          */
-        const val koin = "3.0.2"
+        const val koin = "3.1.4"
 
         /**
          * [klock](https://github.com/korlibs/klock)
@@ -92,7 +92,7 @@ object Version {
 
             object Compose {
 
-                const val lifecycleViewModel = "1.0.0"
+                const val compiler = "1.1.0-beta04"
 
                 /**
                  * [Coil (Compose Image Loader)](https://coil-kt.github.io/coil/compose/)

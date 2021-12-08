@@ -9,7 +9,6 @@ object Dependency {
     val kotlin = Kotlin
     val multiplatform = Multiplatform
     val multiplatformTest = MultiplatformTest
-    val jvmTest = JvmTest
     val android = Android
     val androidTest = AndroidTest
 
@@ -148,10 +147,6 @@ object MultiplatformTest {
     const val karmok = "co.touchlab:karmok-library:${Version.MultiplatformTest.karmok}"
 }
 
-object JvmTest {
-    const val junit = "junit:junit:${Version.JvmTest.jUnit}"
-}
-
 object Android {
 
     val androidX = AndroidX
@@ -199,6 +194,12 @@ object Android {
         }
 
         object Compose {
+            const val compiler = "androidx.compose.compiler:compiler:${Version.android.androidX.compose.compiler}"
+            const val runtime = "androidx.compose.runtime:runtime:${Version.android.androidX.compose.compiler}"
+            const val foundation = "androidx.compose.foundation:foundation:${Version.android.androidX.compose.compiler}"
+            const val ui = "androidx.compose.ui:ui:${Version.android.androidX.compose.compiler}"
+            const val material = "androidx.compose.material:material:${Version.android.androidX.compose.compiler}"
+            
             const val coil = "io.coil-kt:coil-compose:${Version.Android.AndroidX.Compose.coil}"
         }
     }

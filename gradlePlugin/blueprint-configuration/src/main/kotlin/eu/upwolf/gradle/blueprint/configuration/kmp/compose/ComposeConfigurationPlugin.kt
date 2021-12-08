@@ -2,9 +2,11 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.kmp.common.compose
+package eu.upwolf.gradle.blueprint.configuration.kmp.compose
 
+import com.android.build.gradle.BaseExtension
 import eu.upwolf.gradle.blueprint.dependency.Dependency
+import eu.upwolf.gradle.blueprint.dependency.Version
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -16,7 +18,7 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-class CommonComposeConfigurationPlugin : Plugin<Project> {
+class ComposeConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.pluginManager.apply("org.jetbrains.kotlin.multiplatform")
@@ -72,11 +74,22 @@ class CommonComposeConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     implementation(Dependency.Kotlin.StdLib.android)
                     implementation(Dependency.Kotlin.Coroutines.android)
+                    implementation(Dependency.android.androidX.compose.compiler)
+                    implementation(Dependency.android.androidX.compose.runtime)
+                    implementation(Dependency.android.androidX.compose.foundation)
+                    implementation(Dependency.android.androidX.compose.ui)
+                    implementation(Dependency.android.androidX.compose.material)
                 }
                 maybeCreate("androidTest").dependencies {
                     implementation(Dependency.Kotlin.Test.jvmJunit)
                     implementation(Dependency.Kotlin.Coroutines.test)
                 }
+            }
+        }
+
+        project.android {
+            composeOptions {
+                kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
             }
         }
     }
@@ -100,5 +113,9 @@ class CommonComposeConfigurationPlugin : Plugin<Project> {
 
     private fun Project.kotlin(action: Action<KotlinMultiplatformExtension>) {
         extensions.configure(KotlinMultiplatformExtension::class.java, action)
+    }
+
+    private fun Project.android(action: Action<BaseExtension>) {
+        extensions.configure(BaseExtension::class.java, action)
     }
 }
