@@ -4,8 +4,9 @@
 
 package eu.upwolf.gradle.blueprint.configuration.android.app
 
-import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import eu.upwolf.gradle.blueprint.configuration.android.AndroidConfig
+import eu.upwolf.gradle.blueprint.dependency.Version
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -15,6 +16,7 @@ import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.File
 
+@Suppress("UnstableApiUsage")
 class AndroidAppConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
@@ -29,7 +31,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
     private fun setupAndroidApplication(project: Project) {
         project.android {
-            compileSdkVersion(AndroidConfig.compileSdkVersion)
+            compileSdk = AndroidConfig.compileSdkVersion
 
             defaultConfig {
                 minSdk = AndroidConfig.minSdkVersion
@@ -38,19 +40,25 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
                 vectorDrawables.useSupportLibrary = true
 
                 testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-                testInstrumentationRunnerArguments(
-                    mapOf(
-                        "clearPackageData" to "true"
-                    )
+                testInstrumentationRunnerArguments += mapOf(
+                    "clearPackageData" to "true"
                 )
+            }
+
+            buildFeatures {
+                compose = true
+            }
+
+            composeOptions {
+                kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
             }
 
             buildTypes {
                 getByName("debug") {
-                    setMatchingFallbacks("release")
                     applicationIdSuffix = ".debug"
                     versionNameSuffix = "-DEBUG"
                     isTestCoverageEnabled = true
+                    matchingFallbacks += listOf("release")
                 }
                 getByName("release") {
                     isMinifyEnabled = true
@@ -60,17 +68,17 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
                         getDefaultProguardFile("proguard-android.txt"),
                         "proguard-rules.pro"
                     )
-                    setMatchingFallbacks("release")
+                    matchingFallbacks += listOf("release")
                 }
             }
 
-            lintOptions {
-                baseline(File("lint-baseline.xml"))
+            lint {
+                baseline = File("lint-baseline.xml")
 
-                disable("Typos")
+                disable += setOf("Typos")
 
-                isWarningsAsErrors = true
-                isAbortOnError = true
+                warningsAsErrors = true
+                abortOnError = true
             }
 
             compileOptions {
@@ -110,7 +118,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
         }
     }
 
-    private fun Project.android(action: Action<BaseExtension>) {
-        extensions.configure(BaseExtension::class.java, action)
+    private fun Project.android(action: Action<BaseAppModuleExtension>) {
+        extensions.configure(BaseAppModuleExtension::class.java, action)
     }
 }

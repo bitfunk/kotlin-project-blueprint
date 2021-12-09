@@ -50,6 +50,8 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                     api(compose.foundation)
                     api(compose.material)
                     api(compose.material3)
+                    api(compose.materialIconsExtended)
+                    api(compose.animation)
                 }
             }
         }
@@ -97,12 +99,14 @@ class ComposeConfigurationPlugin : Plugin<Project> {
     private fun setupDesktopTarget(project: Project) {
         project.kotlin {
             jvm {
-
+                compilations.all {
+                    kotlinOptions.jvmTarget = "11"
+                }
             }
 
             sourceSets {
                 maybeCreate("jvmMain").dependencies {
-                    // nothing to add
+                    implementation(compose.desktop.currentOs)
                 }
                 maybeCreate("jvmTest").dependencies {
                     // nothing to add

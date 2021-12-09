@@ -4,23 +4,25 @@
 
 package eu.upwolf.mobile.blueprint.desktop.ui
 
+import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import eu.upwolf.mobile.blueprint.common.ui.component.AppSurface
 import eu.upwolf.mobile.blueprint.common.ui.component.HeadlineLarge
 import eu.upwolf.mobile.blueprint.common.ui.component.ThemeOverview
 import eu.upwolf.mobile.blueprint.common.ui.component.ThemeSwitch
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeMain
 
+@Preview
 @Composable
 fun MainApp() {
     val isDarkState = remember { mutableStateOf(false) }
@@ -28,10 +30,8 @@ fun MainApp() {
     AppThemeMain(
         darkTheme = isDarkState.value
     ) {
-        Surface(
-            modifier = Modifier
-                .fillMaxSize(),
-            color = AppTheme.colorScheme.background,
+        AppSurface(
+            modifier = Modifier.fillMaxSize()
         ) {
             Column(
                 modifier = Modifier
