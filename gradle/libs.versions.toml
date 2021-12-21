@@ -3,17 +3,32 @@ blueprintConfiguration = "1.0.0-SNAPSHOT"
 blueprintDependency = "1.0.0-SNAPSHOT"
 blueprintTools = "1.0.0-SNAPSHOT"
 
-kotlin = "1.5.31"
+kotlin = "1.6.10"
 kotlinx-coroutines = "1.5.2"
 
-androidGradlePlugin = "7.1.0-beta04"
+androidGradlePlugin = "7.1.0-beta05"
 
-androidx-compose-compiler = "1.0.5"
+androidx-compose-compiler = "1.1.0-beta04"
 androidx-compose-ui = "1.1.0-beta04"
 
-jetbrainsCompose = "1.0.0"
+jetbrainsCompose = "1.0.1-rc2"
 
-accompanist = "0.20.2"
+jetbrainsAppleGradlePlugin = "212.4638.14-0.14"
+
+# https://github.com/ben-manes/gradle-versions-plugin
+gradleVersionUpdate = "0.39.0"
+# https://github.com/littlerobots/version-catalog-update-plugin
+gradleVersionCatalogUpdate = "0.2.1"
+# https://github.com/detekt/detekt
+detekt = "1.19.0"
+# https://github.com/wmontwe/gradle-git-version
+gitVersion = "0.12.6"
+# https://github.com/pinterest/ktlint
+ktlint = "0.43.2"
+# https://github.com/diffplug/spotless
+spotless = "6.0.4"
+
+accompanist = "0.20.3"
 decompose = "0.4.0"
 sqlDelight = "1.5.3"
 jacoco = "0.8.7"
@@ -23,9 +38,22 @@ androidx-test = "1.4.0"
 androidx-test-espresso = "3.4.0"
 
 [libraries]
+gradleBlueprintDependencyPlugin = { module = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency", version.ref = "blueprintDependency" }
+
 gradleAndroidPlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 gradleKotlinPlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+gradleKotlinSerializationPlugin = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
 gradleSqlDelightPlugin = { module = "com.squareup.sqldelight:gradle-plugin", version.ref = "sqlDelight" }
+gradleJetbrainsComposePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "jetbrainsCompose" }
+gradleJetbrainsApplePlugin = { module = "org.jetbrains.gradle.apple:applePlugin", version.ref = "jetbrainsAppleGradlePlugin" }
+
+gradleVersionUpdatePlugin = { module = "com.github.ben-manes:gradle-versions-plugin", version.ref = "gradleVersionUpdate" }
+gradleVersionCatalogUpdatePlugin = { module = "nl.littlerobots.vcu:plugin", version.ref = "gradleVersionCatalogUpdate" }
+
+gradleDetektPlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+gradleGitVersionPlugin = { module = "eu.upwolf.gradle.gitversion:gradle-git-version", version.ref = "gitVersion"}
+gradleKtlintPlugin = { module = "com.pinterest:ktlint", version.ref = "ktlint" }
+gradleSpotlessPlugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 
 kotlin-android = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 
@@ -96,3 +124,6 @@ gradleBlueprintConfigurationIosApp = { id = "eu.upwolf.gradle.blueprint.configur
 gradleBlueprintConfigurationKmpCommon = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.common", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpCompose = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.compose", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpFeature = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.feature", version.ref = "blueprintConfiguration" }
+
+gradleVersionUpdate = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionUpdate" }
+gradleVersionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradleVersionCatalogUpdate" }

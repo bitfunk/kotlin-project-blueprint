@@ -4,8 +4,9 @@
 
 package eu.upwolf.gradle.blueprint.configuration.android.library
 
-import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.LibraryExtension
 import eu.upwolf.gradle.blueprint.configuration.android.AndroidConfig
+import eu.upwolf.gradle.blueprint.dependency.Version
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -13,6 +14,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+@Suppress("UnstableApiUsage")
 class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
@@ -24,17 +26,15 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
     private fun setupAndroidLibrary(project: Project) {
         project.android {
-            compileSdkVersion(AndroidConfig.compileSdkVersion)
+            compileSdk = AndroidConfig.compileSdkVersion
 
             defaultConfig {
                 minSdk = AndroidConfig.minSdkVersion
                 targetSdk = AndroidConfig.targetSdkVersion
 
                 testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-                testInstrumentationRunnerArguments(
-                    mapOf(
-                        "clearPackageData" to "true"
-                    )
+                testInstrumentationRunnerArguments += mapOf(
+                    "clearPackageData" to "true"
                 )
 
                 consumerProguardFiles("consumer-rules.pro")
@@ -42,9 +42,31 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
             resourcePrefix(AndroidConfig.resourcePrefix)
 
-            lintOptions {
-                isWarningsAsErrors = true
-                isAbortOnError = true
+            buildFeatures {
+                compose = true
+            }
+
+            composeOptions {
+                kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
+            }
+
+            buildTypes {
+                getByName("debug") {
+                    matchingFallbacks += listOf("release")
+                }
+                getByName("release") {
+                    isMinifyEnabled = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                    matchingFallbacks += listOf("release")
+                }
+            }
+
+            lint {
+                warningsAsErrors = true
+                abortOnError = true
             }
 
             compileOptions {
@@ -66,20 +88,6 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                 getByName("test") {
                     java.setSrcDirs(setOf("src/androidTest/kotlin"))
                     res.setSrcDirs(setOf("src/androidTest/res"))
-                }
-            }
-
-            buildTypes {
-                getByName("debug") {
-                    setMatchingFallbacks("release")
-                }
-                getByName("release") {
-                    isMinifyEnabled = false
-                    proguardFiles(
-                        getDefaultProguardFile("proguard-android-optimize.txt"),
-                        "proguard-rules.pro"
-                    )
-                    setMatchingFallbacks("release")
                 }
             }
 
@@ -105,7 +113,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
         }
     }
 
-    private fun Project.android(action: Action<BaseExtension>) {
-        extensions.configure(BaseExtension::class.java, action)
+    private fun Project.android(action: Action<LibraryExtension>) {
+        extensions.configure(LibraryExtension::class.java, action)
     }
 }

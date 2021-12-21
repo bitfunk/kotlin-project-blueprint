@@ -108,6 +108,11 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
             kotlinOptions {
                 jvmTarget = JavaVersion.VERSION_1_8.toString()
+
+                freeCompilerArgs += listOf(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
+                )
             }
         }
     }
