@@ -195,10 +195,10 @@ object Android {
 
         object Compose {
             const val compiler = "androidx.compose.compiler:compiler:${Version.android.androidX.compose.compiler}"
-            const val runtime = "androidx.compose.runtime:runtime:${Version.android.androidX.compose.compiler}"
-            const val foundation = "androidx.compose.foundation:foundation:${Version.android.androidX.compose.compiler}"
-            const val ui = "androidx.compose.ui:ui:${Version.android.androidX.compose.compiler}"
-            const val material = "androidx.compose.material:material:${Version.android.androidX.compose.compiler}"
+            const val runtime = "androidx.compose.runtime:runtime:${Version.android.androidX.compose.ui}"
+            const val foundation = "androidx.compose.foundation:foundation:${Version.android.androidX.compose.ui}"
+            const val ui = "androidx.compose.ui:ui:${Version.android.androidX.compose.ui}"
+            const val material = "androidx.compose.material:material:${Version.android.androidX.compose.ui}"
             
             const val coil = "io.coil-kt:coil-compose:${Version.Android.AndroidX.Compose.coil}"
         }

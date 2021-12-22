@@ -92,7 +92,9 @@ object Version {
 
             object Compose {
 
-                const val compiler = "1.1.0-beta04"
+                const val compiler = "1.1.0-rc02"
+
+                const val ui = "1.1.0-rc01"
 
                 /**
                  * [Coil (Compose Image Loader)](https://coil-kt.github.io/coil/compose/)

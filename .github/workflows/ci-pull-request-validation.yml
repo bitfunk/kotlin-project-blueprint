@@ -69,5 +69,5 @@ jobs:
           disable-animations: true
           script: ./gradlew --no-daemon --stacktrace connectedCheck
 
-      - name: Publish Feature Version
+      - name: Publish Development Version
         run: echo "TODO"

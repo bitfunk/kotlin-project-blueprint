@@ -8,8 +8,8 @@ kotlinx-coroutines = "1.5.2"
 
 androidGradlePlugin = "7.1.0-beta05"
 
-androidx-compose-compiler = "1.1.0-beta04"
-androidx-compose-ui = "1.1.0-beta04"
+androidx-compose-compiler = "1.1.0-rc02"
+androidx-compose-ui = "1.1.0-rc01"
 
 jetbrainsCompose = "1.0.1-rc2"
 
@@ -26,7 +26,7 @@ gitVersion = "0.12.6"
 # https://github.com/pinterest/ktlint
 ktlint = "0.43.2"
 # https://github.com/diffplug/spotless
-spotless = "6.0.4"
+spotless = "6.0.5"
 
 accompanist = "0.20.3"
 decompose = "0.4.0"
@@ -71,7 +71,7 @@ androidx-compose-ui-uiTooling = { module = "androidx.compose.ui:ui-tooling", ver
 androidx-compose-ui-uiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-compose-ui" }
 test-androidx-compose-ui-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose-ui" }
 
-google-android-material = "com.google.android.material:material:1.5.0-beta01"
+google-android-material = "com.google.android.material:material:1.5.0-rc01"
 
 accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
 accompanist-insetsUi = { module = "com.google.accompanist:accompanist-insets-ui", version.ref = "accompanist" }
