@@ -14,7 +14,7 @@ kotlin {
     sourceSets {
         jvmMain {
             dependencies {
-                implementation(project(":common:component"))
+                implementation(projects.common.component)
             }
         }
     }

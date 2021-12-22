@@ -20,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":common:theme"))
+    implementation(projects.common.theme)
 
     implementation(libs.kotlin.android)
 

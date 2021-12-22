@@ -11,7 +11,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(project(":common:theme"))
+                api(projects.common.theme)
             }
         }
 

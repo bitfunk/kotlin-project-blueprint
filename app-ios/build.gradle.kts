@@ -12,7 +12,7 @@ apple {
         productName = "Blueprint"
 
         dependencies {
-            implementation(project(":feature:home"))
+            implementation(projects.feature.home)
         }
     }
 }
