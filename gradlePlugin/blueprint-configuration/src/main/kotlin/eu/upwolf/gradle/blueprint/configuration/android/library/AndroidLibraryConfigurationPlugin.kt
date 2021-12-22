@@ -6,7 +6,6 @@ package eu.upwolf.gradle.blueprint.configuration.android.library
 
 import com.android.build.gradle.LibraryExtension
 import eu.upwolf.gradle.blueprint.configuration.android.AndroidConfig
-import eu.upwolf.gradle.blueprint.dependency.Version
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
@@ -41,14 +40,6 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
             }
 
             resourcePrefix(AndroidConfig.resourcePrefix)
-
-            buildFeatures {
-                compose = true
-            }
-
-            composeOptions {
-                kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
-            }
 
             buildTypes {
                 getByName("debug") {

@@ -4,7 +4,7 @@
 
 package eu.upwolf.gradle.blueprint.configuration.kmp.compose
 
-import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.LibraryExtension
 import eu.upwolf.gradle.blueprint.dependency.Dependency
 import eu.upwolf.gradle.blueprint.dependency.Version
 import org.gradle.api.Action
@@ -18,6 +18,7 @@ import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
+@Suppress("UnstableApiUsage")
 class ComposeConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
@@ -90,6 +91,10 @@ class ComposeConfigurationPlugin : Plugin<Project> {
         }
 
         project.android {
+            buildFeatures {
+                compose = true
+            }
+
             composeOptions {
                 kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
             }
@@ -119,7 +124,7 @@ class ComposeConfigurationPlugin : Plugin<Project> {
         extensions.configure(KotlinMultiplatformExtension::class.java, action)
     }
 
-    private fun Project.android(action: Action<BaseExtension>) {
-        extensions.configure(BaseExtension::class.java, action)
+    private fun Project.android(action: Action<LibraryExtension>) {
+        extensions.configure(LibraryExtension::class.java, action)
     }
 }
