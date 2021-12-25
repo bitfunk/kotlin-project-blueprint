@@ -6,11 +6,14 @@ package eu.upwolf.gradle.blueprint.configuration.android.app
 
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import eu.upwolf.gradle.blueprint.configuration.android.AndroidConfig
-import eu.upwolf.gradle.blueprint.dependency.Version
+import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
+import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.Dependency
+import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -30,6 +33,8 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupAndroidApplication(project: Project) {
+        val versionHelper = VersionHelper(project)
+
         project.android {
             compileSdk = AndroidConfig.compileSdkVersion
 
@@ -50,7 +55,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
             }
 
             composeOptions {
-                kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
+                kotlinCompilerExtensionVersion = versionHelper.androidX.compose.compiler
             }
 
             buildTypes {
@@ -118,12 +123,24 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupDependencies(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.dependencies {
-            // TODO
+            implementation(libs.androidx.compose.material)
+            implementation(libs.androidx.compose.material3)
         }
     }
 
     private fun Project.android(action: Action<BaseAppModuleExtension>) {
         extensions.configure(BaseAppModuleExtension::class.java, action)
     }
+
+    private fun DependencyHandler.`implementation`(dependencyNotation: Any): Dependency? =
+        add("implementation", dependencyNotation)
+
+    private fun DependencyHandler.`testImplementation`(dependencyNotation: Any): Dependency? =
+        add("testImplementation", dependencyNotation)
+
+    private fun DependencyHandler.`androidTestImplementation`(dependencyNotation: Any): Dependency? =
+        add("androidTestImplementation", dependencyNotation)
 }

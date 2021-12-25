@@ -5,8 +5,8 @@
 package eu.upwolf.gradle.blueprint.configuration.kmp.compose
 
 import com.android.build.gradle.LibraryExtension
-import eu.upwolf.gradle.blueprint.dependency.Dependency
-import eu.upwolf.gradle.blueprint.dependency.Version
+import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
+import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -68,6 +68,9 @@ class ComposeConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupAndroidTarget(project: Project) {
+        val versionHelper = VersionHelper(project)
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             android {
                 publishLibraryVariants("release")
@@ -75,17 +78,17 @@ class ComposeConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("androidMain").dependencies {
-                    implementation(Dependency.Kotlin.StdLib.android)
-                    implementation(Dependency.Kotlin.Coroutines.android)
-                    implementation(Dependency.android.androidX.compose.compiler)
-                    implementation(Dependency.android.androidX.compose.runtime)
-                    implementation(Dependency.android.androidX.compose.foundation)
-                    implementation(Dependency.android.androidX.compose.ui)
-                    implementation(Dependency.android.androidX.compose.material)
+                    implementation(libs.kotlin.android)
+                    implementation(libs.kotlinx.coroutines.android)
+                    implementation(libs.androidx.compose.compiler)
+                    implementation(libs.androidx.compose.runtime)
+                    implementation(libs.androidx.compose.foundation)
+                    implementation(libs.androidx.compose.ui)
+                    implementation(libs.androidx.compose.material)
+                    implementation(libs.androidx.compose.uiToolingPreview)
                 }
                 maybeCreate("androidTest").dependencies {
-                    implementation(Dependency.Kotlin.Test.jvmJunit)
-                    implementation(Dependency.Kotlin.Coroutines.test)
+                    // nothing to add
                 }
             }
         }
@@ -96,7 +99,7 @@ class ComposeConfigurationPlugin : Plugin<Project> {
             }
 
             composeOptions {
-                kotlinCompilerExtensionVersion = Version.android.androidX.compose.compiler
+                kotlinCompilerExtensionVersion = versionHelper.androidX.compose.compiler
             }
         }
     }

@@ -4,7 +4,7 @@
 
 package eu.upwolf.gradle.blueprint.configuration.kmp.feature
 
-import eu.upwolf.gradle.blueprint.dependency.Dependency
+import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -23,14 +23,16 @@ class FeatureConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupMultiplatformLibrary(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             sourceSets {
                 maybeCreate("commonMain").dependencies {
-                    implementation(Dependency.multiplatform.koin.common)
+                    implementation(libs.koin.core)
                 }
 
                 maybeCreate("commonTest").dependencies {
-                    implementation(Dependency.multiplatform.koin.test)
+                    implementation(libs.koin.test)
                 }
             }
         }

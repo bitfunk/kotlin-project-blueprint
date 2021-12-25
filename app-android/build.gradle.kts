@@ -28,8 +28,6 @@ dependencies {
     implementation(libs.androidx.activityCompose)
 
     implementation(libs.google.android.material)
-    implementation(libs.androidx.compose.material)
-    implementation(libs.androidx.compose.material3)
 
     implementation(libs.accompanist.insets)
     implementation(libs.accompanist.insetsUi)

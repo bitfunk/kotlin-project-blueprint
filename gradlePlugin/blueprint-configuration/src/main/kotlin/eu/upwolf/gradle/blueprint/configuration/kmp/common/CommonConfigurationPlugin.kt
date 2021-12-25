@@ -4,7 +4,7 @@
 
 package eu.upwolf.gradle.blueprint.configuration.kmp.common
 
-import eu.upwolf.gradle.blueprint.dependency.Dependency
+import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -23,16 +23,18 @@ class CommonConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupMultiplatformLibrary(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             sourceSets {
                 maybeCreate("commonMain").dependencies {
-                    implementation(Dependency.Kotlin.StdLib.common)
-                    implementation(Dependency.Kotlin.Coroutines.common)
+                    implementation(libs.kotlin.core)
+                    implementation(libs.kotlinx.coroutines.core)
                 }
 
                 maybeCreate("commonTest").dependencies {
-                    implementation(Dependency.Kotlin.Test.common)
-                    implementation(Dependency.Kotlin.Test.commonAnnotations)
+                    implementation(libs.test.kotlin.core)
+                    implementation(libs.test.kotlin.annotations)
                 }
             }
         }
@@ -55,12 +57,10 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("androidMain").dependencies {
-                    implementation(Dependency.Kotlin.StdLib.android)
-                    implementation(Dependency.Kotlin.Coroutines.android)
+                    // nothing to add
                 }
                 maybeCreate("androidTest").dependencies {
-                    implementation(Dependency.Kotlin.Test.jvmJunit)
-                    implementation(Dependency.Kotlin.Coroutines.test)
+                    // nothing to add
                 }
             }
         }
@@ -72,7 +72,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("iosMain").dependencies {
-                    implementation(Dependency.Kotlin.Coroutines.common)
+                    // nothing to add
                 }
             }
         }

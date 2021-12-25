@@ -1,6 +1,8 @@
 /*
- * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
- */
+* Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
+*/
+
+@file:Suppress("UnstableApiUsage")
 
 enableFeaturePreview("VERSION_CATALOGS")
 
