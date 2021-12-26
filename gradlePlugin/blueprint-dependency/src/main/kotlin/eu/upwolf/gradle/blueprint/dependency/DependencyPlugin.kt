@@ -5,6 +5,7 @@
 package eu.upwolf.gradle.blueprint.dependency
 
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import nl.littlerobots.vcu.plugin.versionCatalogUpdate
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
@@ -23,19 +24,24 @@ class DependencyPlugin : Plugin<Project> {
                 resolutionStrategy {
                     componentSelection {
                         all {
-                            if (isNonStable(candidate.version) && !isNonStable(currentVersion)) {
+                            if (isStable(currentVersion) && !isStable(candidate.version)) {
                                 reject("Release candidate")
                             }
                         }
                     }
                 }
             }
+
+        target.versionCatalogUpdate {
+            keepUnused = true
+            sortByKey = true
+        }
     }
 
-    private fun isNonStable(version: String): Boolean {
+    private fun isStable(version: String): Boolean {
         val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
-        val regex = "^[0-9,.v-]+(-r)?$".toRegex()
+        val regex = "^([0-9]+)\\.([0-9]+)\\.([0-9]+)\$".toRegex()
         val isStable = stableKeyword || regex.matches(version)
-        return isStable.not()
+        return isStable
     }
 }
