@@ -41,7 +41,6 @@ class DependencyPlugin : Plugin<Project> {
     private fun isStable(version: String): Boolean {
         val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
         val regex = "^([0-9]+)\\.([0-9]+)\\.([0-9]+)\$".toRegex()
-        val isStable = stableKeyword || regex.matches(version)
-        return isStable
+        return stableKeyword || regex.matches(version)
     }
 }
