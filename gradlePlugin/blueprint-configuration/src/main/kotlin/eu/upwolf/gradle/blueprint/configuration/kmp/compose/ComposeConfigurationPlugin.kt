@@ -37,6 +37,8 @@ class ComposeConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupMultiplatformLibrary(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             sourceSets {
                 all {
@@ -53,6 +55,11 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                     api(compose.material3)
                     api(compose.materialIconsExtended)
                     api(compose.animation)
+                }
+
+                maybeCreate("commonTest").dependencies {
+                    implementation(libs.test.kotlin.core)
+                    implementation(libs.test.kotlin.annotations)
                 }
             }
         }
@@ -88,7 +95,8 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.uiToolingPreview)
                 }
                 maybeCreate("androidTest").dependencies {
-                    // nothing to add
+                    implementation(libs.test.kotlin.junit)
+                    implementation(libs.test.junit)
                 }
             }
         }

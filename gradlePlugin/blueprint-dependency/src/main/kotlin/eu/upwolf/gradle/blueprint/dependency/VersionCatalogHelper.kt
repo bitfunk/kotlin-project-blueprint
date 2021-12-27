@@ -78,6 +78,8 @@ class DependencyHelper(
 
     override val test: Deps.Test
         get() = object : Deps.Test {
+            override val junit: String
+                get() = findDependency("test-junit")
             override val kotlin: Deps.Test.Kotlin
                 get() = object : Deps.Test.Kotlin {
                     override val core: String
@@ -156,6 +158,8 @@ interface Deps {
     val test: Test
 
     interface Test {
+        val junit: String
+
         val kotlin: Kotlin
 
         interface Kotlin {

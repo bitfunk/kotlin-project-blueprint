@@ -50,6 +50,8 @@ class CommonConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupAndroidTarget(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             android {
                 publishLibraryVariants("release")
@@ -60,7 +62,8 @@ class CommonConfigurationPlugin : Plugin<Project> {
                     // nothing to add
                 }
                 maybeCreate("androidTest").dependencies {
-                    // nothing to add
+                    implementation(libs.test.kotlin.junit)
+                    implementation(libs.test.junit)
                 }
             }
         }
