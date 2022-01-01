@@ -10,7 +10,6 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 

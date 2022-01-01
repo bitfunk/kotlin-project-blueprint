@@ -15,10 +15,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import eu.upwolf.mobile.blueprint.common.ui.component.AppSurface
-import eu.upwolf.mobile.blueprint.common.ui.component.HeadlineLarge
-import eu.upwolf.mobile.blueprint.common.ui.component.ThemeOverview
-import eu.upwolf.mobile.blueprint.common.ui.component.ThemeSwitch
+import eu.upwolf.mobile.blueprint.common.ui.system.AppSurface
+import eu.upwolf.mobile.blueprint.common.ui.system.HeadlineLarge
+import eu.upwolf.mobile.blueprint.common.ui.system.ThemeOverview
+import eu.upwolf.mobile.blueprint.common.ui.system.ThemeSwitch
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeMain
 

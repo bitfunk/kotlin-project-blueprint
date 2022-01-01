@@ -2,6 +2,8 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -30,9 +32,9 @@ include(
 
 // Common
 include(
-    ":common:component",
+    ":common:ui:system",
+    ":common:ui:theme",
     ":common:database",
-    ":common:theme",
 )
 
 // Feature

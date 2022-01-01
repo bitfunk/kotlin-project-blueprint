@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.mobile.blueprint.common.ui.component
+package eu.upwolf.mobile.blueprint.common.ui.system
 
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.Surface

@@ -11,13 +11,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(projects.common.theme)
-            }
-        }
-
-        androidMain {
-            dependencies {
-                implementation(libs.androidx.compose.ui.uiToolingPreview)
+                api(projects.common.ui.theme)
             }
         }
     }
