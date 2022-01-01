@@ -28,6 +28,7 @@ include(
     ":app-android",
     ":app-desktop",
     ":app-ios",
+    ":app-web",
 )
 
 // Common

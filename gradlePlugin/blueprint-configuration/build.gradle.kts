@@ -46,6 +46,13 @@ gradlePlugin {
             "eu.upwolf.gradle.blueprint.configuration.ios.app.IosAppConfigurationPlugin"
     }
 
+    // Web
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.web.app") {
+        id = "eu.upwolf.gradle.blueprint.configuration.web.app"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.web.app.WebAppConfigurationPlugin"
+    }
+
     // KMP - Common
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common") {
         id = "eu.upwolf.gradle.blueprint.configuration.kmp.common"

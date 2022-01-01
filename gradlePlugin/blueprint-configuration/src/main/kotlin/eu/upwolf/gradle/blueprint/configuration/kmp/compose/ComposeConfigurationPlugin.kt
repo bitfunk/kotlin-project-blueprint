@@ -72,6 +72,7 @@ class ComposeConfigurationPlugin : Plugin<Project> {
     private fun setupTargets(project: Project) {
         setupAndroidTarget(project)
         setupDesktopTarget(project)
+        setupWebTarget(project)
     }
 
     private fun setupAndroidTarget(project: Project) {
@@ -125,6 +126,21 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                     implementation(compose.desktop.currentOs)
                 }
                 maybeCreate("jvmTest").dependencies {
+                    // nothing to add
+                }
+            }
+        }
+    }
+
+    private fun setupWebTarget(project: Project) {
+        project.kotlin {
+            js()
+
+            sourceSets {
+                maybeCreate("jsMain").dependencies {
+                    implementation(compose.web.core)
+                }
+                maybeCreate("jsTest").dependencies {
                     // nothing to add
                 }
             }
