@@ -40,7 +40,12 @@ include(
 
 // Feature
 include(
-    ":feature:home",
+    ":feature:home:component",
+    ":feature:home:ui",
+    ":feature:root:component",
+    ":feature:root:ui",
+    ":feature:splash:component",
+    ":feature:splash:ui",
 )
 
 rootProject.name = "MobileProjectBlueprint"

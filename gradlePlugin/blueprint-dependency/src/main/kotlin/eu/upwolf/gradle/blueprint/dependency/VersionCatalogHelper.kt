@@ -67,6 +67,11 @@ class DependencyHelper(
                         get() = findDependency("androidx-compose-material3")
                 }
         }
+    override val decompose: Deps.Decompose
+        get() = object : Deps.Decompose {
+            override val core: String
+                get() = findDependency("decompose-core")
+        }
 
     override val koin: Deps.Koin
         get() = object : Deps.Koin {
@@ -146,6 +151,12 @@ interface Deps {
             val material: String
             val material3: String
         }
+    }
+
+    val decompose: Decompose
+
+    interface Decompose {
+        val core: String
     }
 
     val koin: Koin

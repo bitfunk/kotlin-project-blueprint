@@ -34,6 +34,15 @@ kotlin {
             }
         }
 
+        jvmMain {
+            dependencies {
+                implementation(libs.sqldelight.sqliteDriver)
+            }
+        }
+        jvmTest {
+            // No addition
+        }
+
         iosMain {
             dependencies {
                 implementation(libs.sqldelight.nativeDriver)

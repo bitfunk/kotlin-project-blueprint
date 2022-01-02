@@ -24,34 +24,8 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeMain
 
 @Preview
 @Composable
-fun MainApp() {
-    val isDarkState = remember { mutableStateOf(false) }
-
-    AppThemeMain(
-        darkTheme = isDarkState.value
-    ) {
-        AppSurface(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Column(
-                modifier = Modifier
-                    .padding(AppTheme.dimension.spacingDouble),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                HeadlineLarge(if (isDarkState.value) "Theme is Dark" else "Theme is Light")
-
-                Spacer(
-                    modifier = Modifier.height(AppTheme.dimension.spacingDouble)
-                )
-
-                ThemeSwitch(isDarkState.value) { isDarkState.value = !isDarkState.value }
-
-                Spacer(
-                    modifier = Modifier.height(AppTheme.dimension.spacingDouble)
-                )
-
-                ThemeOverview()
-            }
-        }
-    }
+fun MainApp(
+    content: @Composable () -> Unit
+) {
+    content()
 }

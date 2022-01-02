@@ -28,6 +28,7 @@ class FeatureConfigurationPlugin : Plugin<Project> {
         project.kotlin {
             sourceSets {
                 maybeCreate("commonMain").dependencies {
+                    implementation(libs.decompose.core)
                     implementation(libs.koin.core)
                 }
 

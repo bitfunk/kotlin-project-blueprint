@@ -11,7 +11,8 @@ kotlin {
     sourceSets {
         jsMain {
             dependencies {
-                implementation(projects.common.ui.system)
+                implementation(projects.feature.root.component)
+                implementation(projects.feature.root.ui)
             }
         }
     }

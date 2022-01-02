@@ -15,6 +15,12 @@ kotlin {
         jvmMain {
             dependencies {
                 implementation(projects.common.ui.system)
+
+                implementation(projects.feature.root.component)
+                implementation(projects.feature.root.ui)
+
+                implementation(libs.decompose.core)
+                implementation(libs.decompose.extensionJetbrainsCompose)
             }
         }
     }

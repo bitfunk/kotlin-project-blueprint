@@ -22,6 +22,13 @@ android {
 dependencies {
     implementation(projects.common.ui.system)
 
+    implementation(projects.feature.root.component)
+    implementation(projects.feature.root.ui)
+
+    implementation(libs.decompose.core)
+    implementation(libs.decompose.extensionJetpackCompose)
+
+    // TODO check dependencies below
     implementation(libs.kotlin.android)
 
     implementation(libs.androidx.appCompat)
@@ -31,9 +38,6 @@ dependencies {
 
     implementation(libs.accompanist.insets)
     implementation(libs.accompanist.insetsUi)
-
-    implementation(libs.decompose)
-    implementation(libs.decomposeExtensionJetpackCompose)
 
     implementation(libs.androidx.compose.ui.uiToolingPreview)
 

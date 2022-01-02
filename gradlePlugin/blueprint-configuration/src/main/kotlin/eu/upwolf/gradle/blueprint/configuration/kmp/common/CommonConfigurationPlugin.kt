@@ -10,6 +10,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 class CommonConfigurationPlugin : Plugin<Project> {
@@ -46,6 +47,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
     private fun setupTargets(project: Project) {
         setupAndroidTarget(project)
+        setupDesktopTarget(project)
         setupIosTarget(project)
     }
 
@@ -64,6 +66,25 @@ class CommonConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidTest").dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
+                }
+            }
+        }
+    }
+
+    private fun setupDesktopTarget(project: Project) {
+        project.kotlin {
+            jvm {
+                compilations.all {
+                    kotlinOptions.jvmTarget = "11"
+                }
+            }
+
+            sourceSets {
+                maybeCreate("jvmMain").dependencies {
+                    // nothing to add
+                }
+                maybeCreate("jvmTest").dependencies {
+                    // nothing to add
                 }
             }
         }

@@ -42,8 +42,9 @@ androidx-compose-ui = { module = "androidx.compose.ui:ui", version.ref = "androi
 androidx-compose-ui-uiTooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "androidx-compose-ui" }
 androidx-compose-ui-uiToolingPreview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "androidx-compose-ui" }
 coil-compose = "io.coil-kt:coil-compose:1.3.2"
-decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
-decomposeExtensionJetpackCompose = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
+decompose-core = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-extensionJetpackCompose = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
+decompose-extensionJetbrainsCompose = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose" }
 google-android-material = "com.google.android.material:material:1.6.0-alpha01"
 gradleAndroidPlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 gradleBlueprintDependencyPlugin = { module = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency", version.ref = "blueprintDependency" }
