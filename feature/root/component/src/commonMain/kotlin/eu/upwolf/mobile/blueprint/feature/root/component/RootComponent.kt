@@ -26,13 +26,13 @@ class RootComponent(
 
     override val routerState: Value<RouterState<*, Child>> = router.state
 
-    private fun createChild(config: Config, componentContext: ComponentContext): RootComponentContract.Child =
+    private fun createChild(config: Config, componentContext: ComponentContext): Child =
         when (config) {
-            is Config.Splash -> splash(componentContext, config)
-            is Config.Home -> home(componentContext, config)
+            is Config.Splash -> splash(componentContext)
+            is Config.Home -> home(componentContext)
         }
 
-    private fun splash(componentContext: ComponentContext, config: Config.Splash): Child.Splash {
+    private fun splash(componentContext: ComponentContext): Child.Splash {
         return Child.Splash(SplashComponent(
             componentContext = componentContext,
             onFinishedAction = {
@@ -41,7 +41,7 @@ class RootComponent(
         ))
     }
 
-    private fun home(componentContext: ComponentContext, config: Config.Home): Child.Home {
+    private fun home(componentContext: ComponentContext): Child.Home {
         return Child.Home(HomeComponent(
             componentContext = componentContext,
             onFinishedAction = {

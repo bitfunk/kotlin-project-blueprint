@@ -20,6 +20,8 @@ import androidx.compose.ui.draw.scale
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 import kotlinx.coroutines.delay
 
+private const val DELAY = 3000L
+
 @Composable
 fun SplashPage(
     onFinished: () -> Unit
@@ -36,7 +38,7 @@ fun SplashPage(
                 stiffness = Spring.StiffnessMediumLow
             )
         )
-        delay(3000L)
+        delay(DELAY)
         onFinished()
     }
 

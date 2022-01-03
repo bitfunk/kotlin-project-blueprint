@@ -55,6 +55,7 @@ class DetektConfigurationPlugin : Plugin<Project> {
                 "**/.gradle/**",
                 "**/.idea/**",
                 "**/build/**",
+                "**/gradle/wrapper/**",
                 ".github/**",
                 "assets/**",
                 "app-ios/**",

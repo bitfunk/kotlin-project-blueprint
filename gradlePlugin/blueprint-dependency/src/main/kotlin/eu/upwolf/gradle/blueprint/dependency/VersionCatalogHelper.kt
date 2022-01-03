@@ -11,16 +11,18 @@ import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.kotlin.dsl.getByType
 
-abstract class VersionCatalogHelper(
-    project: Project
-) {
-    private val catalogs: VersionCatalogsExtension = project.extensions.getByType()
-    protected val libs: VersionCatalog = catalogs.named("libs")
+internal interface VersionCatalogHelper {
+    val project: Project
+
+    val catalogs: VersionCatalogsExtension
+        get() = project.extensions.getByType()
+    val libs: VersionCatalog
+        get() = catalogs.named("libs")
 }
 
 class DependencyHelper(
-    project: Project
-) : VersionCatalogHelper(project), Deps {
+    override val project: Project
+) : VersionCatalogHelper, Deps {
 
     private fun findDependency(name: String): String {
         return libs.findDependency(name).get().get().toString()
@@ -98,8 +100,8 @@ class DependencyHelper(
 }
 
 class VersionHelper(
-    project: Project
-) : VersionCatalogHelper(project), Versions {
+    override val project: Project
+) : VersionCatalogHelper, Versions {
 
     private fun findVersion(name: String): String {
         return libs.findVersion(name).get().requiredVersion
