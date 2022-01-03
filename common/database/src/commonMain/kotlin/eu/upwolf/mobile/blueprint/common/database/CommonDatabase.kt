@@ -10,10 +10,23 @@ import com.squareup.sqldelight.db.SqlDriver
 // - add logger
 // - add background dispatcher
 class CommonDatabase(
-    private val driver: SqlDriver
+    private val driverProvider: suspend (SqlDriver.Schema) -> SqlDriver
 ) : CommonDatabaseContract {
 
-    fun todo() {
-        driver.currentTransaction()
+    private var database: CommonSqlDatabase? = null
+
+    suspend fun initDatabase() {
+        if (database == null) {
+            database = driverProvider(CommonSqlDatabase.Schema).createDatabase()
+        }
+    }
+
+    suspend operator fun <R> invoke(block: suspend (CommonSqlDatabase) -> R): R {
+        initDatabase()
+        return block(database!!)
+    }
+
+    private fun SqlDriver.createDatabase(): CommonSqlDatabase {
+        return CommonSqlDatabase.invoke(this)
     }
 }

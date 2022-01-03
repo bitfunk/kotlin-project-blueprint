@@ -82,6 +82,7 @@ ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "k
 ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
 ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
 sqldelight-androidDriver = { module = "com.squareup.sqldelight:android-driver", version.ref = "sqlDelight" }
+sqldelight-jsDriver = { module = "com.squareup.sqldelight:sqljs-driver", version.ref = "sqlDelight" }
 sqldelight-coroutinesExtensions = { module = "com.squareup.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 sqldelight-nativeDriver = { module = "com.squareup.sqldelight:native-driver", version.ref = "sqlDelight" }
 sqldelight-runtime = { module = "com.squareup.sqldelight:runtime", version.ref = "sqlDelight" }

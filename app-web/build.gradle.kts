@@ -12,7 +12,6 @@ kotlin {
         jsMain {
             dependencies {
                 implementation(projects.feature.root.component)
-                implementation(projects.feature.root.ui)
             }
         }
     }

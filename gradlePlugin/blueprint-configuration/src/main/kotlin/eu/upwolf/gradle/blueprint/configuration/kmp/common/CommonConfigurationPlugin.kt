@@ -49,6 +49,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
         setupAndroidTarget(project)
         setupDesktopTarget(project)
         setupIosTarget(project)
+        setupWebTarget(project)
     }
 
     private fun setupAndroidTarget(project: Project) {
@@ -97,6 +98,25 @@ class CommonConfigurationPlugin : Plugin<Project> {
             sourceSets {
                 maybeCreate("iosMain").dependencies {
                     // nothing to add
+                }
+            }
+        }
+    }
+
+    private fun setupWebTarget(project: Project) {
+        project.kotlin {
+            project.kotlin {
+                js(IR) {
+                    browser()
+                }
+
+                sourceSets {
+                    maybeCreate("jsMain").dependencies {
+                        implementation(compose.web.core)
+                    }
+                    maybeCreate("jsTest").dependencies {
+                        // nothing to add
+                    }
                 }
             }
         }

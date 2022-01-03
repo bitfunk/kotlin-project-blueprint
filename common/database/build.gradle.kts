@@ -43,6 +43,16 @@ kotlin {
             // No addition
         }
 
+        jsMain {
+            dependencies {
+                implementation(libs.sqldelight.jsDriver)
+            }
+        }
+
+        jsTest {
+            // No addition
+        }
+
         iosMain {
             dependencies {
                 implementation(libs.sqldelight.nativeDriver)
