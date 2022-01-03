@@ -1,13 +1,24 @@
 import SwiftUI
-import FeatureHome
+import FeatureRoot
 
-func greet() -> String {
-    return Greeting().greet()
-}
+public struct ContentView: View {
 
-struct ContentView: View {
-    var body: some View {
-        Text(greet())
+    @State
+    private var componentHolder = ComponentHolder {
+        RootComponent(componentContext: $0)
+    }
+
+    public init() {
+    }
+
+    public var body: some View {
+        RootContent(componentHolder.component)
+                .onAppear {
+                    LifecycleRegistryExtKt.resume(self.componentHolder.lifecycle)
+                }
+                .onDisappear {
+                    LifecycleRegistryExtKt.stop(self.componentHolder.lifecycle)
+                }
     }
 }
 

@@ -13,11 +13,12 @@ kotlin {
     ios {
         binaries {
             framework {
-                baseName = "Blueprint"
+                baseName = "FeatureRoot"
                 transitiveExport = true
                 linkerOpts.add("-lsqlite3")
                 export(projects.common.database)
                 export(libs.decompose.core)
+                export(libs.essenty.lifecycle)
 
                 export(projects.feature.splash.component)
                 export(projects.feature.home.component)
@@ -39,10 +40,11 @@ kotlin {
         iosMain {
             dependencies {
                 api(projects.common.database)
-                api(libs.decompose.core)
+                implementation(libs.decompose.core)
+                implementation(libs.essenty.lifecycle)
 
                 api(projects.feature.splash.component)
-                implementation(projects.feature.home)
+                api(projects.feature.home.component)
             }
         }
     }

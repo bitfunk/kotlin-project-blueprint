@@ -13,9 +13,6 @@ apple {
 
         dependencies {
             implementation(projects.feature.root.component)
-
-            // TODO remove
-            implementation(projects.feature.home)
         }
     }
 }

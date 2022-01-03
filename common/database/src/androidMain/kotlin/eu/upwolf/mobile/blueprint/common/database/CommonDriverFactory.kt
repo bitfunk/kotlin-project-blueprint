@@ -11,7 +11,7 @@ import com.squareup.sqldelight.db.SqlDriver
 actual class CommonDriverFactory(
     private val context: Context
 ) : CommonDatabaseContract.DriverFactory {
-    
+
     actual override suspend fun createDriver(schema: SqlDriver.Schema): SqlDriver {
         return AndroidSqliteDriver(
             schema = schema,
