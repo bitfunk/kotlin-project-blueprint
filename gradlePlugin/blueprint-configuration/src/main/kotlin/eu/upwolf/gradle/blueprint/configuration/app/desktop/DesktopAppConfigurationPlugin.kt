@@ -4,14 +4,13 @@
 
 package eu.upwolf.gradle.blueprint.configuration.app.desktop
 
-import org.gradle.api.Action
+import eu.upwolf.gradle.blueprint.configuration.kotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
 import org.jetbrains.compose.compose
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 class DesktopAppConfigurationPlugin : Plugin<Project> {
 
@@ -30,27 +29,23 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
 
     private fun setupDesktopApplication(project: Project) {
         project.kotlin {
-            jvm {
+            jvm("desktop") {
                 compilations.all {
                     kotlinOptions.jvmTarget = "11"
                 }
             }
 
             sourceSets {
-                maybeCreate("jvmMain").dependencies {
+                maybeCreate("desktopMain").dependencies {
                     api(compose.runtime)
                     api(compose.foundation)
                     api(compose.material)
                     implementation(compose.desktop.currentOs)
                 }
-                maybeCreate("jvmTest").dependencies {
+                maybeCreate("desktopTest").dependencies {
                     // nothing to add
                 }
             }
         }
-    }
-
-    private fun Project.kotlin(action: Action<KotlinMultiplatformExtension>) {
-        extensions.configure(KotlinMultiplatformExtension::class.java, action)
     }
 }

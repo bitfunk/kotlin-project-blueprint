@@ -12,7 +12,7 @@ plugins {
 
 kotlin {
     sourceSets {
-        jvmMain {
+        desktopMain {
             dependencies {
                 implementation(libs.decompose.core)
                 implementation(libs.decompose.extensionJetbrainsCompose)

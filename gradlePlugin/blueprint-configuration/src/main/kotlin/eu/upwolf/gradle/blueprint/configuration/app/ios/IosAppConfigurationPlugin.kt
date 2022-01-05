@@ -4,16 +4,14 @@
 
 package eu.upwolf.gradle.blueprint.configuration.app.ios
 
-import org.gradle.api.Action
+import eu.upwolf.gradle.blueprint.configuration.apple
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
-import org.jetbrains.gradle.apple.AppleProjectExtension
 
 class IosAppConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        target.apply(plugin = "org.jetbrains.gradle.apple.applePlugin")
+        target.pluginManager.apply("org.jetbrains.gradle.apple.applePlugin")
 
         setupIosApplication(target)
     }
@@ -29,9 +27,5 @@ class IosAppConfigurationPlugin : Plugin<Project> {
                 }
             }
         }
-    }
-
-    private fun Project.apple(action: Action<AppleProjectExtension>) {
-        extensions.configure(AppleProjectExtension::class.java, action)
     }
 }

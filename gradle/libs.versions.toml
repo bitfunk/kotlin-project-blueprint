@@ -26,6 +26,7 @@ ktor = "1.6.2"
 moko-resources = "0.17.3"
 spotless = "6.0.5"
 sqlDelight = "1.5.3"
+junit-jupiter = "5.7.1"
 
 [libraries]
 accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }

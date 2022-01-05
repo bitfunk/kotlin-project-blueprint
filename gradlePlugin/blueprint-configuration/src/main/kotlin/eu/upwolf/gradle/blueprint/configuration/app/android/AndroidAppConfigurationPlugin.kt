@@ -4,17 +4,14 @@
 
 package eu.upwolf.gradle.blueprint.configuration.app.android
 
-import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
+import eu.upwolf.gradle.blueprint.configuration.androidApp
+import eu.upwolf.gradle.blueprint.configuration.implementation
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import eu.upwolf.gradle.blueprint.dependency.VersionHelper
-import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.Dependency
-import org.gradle.api.artifacts.dsl.DependencyHandler
-import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.File
@@ -23,9 +20,9 @@ import java.io.File
 class AndroidAppConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        target.apply(plugin = "com.android.application")
-        target.apply(plugin = "kotlin-android")
-        target.apply(plugin = "kotlin-parcelize")
+        target.pluginManager.apply("com.android.application")
+        target.pluginManager.apply("kotlin-android")
+        target.pluginManager.apply("kotlin-parcelize")
 
         setupAndroidApplication(target)
         setupAndroidKotlinCompatibility(target)
@@ -35,7 +32,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
     private fun setupAndroidApplication(project: Project) {
         val versionHelper = VersionHelper(project)
 
-        project.android {
+        project.androidApp {
             compileSdk = AndroidConfig.compileSdkVersion
 
             defaultConfig {
@@ -114,7 +111,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
             kotlinOptions {
                 jvmTarget = JavaVersion.VERSION_1_8.toString()
 
-                freeCompilerArgs += listOf(
+                freeCompilerArgs = freeCompilerArgs + listOf(
                     "-P",
                     "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
                 )
@@ -130,17 +127,4 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
             implementation(libs.androidx.compose.material3)
         }
     }
-
-    private fun Project.android(action: Action<BaseAppModuleExtension>) {
-        extensions.configure(BaseAppModuleExtension::class.java, action)
-    }
-
-    private fun DependencyHandler.`implementation`(dependencyNotation: Any): Dependency? =
-        add("implementation", dependencyNotation)
-
-    private fun DependencyHandler.`testImplementation`(dependencyNotation: Any): Dependency? =
-        add("testImplementation", dependencyNotation)
-
-    private fun DependencyHandler.`androidTestImplementation`(dependencyNotation: Any): Dependency? =
-        add("androidTestImplementation", dependencyNotation)
 }

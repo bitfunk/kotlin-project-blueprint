@@ -4,14 +4,13 @@
 
 package eu.upwolf.gradle.blueprint.configuration.app.web
 
-import org.gradle.api.Action
+import eu.upwolf.gradle.blueprint.configuration.kotlin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
 import org.jetbrains.compose.compose
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 class WebAppConfigurationPlugin : Plugin<Project> {
 
@@ -30,7 +29,7 @@ class WebAppConfigurationPlugin : Plugin<Project> {
 
     private fun setupWebApplication(project: Project) {
         project.kotlin {
-            js(IR) {
+            js("web", IR) {
                 browser {
                     binaries.executable()
                     testTask {
@@ -42,18 +41,14 @@ class WebAppConfigurationPlugin : Plugin<Project> {
             }
 
             sourceSets {
-                maybeCreate("jsMain").dependencies {
+                maybeCreate("webMain").dependencies {
                     api(compose.runtime)
                     implementation(compose.web.core)
                 }
-                maybeCreate("jsTest").dependencies {
+                maybeCreate("webTest").dependencies {
                     // nothing to add
                 }
             }
         }
-    }
-
-    private fun Project.kotlin(action: Action<KotlinMultiplatformExtension>) {
-        extensions.configure(KotlinMultiplatformExtension::class.java, action)
     }
 }

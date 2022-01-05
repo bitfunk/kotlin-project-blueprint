@@ -9,7 +9,7 @@ plugins {
 
 kotlin {
     sourceSets {
-        jsMain {
+        webMain {
             dependencies {
                 implementation(projects.feature.root.component)
             }

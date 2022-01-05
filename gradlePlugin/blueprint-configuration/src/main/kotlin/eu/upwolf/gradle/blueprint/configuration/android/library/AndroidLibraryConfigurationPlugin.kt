@@ -4,27 +4,25 @@
 
 package eu.upwolf.gradle.blueprint.configuration.android.library
 
-import com.android.build.gradle.LibraryExtension
 import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
-import org.gradle.api.Action
+import eu.upwolf.gradle.blueprint.configuration.androidLibrary
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.apply
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 @Suppress("UnstableApiUsage")
 class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        target.apply(plugin = "com.android.library")
+        target.pluginManager.apply("com.android.library")
 
         setupAndroidLibrary(target)
         setupAndroidKotlinCompatibility(target)
     }
 
     private fun setupAndroidLibrary(project: Project) {
-        project.android {
+        project.androidLibrary {
             compileSdk = AndroidConfig.compileSdkVersion
 
             defaultConfig {
@@ -73,7 +71,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                 getByName("main") {
                     manifest.srcFile("src/androidMain/AndroidManifest.xml")
                     java.setSrcDirs(setOf("src/androidMain/kotlin"))
-                    res.setSrcDirs(setOf("src/androidMain/res"))
+                    res.setSrcDirs(setOf("src/androidMain/res", "src/commonMain/resources"))
                 }
 
                 getByName("test") {
@@ -100,11 +98,9 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
             kotlinOptions {
                 jvmTarget = JavaVersion.VERSION_1_8.toString()
+
+                freeCompilerArgs = freeCompilerArgs + listOf()
             }
         }
-    }
-
-    private fun Project.android(action: Action<LibraryExtension>) {
-        extensions.configure(LibraryExtension::class.java, action)
     }
 }
