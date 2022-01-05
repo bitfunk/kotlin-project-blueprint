@@ -4,16 +4,14 @@
 
 package eu.upwolf.gradle.blueprint.configuration.feature.resource
 
+import eu.upwolf.gradle.blueprint.configuration.fixAndroidSourceSets
 import eu.upwolf.gradle.blueprint.configuration.kotlin
 import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.creating
-import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.invoke
-import org.gradle.kotlin.dsl.provideDelegate
 
 @Suppress("UnstableApiUsage")
 class FeatureResourceConfigurationPlugin : Plugin<Project> {
@@ -64,11 +62,12 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     // nothing to add
                 }
-                maybeCreate("androidTest").dependencies {
+                val androidTest = maybeCreate("androidTest")
+                androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
-                maybeCreate("androidAndroidTestRelease").dependsOn(sourceSets["androidTest"])
+                fixAndroidSourceSets(androidTest)
             }
         }
     }

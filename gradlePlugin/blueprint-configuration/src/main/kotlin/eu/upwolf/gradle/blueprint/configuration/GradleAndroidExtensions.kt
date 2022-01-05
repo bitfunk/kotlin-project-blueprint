@@ -10,6 +10,8 @@ import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.NamedDomainObjectContainerScope
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 
 internal fun Project.androidApp(action: Action<BaseAppModuleExtension>) {
     extensions.configure(BaseAppModuleExtension::class.java, action)
@@ -27,3 +29,17 @@ internal fun DependencyHandler.`testImplementation`(dependencyNotation: Any): De
 
 internal fun DependencyHandler.`androidTestImplementation`(dependencyNotation: Any): Dependency? =
     add("androidTestImplementation", dependencyNotation)
+
+internal fun NamedDomainObjectContainerScope<KotlinSourceSet>.fixAndroidSourceSets(
+    androidTest: KotlinSourceSet
+) {
+    val androidAndroidTestRelease = maybeCreate("androidAndroidTestRelease")
+    val androidTestFixtures = maybeCreate("androidTestFixtures")
+    val androidTestFixturesDebug = maybeCreate("androidTestFixturesDebug")
+    val androidTestFixturesRelease = maybeCreate("androidTestFixturesRelease")
+
+    androidTest.dependsOn(androidAndroidTestRelease)
+    androidTest.dependsOn(androidTestFixtures)
+    androidTest.dependsOn(androidTestFixturesDebug)
+    androidTest.dependsOn(androidTestFixturesRelease)
+}

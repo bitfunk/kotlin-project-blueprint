@@ -5,6 +5,7 @@
 package eu.upwolf.gradle.blueprint.configuration.feature.ui
 
 import eu.upwolf.gradle.blueprint.configuration.androidLibrary
+import eu.upwolf.gradle.blueprint.configuration.fixAndroidSourceSets
 import eu.upwolf.gradle.blueprint.configuration.kotlin
 import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
@@ -96,10 +97,12 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.material3)
                     implementation(libs.androidx.compose.uiToolingPreview)
                 }
-                maybeCreate("androidTest").dependencies {
+                val androidTest = maybeCreate("androidTest")
+                androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
+                fixAndroidSourceSets(androidTest)
             }
         }
 

@@ -4,6 +4,7 @@
 
 package eu.upwolf.gradle.blueprint.configuration.kmp.feature
 
+import eu.upwolf.gradle.blueprint.configuration.fixAndroidSourceSets
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import org.gradle.api.Action
 import org.gradle.api.Plugin
@@ -50,9 +51,11 @@ class FeatureConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     // Nothing to add
                 }
-                maybeCreate("androidTest").dependencies {
+                val androidTest = maybeCreate("androidTest")
+                androidTest.dependencies {
                     // Nothing to add
                 }
+                fixAndroidSourceSets(androidTest)
             }
         }
     }

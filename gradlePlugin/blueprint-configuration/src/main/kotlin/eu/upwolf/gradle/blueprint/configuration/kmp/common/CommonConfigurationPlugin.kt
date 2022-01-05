@@ -4,6 +4,7 @@
 
 package eu.upwolf.gradle.blueprint.configuration.kmp.common
 
+import eu.upwolf.gradle.blueprint.configuration.fixAndroidSourceSets
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import org.gradle.api.Action
 import org.gradle.api.Plugin
@@ -64,10 +65,12 @@ class CommonConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     // nothing to add
                 }
-                maybeCreate("androidTest").dependencies {
+                val androidTest = maybeCreate("androidTest")
+                androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
+                fixAndroidSourceSets(androidTest)
             }
         }
     }
