@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.ios.app
+package eu.upwolf.gradle.blueprint.configuration.app.ios
 
 import org.gradle.api.Action
 import org.gradle.api.Plugin

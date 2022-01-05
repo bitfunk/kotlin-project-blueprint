@@ -7,7 +7,7 @@ import eu.upwolf.gradle.blueprint.version.versionCode
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.gradleBlueprintConfigurationAndroidApp)
+    alias(libs.plugins.gradleBlueprintConfigurationAppAndroid)
 }
 
 android {

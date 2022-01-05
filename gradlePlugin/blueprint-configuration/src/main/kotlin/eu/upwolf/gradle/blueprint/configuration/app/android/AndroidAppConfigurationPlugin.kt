@@ -1,11 +1,11 @@
 /*
- * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
+ * Copyright (c) 2022 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.android.app
+package eu.upwolf.gradle.blueprint.configuration.app.android
 
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-import eu.upwolf.gradle.blueprint.configuration.android.AndroidConfig
+import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.Action

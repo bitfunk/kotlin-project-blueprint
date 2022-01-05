@@ -21,37 +21,35 @@ repositories {
 }
 
 gradlePlugin {
-    // Android
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.android.app") {
-        id = "eu.upwolf.gradle.blueprint.configuration.android.app"
-        implementationClass = "eu.upwolf.gradle.blueprint.configuration.android.app.AndroidAppConfigurationPlugin"
+    // Apps
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.app.android") {
+        id = "eu.upwolf.gradle.blueprint.configuration.app.android"
+        implementationClass = "eu.upwolf.gradle.blueprint.configuration.app.android.AndroidAppConfigurationPlugin"
     }
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.app.desktop") {
+        id = "eu.upwolf.gradle.blueprint.configuration.app.desktop"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.app.desktop.DesktopAppConfigurationPlugin"
+    }
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.app.ios") {
+        id = "eu.upwolf.gradle.blueprint.configuration.app.ios"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.app.ios.IosAppConfigurationPlugin"
+    }
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.app.web") {
+        id = "eu.upwolf.gradle.blueprint.configuration.app.web"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.app.web.WebAppConfigurationPlugin"
+    }
+
+    // Android
+
     plugins.register("eu.upwolf.gradle.blueprint.configuration.android.library") {
         id = "eu.upwolf.gradle.blueprint.configuration.android.library"
         implementationClass =
             "eu.upwolf.gradle.blueprint.configuration.android.library.AndroidLibraryConfigurationPlugin"
     }
 
-    // Desktop
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.desktop.app") {
-        id = "eu.upwolf.gradle.blueprint.configuration.desktop.app"
-        implementationClass =
-            "eu.upwolf.gradle.blueprint.configuration.desktop.app.DesktopAppConfigurationPlugin"
-    }
-
-    // iOS
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.ios.app") {
-        id = "eu.upwolf.gradle.blueprint.configuration.ios.app"
-        implementationClass =
-            "eu.upwolf.gradle.blueprint.configuration.ios.app.IosAppConfigurationPlugin"
-    }
-
-    // Web
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.web.app") {
-        id = "eu.upwolf.gradle.blueprint.configuration.web.app"
-        implementationClass =
-            "eu.upwolf.gradle.blueprint.configuration.web.app.WebAppConfigurationPlugin"
-    }
 
     // KMP - Common
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common") {

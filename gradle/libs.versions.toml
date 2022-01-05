@@ -103,17 +103,19 @@ test-androidx-rules = { module = "androidx.test:rules", version.ref = "androidx-
 test-androidx-runner = { module = "androidx.test:runner", version.ref = "androidx-test" }
 test-androidx-uiautomator = "androidx.test.uiautomator:uiautomator:2.2.0"
 test-junit = "junit:junit:4.13.2"
+test-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
+test-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit-jupiter" }
 test-kotlin-annotations = { module = "org.jetbrains.kotlin:kotlin-test-annotations-common", version.ref = "kotlin" }
 test-kotlin-core = { module = "org.jetbrains.kotlin:kotlin-test-common", version.ref = "kotlin" }
 test-kotlin-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 test-robolectric = "org.robolectric:robolectric:4.5.1"
 
 [plugins]
-gradleBlueprintConfigurationAndroidApp = { id = "eu.upwolf.gradle.blueprint.configuration.android.app", version.ref = "blueprintConfiguration" }
+gradleBlueprintConfigurationAppAndroid = { id = "eu.upwolf.gradle.blueprint.configuration.app.android", version.ref = "blueprintConfiguration" }
+gradleBlueprintConfigurationAppDesktop = { id = "eu.upwolf.gradle.blueprint.configuration.app.desktop", version.ref = "blueprintConfiguration" }
+gradleBlueprintConfigurationAppIos = { id = "eu.upwolf.gradle.blueprint.configuration.app.ios", version.ref = "blueprintConfiguration" }
+gradleBlueprintConfigurationAppWeb = { id = "eu.upwolf.gradle.blueprint.configuration.app.web", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationAndroidLibrary = { id = "eu.upwolf.gradle.blueprint.configuration.android.library", version.ref = "blueprintConfiguration" }
-gradleBlueprintConfigurationDesktopApp = { id = "eu.upwolf.gradle.blueprint.configuration.desktop.app", version.ref = "blueprintConfiguration" }
-gradleBlueprintConfigurationIosApp = { id = "eu.upwolf.gradle.blueprint.configuration.ios.app", version.ref = "blueprintConfiguration" }
-gradleBlueprintConfigurationWebApp = { id = "eu.upwolf.gradle.blueprint.configuration.web.app", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpCommon = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.common", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpCompose = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.compose", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpFeature = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.feature", version.ref = "blueprintConfiguration" }

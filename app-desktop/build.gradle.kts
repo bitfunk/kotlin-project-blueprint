@@ -7,7 +7,7 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.gradleBlueprintConfigurationDesktopApp)
+    alias(libs.plugins.gradleBlueprintConfigurationAppDesktop)
 }
 
 kotlin {

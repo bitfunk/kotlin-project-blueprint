@@ -5,7 +5,7 @@
 package eu.upwolf.gradle.blueprint.configuration.android.library
 
 import com.android.build.gradle.LibraryExtension
-import eu.upwolf.gradle.blueprint.configuration.android.AndroidConfig
+import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
 import org.gradle.api.Action
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin

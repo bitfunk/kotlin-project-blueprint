@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.android
+package eu.upwolf.gradle.blueprint.configuration
 
 object AndroidConfig {
     const val minSdkVersion = 21
