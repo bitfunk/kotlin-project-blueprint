@@ -59,8 +59,8 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
             }
 
             compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_1_8
-                targetCompatibility = JavaVersion.VERSION_1_8
+                sourceCompatibility = JavaVersion.VERSION_11
+                targetCompatibility = JavaVersion.VERSION_11
             }
 
             testOptions {
@@ -93,11 +93,11 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
     private fun setupAndroidKotlinCompatibility(project: Project) {
         project.tasks.withType(KotlinCompile::class.java).all {
-            sourceCompatibility = JavaVersion.VERSION_1_8.toString()
-            targetCompatibility = JavaVersion.VERSION_1_8.toString()
+            sourceCompatibility = JavaVersion.VERSION_11.toString()
+            targetCompatibility = JavaVersion.VERSION_11.toString()
 
             kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_1_8.toString()
+                jvmTarget = JavaVersion.VERSION_11.toString()
 
                 freeCompilerArgs = freeCompilerArgs + listOf()
             }

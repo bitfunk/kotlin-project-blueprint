@@ -68,6 +68,25 @@ gradlePlugin {
     }
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
+    sourceCompatibility = "11"
+    targetCompatibility = "11"
+
+    kotlinOptions {
+        jvmTarget = "11"
+
+        freeCompilerArgs = freeCompilerArgs + listOf(
+            "-Xopt-in=kotlin.RequiresOptIn",
+            "-Xopt-in=org.jetbrains.compose.ExperimentalComposeLibrary",
+        )
+    }
+}
+
 dependencies {
     implementation(libs.gradleBlueprintDependencyPlugin)
 
@@ -79,11 +98,6 @@ dependencies {
     implementation(libs.gradleJetbrainsComposePlugin)
 
     implementation(libs.gradleJetbrainsApplePlugin)
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.named<Wrapper>("wrapper") {
