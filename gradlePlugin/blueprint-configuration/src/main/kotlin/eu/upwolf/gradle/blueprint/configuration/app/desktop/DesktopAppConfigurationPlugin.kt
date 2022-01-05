@@ -5,6 +5,7 @@
 package eu.upwolf.gradle.blueprint.configuration.app.desktop
 
 import eu.upwolf.gradle.blueprint.configuration.kotlin
+import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
@@ -25,6 +26,12 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
         }
 
         setupDesktopApplication(target)
+
+        target.setupKotlinCompatibility(
+            listOf(
+                "-opt-in=kotlin.RequiresOptIn"
+            )
+        )
     }
 
     private fun setupDesktopApplication(project: Project) {
