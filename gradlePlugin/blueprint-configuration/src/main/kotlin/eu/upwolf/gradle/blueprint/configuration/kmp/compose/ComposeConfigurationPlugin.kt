@@ -92,6 +92,7 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.foundation)
                     implementation(libs.androidx.compose.ui)
                     implementation(libs.androidx.compose.material)
+                    implementation(libs.androidx.compose.material3)
                     implementation(libs.androidx.compose.uiToolingPreview)
                 }
                 maybeCreate("androidTest").dependencies {

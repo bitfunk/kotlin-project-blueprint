@@ -33,6 +33,7 @@ include(
 
 // Common
 include(
+    ":common:ui:foundation",
     ":common:ui:system",
     ":common:ui:theme",
     ":common:database",
@@ -43,8 +44,10 @@ include(
     ":feature:home:component",
     ":feature:home:ui",
     ":feature:root:component",
+    ":feature:root:resources",
     ":feature:root:ui",
     ":feature:splash:component",
+    ":feature:splash:resources",
     ":feature:splash:ui",
 )
 

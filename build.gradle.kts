@@ -22,6 +22,7 @@ buildscript {
         classpath(libs.gradleKotlinPlugin)
         classpath(libs.gradleAndroidPlugin)
         classpath(libs.gradleSqlDelightPlugin)
+        classpath(libs.gradleMokoResourcesGeneratorPlugin)
     }
 }
 

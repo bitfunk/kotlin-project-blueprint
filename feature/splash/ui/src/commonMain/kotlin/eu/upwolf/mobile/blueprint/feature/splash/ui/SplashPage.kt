@@ -17,7 +17,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.scale
+import eu.upwolf.mobile.blueprint.common.ui.foundation.stringResource
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
+import eu.upwolf.mobile.blueprint.feature.splash.resources.SplashResources
 import kotlinx.coroutines.delay
 
 private const val DELAY = 3000L
@@ -49,7 +51,7 @@ fun SplashPage(
         // TODO change to image
         Icon(
             imageVector = Github,
-            contentDescription = "contentDescription", //TODO use external resources
+            contentDescription = stringResource(SplashResources.Strings.logoContentDescription()),
             modifier = Modifier
                 .size(AppTheme.size.larger)
                 .scale(scale.value)

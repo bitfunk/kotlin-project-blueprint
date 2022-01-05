@@ -12,6 +12,7 @@ kotlin {
         commonMain {
             dependencies {
                 api(projects.common.ui.theme)
+                api(projects.common.ui.foundation)
             }
         }
     }

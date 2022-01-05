@@ -11,11 +11,13 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(projects.common.ui.system)
-                implementation(libs.decompose.core)
-
-                implementation(projects.feature.splash.component)
-                implementation(projects.feature.splash.resources)
+                api(libs.moko.resources)
+            }
+        }
+        androidMain {
+            dependencies {
+                api(libs.androidx.appCompat)
+                api(libs.androidx.core.ktx)
             }
         }
     }
