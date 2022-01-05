@@ -83,6 +83,12 @@ class DependencyHelper(
                 get() = findDependency("koin-test")
         }
 
+    override val moko: Deps.Moko
+        get() = object : Deps.Moko {
+            override val resources: String
+                get() = findDependency("moko-resources")
+        }
+
     override val test: Deps.Test
         get() = object : Deps.Test {
             override val junit: String
@@ -166,6 +172,12 @@ interface Deps {
     interface Koin {
         val core: String
         val test: String
+    }
+
+    val moko: Moko
+
+    interface Moko {
+        val resources: String
     }
 
     val test: Test

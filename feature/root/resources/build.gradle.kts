@@ -4,7 +4,7 @@
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.gradleBlueprintConfigurationKmpCommon)
+    alias(libs.plugins.gradleBlueprintConfigurationFeatureResource)
 }
 
 kotlin {
@@ -31,4 +31,8 @@ kotlin {
             }
         }
     }
+}
+
+multiplatformResources {
+    multiplatformResourcesPackage = "eu.upwolf.mobile.blueprint.feature.root.resources"
 }

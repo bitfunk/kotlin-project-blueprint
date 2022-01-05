@@ -2,24 +2,23 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.gradle.blueprint.configuration.kmp.compose
+package eu.upwolf.gradle.blueprint.configuration.common.ui
 
-import com.android.build.gradle.LibraryExtension
+import eu.upwolf.gradle.blueprint.configuration.androidLibrary
+import eu.upwolf.gradle.blueprint.configuration.kotlin
+import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import eu.upwolf.gradle.blueprint.dependency.VersionHelper
-import org.gradle.api.Action
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.compose
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 @Suppress("UnstableApiUsage")
-class ComposeConfigurationPlugin : Plugin<Project> {
+class CommonUiConfigurationPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         target.pluginManager.apply("org.jetbrains.kotlin.multiplatform")
@@ -32,11 +31,24 @@ class ComposeConfigurationPlugin : Plugin<Project> {
             maven(url = "https://maven.pkg.jetbrains.space/public/p/compose/dev")
         }
 
-        setupMultiplatformLibrary(target)
         setupTargets(target)
+
+        target.setupKotlinCompatibility(
+            listOf(
+                "-Xopt-in=kotlin.RequiresOptIn",
+                // "-Xopt-in=org.jetbrains.compose.ExperimentalComposeLibrary"
+            )
+        )
     }
 
-    private fun setupMultiplatformLibrary(project: Project) {
+    private fun setupTargets(project: Project) {
+        setupCommonTarget(project)
+        setupAndroidTarget(project)
+        setupDesktopTarget(project)
+    }
+
+    @OptIn(ExperimentalComposeLibrary::class)
+    private fun setupCommonTarget(project: Project) {
         val libs = DependencyHelper(project)
 
         project.kotlin {
@@ -47,13 +59,11 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                     }
                 }
 
-                @OptIn(ExperimentalComposeLibrary::class)
                 maybeCreate("commonMain").dependencies {
                     api(compose.runtime)
                     api(compose.foundation)
                     api(compose.material)
                     api(compose.material3)
-                    api(compose.materialIconsExtended)
                     api(compose.animation)
                 }
 
@@ -63,15 +73,6 @@ class ComposeConfigurationPlugin : Plugin<Project> {
                 }
             }
         }
-
-        project.tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-            kotlinOptions.jvmTarget = "1.8"
-        }
-    }
-
-    private fun setupTargets(project: Project) {
-        setupAndroidTarget(project)
-        setupDesktopTarget(project)
     }
 
     private fun setupAndroidTarget(project: Project) {
@@ -102,7 +103,7 @@ class ComposeConfigurationPlugin : Plugin<Project> {
             }
         }
 
-        project.android {
+        project.androidLibrary {
             buildFeatures {
                 compose = true
             }
@@ -115,28 +116,20 @@ class ComposeConfigurationPlugin : Plugin<Project> {
 
     private fun setupDesktopTarget(project: Project) {
         project.kotlin {
-            jvm {
+            jvm("desktop") {
                 compilations.all {
                     kotlinOptions.jvmTarget = "11"
                 }
             }
 
             sourceSets {
-                maybeCreate("jvmMain").dependencies {
+                maybeCreate("desktopMain").dependencies {
                     implementation(compose.desktop.currentOs)
                 }
-                maybeCreate("jvmTest").dependencies {
+                maybeCreate("desktopTest").dependencies {
                     // nothing to add
                 }
             }
         }
-    }
-
-    private fun Project.kotlin(action: Action<KotlinMultiplatformExtension>) {
-        extensions.configure(KotlinMultiplatformExtension::class.java, action)
-    }
-
-    private fun Project.android(action: Action<LibraryExtension>) {
-        extensions.configure(LibraryExtension::class.java, action)
     }
 }

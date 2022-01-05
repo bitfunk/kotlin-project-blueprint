@@ -116,9 +116,11 @@ gradleBlueprintConfigurationAppAndroid = { id = "eu.upwolf.gradle.blueprint.conf
 gradleBlueprintConfigurationAppDesktop = { id = "eu.upwolf.gradle.blueprint.configuration.app.desktop", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationAppIos = { id = "eu.upwolf.gradle.blueprint.configuration.app.ios", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationAppWeb = { id = "eu.upwolf.gradle.blueprint.configuration.app.web", version.ref = "blueprintConfiguration" }
+gradleBlueprintConfigurationCommonUi = { id = "eu.upwolf.gradle.blueprint.configuration.common.ui", version.ref = "blueprintConfiguration"}
+gradleBlueprintConfigurationFeatureResource = { id = "eu.upwolf.gradle.blueprint.configuration.feature.resource", version.ref = "blueprintConfiguration"}
+gradleBlueprintConfigurationFeatureUi = { id = "eu.upwolf.gradle.blueprint.configuration.feature.ui", version.ref = "blueprintConfiguration"}
 gradleBlueprintConfigurationAndroidLibrary = { id = "eu.upwolf.gradle.blueprint.configuration.android.library", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpCommon = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.common", version.ref = "blueprintConfiguration" }
-gradleBlueprintConfigurationKmpCompose = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.compose", version.ref = "blueprintConfiguration" }
 gradleBlueprintConfigurationKmpFeature = { id = "eu.upwolf.gradle.blueprint.configuration.kmp.feature", version.ref = "blueprintConfiguration" }
 gradleBlueprintDependency = { id = "eu.upwolf.gradle.blueprint.dependency", version.ref = "blueprintDependency" }
 gradleBlueprintQualityDetekt = { id = "eu.upwolf.gradle.blueprint.quality.detekt", version.ref = "blueprintTools" }

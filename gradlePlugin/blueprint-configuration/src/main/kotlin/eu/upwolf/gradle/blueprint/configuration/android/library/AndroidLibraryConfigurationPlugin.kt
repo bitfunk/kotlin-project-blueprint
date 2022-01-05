@@ -6,6 +6,7 @@ package eu.upwolf.gradle.blueprint.configuration.android.library
 
 import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
 import eu.upwolf.gradle.blueprint.configuration.androidLibrary
+import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -18,7 +19,8 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
         target.pluginManager.apply("com.android.library")
 
         setupAndroidLibrary(target)
-        setupAndroidKotlinCompatibility(target)
+
+        target.setupKotlinCompatibility()
     }
 
     private fun setupAndroidLibrary(project: Project) {
@@ -37,7 +39,8 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                 consumerProguardFiles("consumer-rules.pro")
             }
 
-            resourcePrefix(AndroidConfig.resourcePrefix)
+            // FIXME
+            //resourcePrefix(AndroidConfig.resourcePrefix)
 
             buildTypes {
                 getByName("debug") {
@@ -87,19 +90,6 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                         "META-INF/LGPL2.1",
                     )
                 }
-            }
-        }
-    }
-
-    private fun setupAndroidKotlinCompatibility(project: Project) {
-        project.tasks.withType(KotlinCompile::class.java).all {
-            sourceCompatibility = JavaVersion.VERSION_11.toString()
-            targetCompatibility = JavaVersion.VERSION_11.toString()
-
-            kotlinOptions {
-                jvmTarget = JavaVersion.VERSION_11.toString()
-
-                freeCompilerArgs = freeCompilerArgs + listOf()
             }
         }
     }

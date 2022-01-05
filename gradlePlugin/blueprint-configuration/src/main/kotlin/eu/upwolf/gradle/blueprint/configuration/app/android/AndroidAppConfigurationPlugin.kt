@@ -7,6 +7,7 @@ package eu.upwolf.gradle.blueprint.configuration.app.android
 import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
 import eu.upwolf.gradle.blueprint.configuration.androidApp
 import eu.upwolf.gradle.blueprint.configuration.implementation
+import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.JavaVersion
@@ -25,8 +26,14 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
         target.pluginManager.apply("kotlin-parcelize")
 
         setupAndroidApplication(target)
-        setupAndroidKotlinCompatibility(target)
         setupDependencies(target)
+
+        target.setupKotlinCompatibility(
+            listOf(
+                "-P",
+                "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
+            )
+        )
     }
 
     private fun setupAndroidApplication(project: Project) {

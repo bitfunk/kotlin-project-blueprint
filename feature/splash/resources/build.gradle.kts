@@ -4,15 +4,14 @@
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.gradleBlueprintConfigurationKmpCommon)
-    id("dev.icerock.mobile.multiplatform-resources")
+    alias(libs.plugins.gradleBlueprintConfigurationFeatureResource)
 }
 
 kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(libs.moko.resources)
+                // nothing to add
             }
         }
     }

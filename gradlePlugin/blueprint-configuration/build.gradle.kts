@@ -42,6 +42,26 @@ gradlePlugin {
             "eu.upwolf.gradle.blueprint.configuration.app.web.WebAppConfigurationPlugin"
     }
 
+    // Common
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.common.ui") {
+        id = "eu.upwolf.gradle.blueprint.configuration.common.ui"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.common.ui.CommonUiConfigurationPlugin"
+    }
+
+    // Feature
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.feature.resource") {
+        id = "eu.upwolf.gradle.blueprint.configuration.feature.resource"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.feature.resource.FeatureResourceConfigurationPlugin"
+    }
+    plugins.register("eu.upwolf.gradle.blueprint.configuration.feature.ui") {
+        id = "eu.upwolf.gradle.blueprint.configuration.feature.ui"
+        implementationClass =
+            "eu.upwolf.gradle.blueprint.configuration.feature.ui.FeatureUiConfigurationPlugin"
+    }
+
+    // OLD
     // Android
 
     plugins.register("eu.upwolf.gradle.blueprint.configuration.android.library") {
@@ -50,16 +70,10 @@ gradlePlugin {
             "eu.upwolf.gradle.blueprint.configuration.android.library.AndroidLibraryConfigurationPlugin"
     }
 
-
     // KMP - Common
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.common") {
         id = "eu.upwolf.gradle.blueprint.configuration.kmp.common"
         implementationClass = "eu.upwolf.gradle.blueprint.configuration.kmp.common.CommonConfigurationPlugin"
-    }
-    plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.compose") {
-        id = "eu.upwolf.gradle.blueprint.configuration.kmp.compose"
-        implementationClass =
-            "eu.upwolf.gradle.blueprint.configuration.kmp.compose.ComposeConfigurationPlugin"
     }
     // KMP - Feature
     plugins.register("eu.upwolf.gradle.blueprint.configuration.kmp.feature") {
