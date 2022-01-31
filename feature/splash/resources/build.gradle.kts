@@ -8,6 +8,14 @@ plugins {
 }
 
 kotlin {
+    ios {
+        binaries {
+            framework {
+                baseName = "FeatureSplashResources"
+            }
+        }
+    }
+
     sourceSets {
         commonMain {
             dependencies {

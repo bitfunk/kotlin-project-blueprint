@@ -11,9 +11,11 @@ apple {
     iosApp {
         productName = "Blueprint"
 
+        embedFrameworks = true
+
         dependencies {
             implementation(projects.feature.root.component)
-            implementation(projects.feature.root.resources)
+            implementation(projects.feature.splash.resources)
         }
     }
 }

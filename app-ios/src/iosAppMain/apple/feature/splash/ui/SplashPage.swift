@@ -1,4 +1,5 @@
 import SwiftUI
+import FeatureSplashResources
 
 public struct SplashPage: View {
 
@@ -12,7 +13,7 @@ public struct SplashPage: View {
     }
 
     public var body: some View {
-        Text("Splash page")
+        Text(SplashResources().strings.logoContentDescription().localized())
                 .padding()
                 .scaleEffect(scale)
                 .onAppear {
@@ -26,5 +27,4 @@ public struct SplashPage: View {
                     }
                 }
     }
-
 }

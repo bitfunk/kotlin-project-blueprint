@@ -6,6 +6,8 @@ package eu.upwolf.gradle.blueprint.configuration.app.desktop
 
 import eu.upwolf.gradle.blueprint.configuration.kotlin
 import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
+import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
+import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
@@ -35,6 +37,8 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupDesktopApplication(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             jvm("desktop") {
                 compilations.all {
@@ -43,6 +47,10 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
             }
 
             sourceSets {
+                maybeCreate("commonMain").dependencies {
+                    implementation(libs.kotlin.core)
+                }
+
                 maybeCreate("desktopMain").dependencies {
                     api(compose.runtime)
                     api(compose.foundation)
