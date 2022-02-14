@@ -9,6 +9,7 @@ import eu.upwolf.gradle.blueprint.dependency.byProperty
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
+    jacoco
 
     alias(libs.plugins.gradleBlueprintDependency)
 }
@@ -83,9 +84,49 @@ dependencies {
 
     // Version
     implementation(libs.gradleGitVersionPlugin)
+
+    // Testing
+    testImplementation(gradleTestKit())
+    testImplementation(libs.test.junit.jupiter)
+    testRuntimeOnly(libs.test.junit.jupiter.engine)
+}
+
+jacoco {
+    version = libs.versions.jacoco.get()
+}
+
+tasks.withType<Test>().configureEach {
+    useJUnitPlatform()
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.named("test"))
+
+    reports {
+        html.required.set(true)
+        xml.required.set(true)
+    }
+}
+
+tasks.jacocoTestCoverageVerification {
+    dependsOn(tasks.named("jacocoTestReport"))
+    violationRules {
+        rule {
+            enabled = true
+            limit {
+                counter = "BRANCH"
+                value = "COVEREDRATIO"
+                minimum = BigDecimal(0.99)
+            }
+        }
+    }
+}
+
+tasks.check {
+    dependsOn(tasks.named("jacocoTestCoverageVerification"))
 }
 
 tasks.named<Wrapper>("wrapper") {
-    gradleVersion = "7.3.3"
+    gradleVersion = "7.4"
     distributionType = Wrapper.DistributionType.ALL
 }

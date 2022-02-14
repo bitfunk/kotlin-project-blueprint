@@ -2,8 +2,6 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
-@file:Suppress("UnstableApiUsage")
-
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -18,7 +16,6 @@ pluginManagement {
     includeBuild("gradlePlugin/blueprint-tools")
 }
 
-enableFeaturePreview("VERSION_CATALOGS")
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 // Gradle Plugin
