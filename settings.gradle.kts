@@ -48,4 +48,4 @@ include(
     ":feature:splash:ui",
 )
 
-rootProject.name = "MobileProjectBlueprint"
+rootProject.name = "KotlinProjectBlueprint"
