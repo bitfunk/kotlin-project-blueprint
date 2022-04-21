@@ -27,6 +27,7 @@ build-cache/
 
 # Others
 captures/
+kotlin-js-store
 
 ## Asciidoctor
 .asciidoctor/
