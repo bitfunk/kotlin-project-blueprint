@@ -1,7 +1,7 @@
 [versions]
 accompanist = "0.20.3"
 androidGradlePlugin = "7.1.0"
-androidx-compose-compiler = "1.1.0-rc03"
+androidx-compose-compiler = "1.1.1"
 androidx-compose-ui = "1.1.1"
 androidx-test = "1.4.0"
 androidx-test-orchestrator = "1.4.1"
