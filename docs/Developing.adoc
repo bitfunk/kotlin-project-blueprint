@@ -52,7 +52,7 @@ Every change has to branch of from `main` and use this branch naming convention:
 
 Examples:
 
-- `feature/SDK-456/add-awesome-hashing-algorithm`
+- `feature/ISSUE-456/add-awesome-hashing-algorithm`
 - `feature/add-awesome-hashing-algorithm`
 - `feature/remove-not-so-awesome-algorithm`
 - `feature/fix-algorithm-corner-case`

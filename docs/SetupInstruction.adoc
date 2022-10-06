@@ -28,7 +28,7 @@ You could use link:https://brew.sh/[Homebrew] to install on mac
 [source,bash]
 ----
 brew tap adoptopenjdk/openjdk
-brew install adoptopenjdk8
+brew install adoptopenjdk11
 brew install kotlin
 ----
 
@@ -55,7 +55,7 @@ Just install the mentioned dependencies:
 [source,bash]
 ----
 sdk install java 11.0.11.hs-adpt
-sdk install kotlin 1.5.31
+sdk install kotlin 1.6.10
 ----
 
 Check your installation by:
