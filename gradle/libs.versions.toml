@@ -35,7 +35,7 @@ accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-
 android-desugar = "com.android.tools:desugar_jdk_libs:1.0.9"
 androidx-core-ktx = "androidx.core:core-ktx:1.7.0"
 androidx-activityCompose = "androidx.activity:activity-compose:1.4.0"
-androidx-appCompat = "androidx.appcompat:appcompat:1.4.1"
+androidx-appCompat = "androidx.appcompat:appcompat:1.4.2"
 androidx-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "androidx-compose-compiler" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose-ui" }
 androidx-compose-material = "androidx.compose.material:material:1.1.0-rc03"
