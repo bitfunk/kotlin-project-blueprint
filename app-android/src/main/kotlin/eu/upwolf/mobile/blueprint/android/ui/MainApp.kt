@@ -6,6 +6,7 @@ package eu.upwolf.mobile.blueprint.android.ui
 
 import androidx.compose.runtime.Composable
 import com.google.accompanist.insets.ProvideWindowInsets
+import eu.upwolf.mobile.blueprint.common.ui.foundation.painter.ProvideImageVectorCache
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeMain
 
 @Composable
@@ -14,7 +15,9 @@ fun MainApp(
 ) {
     ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
         AppThemeMain {
-            content()
+            ProvideImageVectorCache {
+                content()
+            }
         }
     }
 }

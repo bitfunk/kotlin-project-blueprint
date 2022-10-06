@@ -2,14 +2,10 @@
  * Copyright (c) 2022 Wolf-Martell Montwé. All rights reserved.
  */
 
-package eu.upwolf.mobile.blueprint.common.ui.foundation
+package eu.upwolf.mobile.blueprint.feature.splash.ui
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.painter.Painter
-import dev.icerock.moko.resources.StringResource
 
 @Composable
 actual fun painterResource(resourcePath: String): Painter = androidx.compose.ui.res.painterResource(resourcePath)
-
-@Composable
-actual fun stringResource(id: StringResource): String = id.localized()
