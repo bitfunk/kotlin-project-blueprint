@@ -24,7 +24,7 @@ endif::[]
         </a>
     </p>
     <p><!-- PROJECT TITLE -->
-        <h3>Blueprint For Mobile Projects</h3>
+        <h3>WIP Blueprint For Mobile Projects</h3>
     </p>
     <p><!-- PROJECT DESCRIPTION -->
         A blueprint to kickstart mobile projects.
