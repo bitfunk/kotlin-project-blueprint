@@ -10,8 +10,7 @@ on:
 jobs:
   build-latest-version:
 
-    #    runs-on: ubuntu-latest
-    runs-on: [ self-hosted, macos ]
+    runs-on: macos-latest
 
     strategy:
       matrix:

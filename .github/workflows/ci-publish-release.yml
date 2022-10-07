@@ -9,8 +9,7 @@ on:
 jobs:
   publish-release:
 
-    #    runs-on: ubuntu-latest
-    runs-on: [ self-hosted, macos ]
+    runs-on: macos-latest
 
     strategy:
       matrix:
