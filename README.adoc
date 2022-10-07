@@ -24,7 +24,7 @@ endif::[]
         </a>
     </p>
     <p><!-- PROJECT TITLE -->
-        <h3>Blueprint For Mobile Projects</h3>
+        <h3>WIP Blueprint For Mobile Projects</h3>
     </p>
     <p><!-- PROJECT DESCRIPTION -->
         A blueprint to kickstart mobile projects.
@@ -63,6 +63,12 @@ This is a blueprint for Mobile projects to start right away reducing initial set
 It's supporting:
 
  * https://developer.android.com/jetpack/[JetPack] with https://developer.android.com/jetpack/androidx/[AndroidX]
+ 
+=== Warning
+
+This project is work in progress. It contains several experiements and will change heavily over time.
+
+It is currently undergoing architectural and organisational changes that focus on renewal of the current approach and removal of experiments.
 
 === Features
 
