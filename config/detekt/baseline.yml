@@ -11,7 +11,10 @@
     <ID>MagicNumber:Dangerfile.df.kts$600</ID>
     <ID>MagicNumber:VersionConfigurationPlugin.kt$VersionConfigurationPlugin$100</ID>
     <ID>MagicNumber:build.gradle.kts$0.99</ID>
-    <ID>UnusedPrivateMember:AndroidAppConfigurationPlugin.kt$AndroidAppConfigurationPlugin$private fun DependencyHandler.`androidTestImplementation`(dependencyNotation: Any): Dependency?</ID>
-    <ID>UnusedPrivateMember:AndroidAppConfigurationPlugin.kt$AndroidAppConfigurationPlugin$private fun DependencyHandler.`testImplementation`(dependencyNotation: Any): Dependency?</ID>
+    <ID>SpreadOperator:clean.main.kts$(commands[0], *arguments.toTypedArray())</ID>
+    <ID>SwallowedException:PainterResources.kt$catch (throwable: Throwable) { throw IllegalArgumentException(errorMessage) }</ID>
+    <ID>TooGenericExceptionCaught:PainterResources.kt$throwable: Throwable</ID>
+    <ID>TopLevelPropertyNaming:PainterResources.kt$private const val errorMessage = "Only VectorDrawables and rasterized asset types are supported ex. PNG, JPG"</ID>
+    <ID>UnusedPrivateMember:AndroidAppConfigurationPlugin.kt$AndroidAppConfigurationPlugin$private fun setupAndroidKotlinCompatibility(project: Project)</ID>
   </CurrentIssues>
 </SmellBaseline>
