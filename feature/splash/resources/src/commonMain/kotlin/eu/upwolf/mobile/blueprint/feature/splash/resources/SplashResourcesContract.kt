@@ -4,7 +4,7 @@
 
 package eu.upwolf.mobile.blueprint.feature.splash.resources
 
-import dev.icerock.moko.resources.desc.StringDesc
+import dev.icerock.moko.resources.StringResource
 import dev.icerock.moko.resources.desc.image.ImageDesc
 
 interface SplashResourcesContract {
@@ -15,7 +15,7 @@ interface SplashResourcesContract {
     }
 
     interface Strings {
-        fun logoContentDescription(): StringDesc
+        fun logoContentDescription(): StringResource
     }
 
     interface Images {
