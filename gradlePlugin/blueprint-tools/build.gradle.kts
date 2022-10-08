@@ -19,7 +19,7 @@ repositories {
     mavenCentral()
     google()
     maven {
-        url = uri("https://maven.pkg.github.com/wmontwe/gradle-git-version")
+        url = uri("https://maven.pkg.github.com/bitfunk/gradle-git-version")
         credentials {
             username = "githubPackageDownload.user".byProperty(project) ?: "GITHUB_PACKAGE_DOWNLOAD_USER".byEnv()
             password = "githubPackageDownload.key".byProperty(project) ?: "GITHUB_PACKAGE_DOWNLOAD_KEY".byEnv()
