@@ -33,6 +33,7 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 === Changed
 
 - Change JetBrains Compose dependencies to VersionCatalog
+- Change color scheme to add new surfaceTint, outlineVariant and scrim colors
 
 === Removed
 

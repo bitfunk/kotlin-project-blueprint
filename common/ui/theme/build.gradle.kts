@@ -9,6 +9,16 @@ plugins {
 
 kotlin {
     sourceSets {
+        commonMain {
+            dependencies {
+                api(libs.jetbrains.compose.runtime)
+                api(libs.jetbrains.compose.foundation)
+                api(libs.jetbrains.compose.material)
+                api(libs.jetbrains.compose.material3)
+                api(libs.jetbrains.compose.animation)
+            }
+        }
+
         androidMain {
             dependencies {
                 api(libs.accompanist.systemuicontroller)
