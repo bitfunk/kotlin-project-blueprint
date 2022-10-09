@@ -13,7 +13,7 @@ public struct SplashPage: View {
     }
 
     public var body: some View {
-        Text(SplashResources().strings.logoContentDescription().localized())
+        Text(LocalizedStringKey(SplashResources().strings.logoContentDescription().resourceId))
                 .padding()
                 .scaleEffect(scale)
                 .onAppear {

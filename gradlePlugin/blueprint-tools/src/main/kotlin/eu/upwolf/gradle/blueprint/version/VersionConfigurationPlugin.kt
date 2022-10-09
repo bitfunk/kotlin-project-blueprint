@@ -136,7 +136,7 @@ class VersionConfigurationPlugin : Plugin<Project> {
 fun Project.version(): String = this.version as String
 fun Project.versionCleaned(): String {
     return if (version().endsWith("-SNAPSHOT")) {
-        version().removeSuffix("-SNAPSHOT")
+        version().split("-")[0]
     } else {
         version()
     }

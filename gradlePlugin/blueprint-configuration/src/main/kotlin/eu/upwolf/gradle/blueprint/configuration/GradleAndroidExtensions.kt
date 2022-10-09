@@ -33,13 +33,7 @@ internal fun DependencyHandler.`androidTestImplementation`(dependencyNotation: A
 internal fun NamedDomainObjectContainerScope<KotlinSourceSet>.fixAndroidSourceSets(
     androidTest: KotlinSourceSet
 ) {
-    val androidAndroidTestRelease = maybeCreate("androidAndroidTestRelease")
     val androidTestFixtures = maybeCreate("androidTestFixtures")
-    val androidTestFixturesDebug = maybeCreate("androidTestFixturesDebug")
-    val androidTestFixturesRelease = maybeCreate("androidTestFixturesRelease")
 
-    androidTest.dependsOn(androidAndroidTestRelease)
     androidTest.dependsOn(androidTestFixtures)
-    androidTest.dependsOn(androidTestFixturesDebug)
-    androidTest.dependsOn(androidTestFixturesRelease)
 }

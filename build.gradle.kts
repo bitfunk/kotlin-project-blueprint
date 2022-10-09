@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
         google()
         maven {
-            url = uri("https://maven.pkg.github.com/wmontwe/gradle-git-version")
+            url = uri("https://maven.pkg.github.com/bitfunk/gradle-git-version")
             credentials {
                 username = project.findProperty("githubPackageDownload.user") as? String
                     ?: System.getenv("GITHUB_PACKAGE_DOWNLOAD_USER")
