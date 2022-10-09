@@ -83,6 +83,7 @@ class VersionConfigurationPlugin : Plugin<Project> {
             patternNoQualifierBranch.matches(details.branchName) -> versionNameWithQualifier(details)
             patternFeatureBranch.matches(details.branchName) -> versionNameFeature(details)
             patternDependabotBranch.matches(details.branchName) -> versionNameDependabot(details)
+            patternRenovateBranch.matches(details.branchName) -> versionNameRenovate(details)
             else -> throw UnsupportedOperationException("branch name not supported: ${details.branchName}")
         }
     }
@@ -107,6 +108,22 @@ class VersionConfigurationPlugin : Plugin<Project> {
         return versionNameWithQualifier(details, "bump-$dependabotName")
     }
 
+    private fun versionNameRenovate(details: VersionDetails): String {
+        var renovateName = patternRenovateBranch.matchEntire(details.branchName)!!.groups[1]!!.value
+
+        renovateName = renovateName
+            .replace("_", "-")
+            .replace("/", "-")
+
+        if (renovateName == "configure") {
+            renovateName = "renovate-$renovateName"
+        } else {
+            renovateName = "renovate-bump-$renovateName"
+        }
+
+        return versionNameWithQualifier(details, renovateName)
+    }
+
     private fun versionNameWithQualifier(details: VersionDetails, name: String = ""): String {
         val version = if (!details.isCleanTag) {
             var versionCleaned = details.version.substringBefore(".dirty")
@@ -129,6 +146,7 @@ class VersionConfigurationPlugin : Plugin<Project> {
         val patternNoQualifierBranch = "main|release/.*".toRegex()
         val patternFeatureBranch = "feature/(.*)".toRegex()
         val patternDependabotBranch = "dependabot/(.*)".toRegex()
+        val patternRenovateBranch = "renovate/(.*)".toRegex()
         val patternIssueNumber = "[A-Z]{2,8}-.*/(.*)".toRegex()
     }
 }
