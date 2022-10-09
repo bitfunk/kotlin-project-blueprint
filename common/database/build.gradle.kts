@@ -33,6 +33,11 @@ kotlin {
                 implementation(libs.sqldelight.sqliteDriver)
             }
         }
+        androidAndroidTest {
+            dependencies {
+                implementation(libs.sqldelight.sqliteDriver)
+            }
+        }
 
         jvmMain {
             dependencies {
