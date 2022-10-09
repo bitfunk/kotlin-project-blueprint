@@ -90,7 +90,7 @@ It is currently undergoing architectural and organisational changes that focus o
 
 === Prerequisites
 
-* Android 5.0.1 (API 21) to Android 11 (API 31)
+* Android 5.0.1 (API 21) to Android 13 (API 33)
 * Kotlin 1.5.31
 * Java 11
 * Gradle 7.2
