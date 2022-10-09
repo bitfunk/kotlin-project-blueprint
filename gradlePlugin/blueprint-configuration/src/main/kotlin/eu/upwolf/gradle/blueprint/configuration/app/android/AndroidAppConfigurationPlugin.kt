@@ -66,7 +66,8 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
                 getByName("debug") {
                     applicationIdSuffix = ".debug"
                     versionNameSuffix = "-DEBUG"
-                    isTestCoverageEnabled = true
+                    enableUnitTestCoverage = true
+                    enableAndroidTestCoverage = true
                     matchingFallbacks += listOf("release")
                 }
                 getByName("release") {

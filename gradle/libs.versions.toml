@@ -1,6 +1,6 @@
 [versions]
-accompanist = "0.20.3"
-androidGradlePlugin = "7.1.0"
+accompanist = "0.23.1"
+androidGradlePlugin = "7.3.0"
 androidx-compose-compiler = "1.1.1"
 androidx-compose-ui = "1.1.1"
 androidx-test = "1.4.0"
@@ -33,9 +33,9 @@ accompanist-insets = { module = "com.google.accompanist:accompanist-insets", ver
 accompanist-insetsUi = { module = "com.google.accompanist:accompanist-insets-ui", version.ref = "accompanist" }
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 android-desugar = "com.android.tools:desugar_jdk_libs:1.0.9"
-androidx-core-ktx = "androidx.core:core-ktx:1.7.0"
-androidx-activityCompose = "androidx.activity:activity-compose:1.4.0"
-androidx-appCompat = "androidx.appcompat:appcompat:1.4.2"
+androidx-core-ktx = "androidx.core:core-ktx:1.9.0"
+androidx-activityCompose = "androidx.activity:activity-compose:1.6.0"
+androidx-appCompat = "androidx.appcompat:appcompat:1.5.1"
 androidx-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "androidx-compose-compiler" }
 androidx-compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "androidx-compose-ui" }
 androidx-compose-material = "androidx.compose.material:material:1.1.0-rc03"
