@@ -11,6 +11,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -115,7 +116,8 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
                 sourceSets {
                     maybeCreate("jsMain").dependencies {
-                        implementation(compose.web.core)
+                        api(ComposePlugin.Dependencies.runtime)
+                        implementation(ComposePlugin.Dependencies.web.core)
                     }
                     maybeCreate("jsTest").dependencies {
                         // nothing to add

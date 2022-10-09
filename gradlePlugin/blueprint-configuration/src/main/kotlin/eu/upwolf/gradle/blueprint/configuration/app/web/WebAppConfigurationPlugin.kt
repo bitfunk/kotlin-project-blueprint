@@ -10,6 +10,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
+import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.compose
 
 class WebAppConfigurationPlugin : Plugin<Project> {
@@ -42,8 +43,8 @@ class WebAppConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("webMain").dependencies {
-                    api(compose.runtime)
-                    implementation(compose.web.core)
+                    api(ComposePlugin.Dependencies.runtime)
+                    implementation(ComposePlugin.Dependencies.web.core)
                 }
                 maybeCreate("webTest").dependencies {
                     // nothing to add

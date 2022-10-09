@@ -13,6 +13,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
+import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.compose
 
 class DesktopAppConfigurationPlugin : Plugin<Project> {
@@ -52,10 +53,10 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
                 }
 
                 maybeCreate("desktopMain").dependencies {
-                    api(compose.runtime)
-                    api(compose.foundation)
-                    api(compose.material)
-                    implementation(compose.desktop.currentOs)
+                    api(ComposePlugin.Dependencies.runtime)
+                    api(ComposePlugin.Dependencies.foundation)
+                    api(ComposePlugin.Dependencies.material)
+                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add

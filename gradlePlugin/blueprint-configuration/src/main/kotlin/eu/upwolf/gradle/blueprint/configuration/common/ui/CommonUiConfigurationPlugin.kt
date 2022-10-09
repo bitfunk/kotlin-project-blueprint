@@ -15,6 +15,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
+import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.compose
 
@@ -60,11 +61,11 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
                 }
 
                 maybeCreate("commonMain").dependencies {
-                    api(compose.runtime)
-                    api(compose.foundation)
-                    api(compose.material)
-                    api(compose.material3)
-                    api(compose.animation)
+                    api(ComposePlugin.Dependencies.runtime)
+                    api(ComposePlugin.Dependencies.foundation)
+                    api(ComposePlugin.Dependencies.material)
+                    api(ComposePlugin.Dependencies.material3)
+                    api(ComposePlugin.Dependencies.animation)
                 }
 
                 maybeCreate("commonTest").dependencies {
@@ -126,7 +127,7 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("desktopMain").dependencies {
-                    implementation(compose.desktop.currentOs)
+                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add
