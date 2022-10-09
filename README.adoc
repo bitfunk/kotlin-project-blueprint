@@ -93,9 +93,9 @@ It is currently undergoing architectural and organisational changes that focus o
 * Android 5.0.1 (API 21) to Android 13 (API 33)
 * Kotlin 1.5.31
 * Java 11
-* Gradle 7.2
+* Gradle 7.5.1
 * Android Studio Arctic Fox 2020.3.1 Patch 3, but better Bumblebee for Apple Silicon
-* Jetpack Compose 1.0.5
+* Jetpack Compose 1.1.1
 
 === Installation
 

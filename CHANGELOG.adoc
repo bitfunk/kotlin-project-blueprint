@@ -41,6 +41,8 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 === Bumped
 
 - Android target API 31 -> 33
+- Gradle 7.2 -> 7.5.1
+- Jetpack Compose 1.0.5 -> 1.1.1
 
 === Deprecated
 
