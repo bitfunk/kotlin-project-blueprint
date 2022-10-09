@@ -52,7 +52,8 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 - AndroidX Activity Compose 1.4.0 -> 1.6.0
 - Accompanist 0.20.3 -> 0.23.1
 - Material 1.6.0-alpha01 -> 1.6.1
-- Kotlin 1.6.10 -> 1.6.20
+- Kotlin 1.6.10 -> 1.7.20
+- Kotlin Coroutines 1.6.0 -> 1.6.4
 
 === Deprecated
 

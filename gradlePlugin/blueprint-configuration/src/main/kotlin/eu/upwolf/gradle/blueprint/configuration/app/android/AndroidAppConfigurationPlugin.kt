@@ -113,9 +113,6 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
     private fun setupAndroidKotlinCompatibility(project: Project) {
         project.tasks.withType(KotlinCompile::class.java).all {
-            sourceCompatibility = JavaVersion.VERSION_11.toString()
-            targetCompatibility = JavaVersion.VERSION_11.toString()
-
             kotlinOptions {
                 jvmTarget = JavaVersion.VERSION_11.toString()
 
