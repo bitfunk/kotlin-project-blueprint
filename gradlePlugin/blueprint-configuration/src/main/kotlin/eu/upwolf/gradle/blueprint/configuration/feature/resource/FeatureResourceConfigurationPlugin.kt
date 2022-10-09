@@ -78,7 +78,14 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
             sourceSets {
                 getByName("main") {
                     manifest.srcFile("src/androidMain/AndroidManifest.xml")
-                    java.setSrcDirs(setOf("src/androidMain/kotlin"))
+                    kotlin.setSrcDirs(
+                        setOf(
+                            "src/androidMain/kotlin",
+                            // FIX for https://github.com/icerockdev/moko-resources/issues/384
+                            // https://github.com/icerockdev/moko-resources/issues/353
+                            File(project.buildDir, "generated/moko/androidMain/src"),
+                        )
+                    )
                     res.setSrcDirs(
                         setOf(
                             "src/androidMain/res",
@@ -92,6 +99,8 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
                         setOf(
                             "src/androidMain/assets",
                             "src/commonMain/assets",
+                            // FIX for https://github.com/icerockdev/moko-resources/issues/384
+                            // https://github.com/icerockdev/moko-resources/issues/353
                             File(project.buildDir, "generated/moko/androidMain/assets"),
                         )
                     )
