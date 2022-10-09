@@ -108,6 +108,8 @@ class CommonConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupWebTarget(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             project.kotlin {
                 js(IR) {
@@ -116,7 +118,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
                 sourceSets {
                     maybeCreate("jsMain").dependencies {
-                        api(ComposePlugin.Dependencies.runtime)
+                        api(libs.jetbrains.compose.runtime)
                         implementation(ComposePlugin.Dependencies.web.core)
                     }
                     maybeCreate("jsTest").dependencies {

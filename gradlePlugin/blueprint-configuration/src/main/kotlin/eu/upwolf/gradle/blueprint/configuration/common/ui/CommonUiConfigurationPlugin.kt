@@ -61,11 +61,11 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
                 }
 
                 maybeCreate("commonMain").dependencies {
-                    api(ComposePlugin.Dependencies.runtime)
-                    api(ComposePlugin.Dependencies.foundation)
-                    api(ComposePlugin.Dependencies.material)
-                    api(ComposePlugin.Dependencies.material3)
-                    api(ComposePlugin.Dependencies.animation)
+                    api(libs.jetbrains.compose.runtime)
+                    api(libs.jetbrains.compose.foundation)
+                    api(libs.jetbrains.compose.material)
+                    api(libs.jetbrains.compose.material3)
+                    api(libs.jetbrains.compose.animation)
                 }
 
                 maybeCreate("commonTest").dependencies {

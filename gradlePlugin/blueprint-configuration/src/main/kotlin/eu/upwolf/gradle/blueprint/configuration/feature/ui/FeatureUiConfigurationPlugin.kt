@@ -17,7 +17,6 @@ import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
 import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.ExperimentalComposeLibrary
-import org.jetbrains.compose.compose
 
 @Suppress("UnstableApiUsage")
 class FeatureUiConfigurationPlugin : Plugin<Project> {
@@ -61,12 +60,12 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
                 @OptIn(ExperimentalComposeLibrary::class)
                 maybeCreate("commonMain").dependencies {
-                    api(ComposePlugin.Dependencies.runtime)
-                    api(ComposePlugin.Dependencies.foundation)
-                    api(ComposePlugin.Dependencies.material)
-                    api(ComposePlugin.Dependencies.material3)
-                    api(ComposePlugin.Dependencies.materialIconsExtended)
-                    api(ComposePlugin.Dependencies.animation)
+                    api(libs.jetbrains.compose.runtime)
+                    api(libs.jetbrains.compose.foundation)
+                    api(libs.jetbrains.compose.material)
+                    api(libs.jetbrains.compose.material3)
+                    api(libs.jetbrains.compose.materialIconsExtended)
+                    api(libs.jetbrains.compose.animation)
                 }
 
                 maybeCreate("commonTest").dependencies {
@@ -119,6 +118,8 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupDesktopTarget(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             jvm("desktop") {
                 compilations.all {

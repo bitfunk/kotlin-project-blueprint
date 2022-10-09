@@ -5,6 +5,7 @@
 package eu.upwolf.gradle.blueprint.configuration.app.web
 
 import eu.upwolf.gradle.blueprint.configuration.kotlin
+import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
@@ -29,6 +30,8 @@ class WebAppConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupWebApplication(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             js("web", IR) {
                 browser {
@@ -43,7 +46,7 @@ class WebAppConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("webMain").dependencies {
-                    api(ComposePlugin.Dependencies.runtime)
+                    api(libs.jetbrains.compose.runtime)
                     implementation(ComposePlugin.Dependencies.web.core)
                 }
                 maybeCreate("webTest").dependencies {
