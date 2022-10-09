@@ -37,7 +37,6 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
         target.setupKotlinCompatibility(
             listOf(
                 "-Xopt-in=kotlin.RequiresOptIn",
-                // "-Xopt-in=org.jetbrains.compose.ExperimentalComposeLibrary"
             )
         )
     }
