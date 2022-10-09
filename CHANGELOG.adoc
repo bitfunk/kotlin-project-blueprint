@@ -46,10 +46,12 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 - Gradle 7.2 -> 7.5.1
 - Android Gradle Plugin 7.1.0 -> 7.3.0
 - Jetpack Compose 1.0.5 -> 1.1.1
+- Jetbrains Compse 1.0.1 -> 1.1.1
 - AndroidX AppCompat 1.4.2 -> 1.5.1
 - AndroidX CoreKtx 1.7.0 -> 1.9.0
 - AndroidX Activity Compose 1.4.0 -> 1.6.0
 - Accompanist 0.20.3 -> 0.23.1
+- Material 1.6.0-alpha01 -> 1.6.1
 
 === Deprecated
 
