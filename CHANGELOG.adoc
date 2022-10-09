@@ -36,6 +36,8 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 
 === Fixed
 
+- Moko resources failing with Android Gradle Plugin 7.3.0 [Issue 384](https://github.com/icerockdev/moko-resources/issues/384) and [Issue 353](https://github.com/icerockdev/moko-resources/issues/353)
+
 === Security
 
 === Bumped
