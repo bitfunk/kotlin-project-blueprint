@@ -19,3 +19,5 @@ includeBuild("../blueprint-dependency") {
         substitute(module("eu.upwolf.gradle.blueprint.dependency:blueprint-dependency")).using(project(":"))
     }
 }
+
+rootProject.name = "blueprint-tools"
