@@ -22,6 +22,8 @@ kotlin {
 }
 
 android {
+    namespace = "eu.upwolf.mobile.blueprint.feature.splash.ui"
+
     lint {
         baseline = file("lint-baseline.xml")
     }

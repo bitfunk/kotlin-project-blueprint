@@ -25,6 +25,10 @@ kotlin {
     }
 }
 
+android {
+    namespace = "eu.upwolf.mobile.blueprint.feature.splash.resources"
+}
+
 multiplatformResources {
     multiplatformResourcesPackage = "eu.upwolf.mobile.blueprint.feature.splash.resources"
 }

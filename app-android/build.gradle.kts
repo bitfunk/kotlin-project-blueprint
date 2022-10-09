@@ -11,6 +11,8 @@ plugins {
 }
 
 android {
+    namespace = "eu.upwolf.mobile.blueprint.android"
+
     defaultConfig {
         applicationId = "eu.upwolf.mobile.blueprint.android"
 
