@@ -27,6 +27,10 @@ kotlin {
 
 android {
     namespace = "eu.upwolf.mobile.blueprint.feature.splash.resources"
+
+    lint {
+        baseline = file("lint-baseline.xml")
+    }
 }
 
 multiplatformResources {
