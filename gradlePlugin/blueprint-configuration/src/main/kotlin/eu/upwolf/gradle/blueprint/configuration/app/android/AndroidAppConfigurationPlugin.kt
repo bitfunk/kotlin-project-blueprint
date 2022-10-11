@@ -27,13 +27,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
         setupAndroidApplication(target)
         setupDependencies(target)
-
-        target.setupKotlinCompatibility(
-            listOf(
-                "-P",
-                "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
-            )
-        )
+        setupAndroidKotlinCompatibility(target)
     }
 
     private fun setupAndroidApplication(project: Project) {
@@ -115,11 +109,6 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
         project.tasks.withType(KotlinCompile::class.java).all {
             kotlinOptions {
                 jvmTarget = JavaVersion.VERSION_11.toString()
-
-                freeCompilerArgs = freeCompilerArgs + listOf(
-                    "-P",
-                    "plugin:androidx.compose.compiler.plugins.kotlin:suppressKotlinVersionCompatibilityCheck=true"
-                )
             }
         }
     }
