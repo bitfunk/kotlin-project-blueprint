@@ -62,6 +62,7 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 - Material Compose 1.1.0-rc03 -> 1.2.1
 - Material3 Compose 1.0.0-alpha04 -> 1.0.0-alpha14
 - SqlDelight 1.5.3 -> 1.5.4
+- Decompose 0.5.2 -> 0.8.0
 
 === Deprecated
 
