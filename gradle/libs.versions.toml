@@ -26,7 +26,7 @@ ktlint = "0.43.2"
 ktor = "1.6.2"
 moko-resources = "0.20.1"
 spotless = "6.2.0"
-sqlDelight = "1.5.3"
+sqlDelight = "1.5.4"
 junit-jupiter = "5.8.2"
 
 [libraries]
