@@ -5,6 +5,7 @@
 package eu.upwolf.mobile.blueprint.android.ui.reuse
 
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -16,11 +17,12 @@ import com.google.accompanist.insets.rememberInsetsPaddingValues
 import com.google.accompanist.insets.ui.TopAppBar
 import eu.upwolf.mobile.blueprint.android.R
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
+import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeDimension
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppScaffold(
-    content: @Composable () -> Unit
+    content: @Composable (PaddingValues) -> Unit
 ) {
     // val navController = rememberNavController()
 
@@ -38,10 +40,9 @@ fun AppScaffold(
                     )
                 }
             )
-        }
-    ) {
-        content()
-    }
+        },
+        content = content
+    )
 }
 
 @Preview(
