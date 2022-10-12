@@ -114,6 +114,6 @@ dependencies {
 }
 
 tasks.named<Wrapper>("wrapper") {
-    gradleVersion = "7.5.1"
+    gradleVersion = "7.5"
     distributionType = Wrapper.DistributionType.ALL
 }
