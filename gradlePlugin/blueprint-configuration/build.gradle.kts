@@ -96,7 +96,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
 
         freeCompilerArgs = freeCompilerArgs + listOf(
             "-opt-in=kotlin.RequiresOptIn",
-            "-opt-in=org.jetbrains.compose.ExperimentalComposeLibrary",
         )
     }
 }

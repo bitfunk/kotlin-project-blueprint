@@ -16,7 +16,6 @@ import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
 import org.jetbrains.compose.ComposePlugin
-import org.jetbrains.compose.ExperimentalComposeLibrary
 
 @Suppress("UnstableApiUsage")
 class FeatureUiConfigurationPlugin : Plugin<Project> {
@@ -52,13 +51,6 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
         project.kotlin {
             sourceSets {
-                all {
-                    languageSettings.apply {
-                        optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
-                    }
-                }
-
-                @OptIn(ExperimentalComposeLibrary::class)
                 maybeCreate("commonMain").dependencies {
                     api(libs.jetbrains.compose.runtime)
                     api(libs.jetbrains.compose.foundation)
@@ -96,6 +88,8 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.material)
                     implementation(libs.androidx.compose.material3)
                     implementation(libs.androidx.compose.uiToolingPreview)
+                    implementation(libs.androidx.lifecycle.viewmodel)
+                    implementation(libs.androidx.lifecycle.viewmodelKtx)
                 }
                 val androidTest = maybeCreate("androidTest")
                 androidTest.dependencies {
@@ -118,8 +112,6 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupDesktopTarget(project: Project) {
-        val libs = DependencyHelper(project)
-
         project.kotlin {
             jvm("desktop") {
                 compilations.all {

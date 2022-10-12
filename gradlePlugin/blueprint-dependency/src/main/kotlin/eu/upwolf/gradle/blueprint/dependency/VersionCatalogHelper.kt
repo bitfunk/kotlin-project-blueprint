@@ -68,6 +68,13 @@ class DependencyHelper(
                     override val material3: String
                         get() = findLibrary("androidx-compose-material3")
                 }
+            override val lifecycle: Deps.AndroidX.Lifecycle
+                get() = object : Deps.AndroidX.Lifecycle {
+                    override val viewmodel: String
+                        get() = findLibrary("androidx-lifecycle-viewmodel")
+                    override val viewmodelKtx: String
+                        get() = findLibrary("androidx-lifecycle-viewmodelKtx")
+                }
         }
 
     override val jetbrains: Deps.JetBrains
@@ -180,6 +187,13 @@ interface Deps {
             val uiToolingPreview: String
             val material: String
             val material3: String
+        }
+
+        val lifecycle: Lifecycle
+
+        interface Lifecycle {
+            val viewmodel: String
+            val viewmodelKtx: String
         }
     }
 

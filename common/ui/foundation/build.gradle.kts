@@ -17,7 +17,6 @@ kotlin {
         androidMain {
             dependencies {
                 api(libs.androidx.appCompat)
-                api(libs.androidx.core.ktx)
             }
         }
     }

@@ -16,8 +16,6 @@ import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
 import org.jetbrains.compose.ComposePlugin
-import org.jetbrains.compose.ExperimentalComposeLibrary
-import org.jetbrains.compose.compose
 
 @Suppress("UnstableApiUsage")
 class CommonUiConfigurationPlugin : Plugin<Project> {
@@ -48,18 +46,11 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
         setupDesktopTarget(project)
     }
 
-    @OptIn(ExperimentalComposeLibrary::class)
     private fun setupCommonTarget(project: Project) {
         val libs = DependencyHelper(project)
 
         project.kotlin {
             sourceSets {
-                all {
-                    languageSettings.apply {
-                        optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
-                    }
-                }
-
                 maybeCreate("commonMain").dependencies {
                     api(libs.jetbrains.compose.runtime)
                     api(libs.jetbrains.compose.foundation)
