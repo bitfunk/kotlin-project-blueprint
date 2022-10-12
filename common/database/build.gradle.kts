@@ -35,7 +35,7 @@ kotlin {
         }
         androidAndroidTest {
             dependencies {
-                implementation(libs.sqldelight.sqliteDriver)
+                implementation(libs.sqldelight.androidDriver)
             }
         }
 

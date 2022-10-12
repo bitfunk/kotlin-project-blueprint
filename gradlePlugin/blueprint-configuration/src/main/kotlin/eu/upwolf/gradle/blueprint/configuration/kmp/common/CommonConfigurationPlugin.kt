@@ -71,6 +71,10 @@ class CommonConfigurationPlugin : Plugin<Project> {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
+                val androidAndroidTest = maybeCreate("androidAndroidTest")
+                androidAndroidTest.dependencies {
+                    implementation("androidx.test:runner:1.4.0")
+                }
                 fixAndroidSourceSets(androidTest)
             }
         }

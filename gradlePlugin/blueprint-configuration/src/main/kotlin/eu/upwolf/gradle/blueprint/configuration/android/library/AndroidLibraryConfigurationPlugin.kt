@@ -72,7 +72,6 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 getByName("main") {
-                    manifest.srcFile("src/androidMain/AndroidManifest.xml")
                     java.setSrcDirs(setOf("src/androidMain/kotlin"))
                     res.setSrcDirs(setOf("src/androidMain/res", "src/commonMain/resources"))
                 }
@@ -80,6 +79,11 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                 getByName("test") {
                     java.setSrcDirs(setOf("src/androidTest/kotlin"))
                     res.setSrcDirs(setOf("src/androidTest/res"))
+                }
+
+                getByName("androidTest") {
+                    java.setSrcDirs(setOf("src/androidAndroidTest/kotlin"))
+                    res.setSrcDirs(setOf("src/androidAndroidTest/res"))
                 }
             }
 
