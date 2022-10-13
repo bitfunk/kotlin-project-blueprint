@@ -15,8 +15,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
-import org.jetbrains.compose.ExperimentalComposeLibrary
-import org.jetbrains.compose.compose
+import org.jetbrains.compose.ComposePlugin
 
 @Suppress("UnstableApiUsage")
 class CommonUiConfigurationPlugin : Plugin<Project> {
@@ -36,7 +35,7 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
 
         target.setupKotlinCompatibility(
             listOf(
-                "-Xopt-in=kotlin.RequiresOptIn",
+                "-opt-in=kotlin.RequiresOptIn",
             )
         )
     }
@@ -47,24 +46,17 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
         setupDesktopTarget(project)
     }
 
-    @OptIn(ExperimentalComposeLibrary::class)
     private fun setupCommonTarget(project: Project) {
         val libs = DependencyHelper(project)
 
         project.kotlin {
             sourceSets {
-                all {
-                    languageSettings.apply {
-                        optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
-                    }
-                }
-
                 maybeCreate("commonMain").dependencies {
-                    api(compose.runtime)
-                    api(compose.foundation)
-                    api(compose.material)
-                    api(compose.material3)
-                    api(compose.animation)
+                    api(libs.jetbrains.compose.runtime)
+                    api(libs.jetbrains.compose.foundation)
+                    api(libs.jetbrains.compose.material)
+                    api(libs.jetbrains.compose.material3)
+                    api(libs.jetbrains.compose.animation)
                 }
 
                 maybeCreate("commonTest").dependencies {
@@ -126,7 +118,7 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("desktopMain").dependencies {
-                    implementation(compose.desktop.currentOs)
+                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add

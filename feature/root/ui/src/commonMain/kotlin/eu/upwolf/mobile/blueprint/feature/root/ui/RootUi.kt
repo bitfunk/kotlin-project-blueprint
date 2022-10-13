@@ -7,7 +7,8 @@ package eu.upwolf.mobile.blueprint.feature.root.ui
 import androidx.compose.runtime.Composable
 import com.arkivanov.decompose.ExperimentalDecomposeApi
 import com.arkivanov.decompose.extensions.compose.jetbrains.Children
-import com.arkivanov.decompose.extensions.compose.jetbrains.animation.child.crossfadeScale
+import com.arkivanov.decompose.extensions.compose.jetbrains.animation.child.childAnimation
+import com.arkivanov.decompose.extensions.compose.jetbrains.animation.child.fade
 import eu.upwolf.mobile.blueprint.feature.home.ui.HomeContent
 import eu.upwolf.mobile.blueprint.feature.root.component.RootComponentContract
 import eu.upwolf.mobile.blueprint.feature.root.component.RootComponentContract.Child
@@ -18,7 +19,7 @@ import eu.upwolf.mobile.blueprint.feature.splash.ui.SplashContent
 fun RootContent(component: RootComponentContract.Component) {
     Children(
         routerState = component.routerState,
-        animation = crossfadeScale()
+        animation = childAnimation(fade())
     ) {
         when (val child = it.instance) {
             is Child.Splash -> SplashContent(component = child.component)

@@ -4,6 +4,7 @@
 
 package eu.upwolf.gradle.blueprint.configuration.feature.resource
 
+import eu.upwolf.gradle.blueprint.configuration.androidLibrary
 import eu.upwolf.gradle.blueprint.configuration.fixAndroidSourceSets
 import eu.upwolf.gradle.blueprint.configuration.kotlin
 import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
@@ -12,6 +13,7 @@ import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
+import java.io.File
 
 @Suppress("UnstableApiUsage")
 class FeatureResourceConfigurationPlugin : Plugin<Project> {
@@ -59,7 +61,8 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
             }
 
             sourceSets {
-                maybeCreate("androidMain").dependencies {
+                val androidMain = maybeCreate("androidMain")
+                androidMain.dependencies {
                     // nothing to add
                 }
                 val androidTest = maybeCreate("androidTest")
@@ -68,6 +71,27 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
                     implementation(libs.test.junit)
                 }
                 fixAndroidSourceSets(androidTest)
+            }
+        }
+
+        project.androidLibrary {
+            sourceSets {
+                getByName("main") {
+                    kotlin.setSrcDirs(
+                        setOf(
+                            "src/androidMain/kotlin",
+                        )
+                    )
+                    res.srcDir("src/androidMain/res")
+                    // FIX for https://github.com/icerockdev/moko-resources/issues/384
+                    // https://github.com/icerockdev/moko-resources/issues/353
+                    res.srcDir(File(project.buildDir, "generated/moko/androidMain/res"))
+                    assets.setSrcDirs(
+                        setOf(
+                            "src/androidMain/assets",
+                        )
+                    )
+                }
             }
         }
     }

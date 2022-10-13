@@ -35,7 +35,7 @@ kotlin {
         }
         androidAndroidTest {
             dependencies {
-                implementation(libs.sqldelight.sqliteDriver)
+                implementation(libs.sqldelight.androidDriver)
             }
         }
 
@@ -67,4 +67,8 @@ kotlin {
             // No addition
         }
     }
+}
+
+android {
+    namespace = "eu.upwolf.mobile.blueprint.common.database"
 }

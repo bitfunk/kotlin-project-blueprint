@@ -17,8 +17,11 @@ kotlin {
         androidMain {
             dependencies {
                 api(libs.androidx.appCompat)
-                api(libs.androidx.core.ktx)
             }
         }
     }
+}
+
+android {
+    namespace = "eu.upwolf.mobile.blueprint.common.ui.foundation"
 }

@@ -15,8 +15,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
-import org.jetbrains.compose.ExperimentalComposeLibrary
-import org.jetbrains.compose.compose
+import org.jetbrains.compose.ComposePlugin
 
 @Suppress("UnstableApiUsage")
 class FeatureUiConfigurationPlugin : Plugin<Project> {
@@ -36,7 +35,7 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
         target.setupKotlinCompatibility(
             listOf(
-                "-Xopt-in=kotlin.RequiresOptIn"
+                "-opt-in=kotlin.RequiresOptIn"
             )
         )
     }
@@ -52,20 +51,13 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
         project.kotlin {
             sourceSets {
-                all {
-                    languageSettings.apply {
-                        optIn("org.jetbrains.compose.ExperimentalComposeLibrary")
-                    }
-                }
-
-                @OptIn(ExperimentalComposeLibrary::class)
                 maybeCreate("commonMain").dependencies {
-                    api(compose.runtime)
-                    api(compose.foundation)
-                    api(compose.material)
-                    api(compose.material3)
-                    api(compose.materialIconsExtended)
-                    api(compose.animation)
+                    api(libs.jetbrains.compose.runtime)
+                    api(libs.jetbrains.compose.foundation)
+                    api(libs.jetbrains.compose.material)
+                    api(libs.jetbrains.compose.material3)
+                    api(libs.jetbrains.compose.materialIconsExtended)
+                    api(libs.jetbrains.compose.animation)
                 }
 
                 maybeCreate("commonTest").dependencies {
@@ -96,6 +88,8 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.material)
                     implementation(libs.androidx.compose.material3)
                     implementation(libs.androidx.compose.uiToolingPreview)
+                    implementation(libs.androidx.lifecycle.viewmodel)
+                    implementation(libs.androidx.lifecycle.viewmodelKtx)
                 }
                 val androidTest = maybeCreate("androidTest")
                 androidTest.dependencies {
@@ -127,7 +121,7 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("desktopMain").dependencies {
-                    implementation(compose.desktop.currentOs)
+                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add

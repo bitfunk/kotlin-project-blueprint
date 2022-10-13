@@ -7,13 +7,12 @@ package eu.upwolf.gradle.blueprint.configuration.app.desktop
 import eu.upwolf.gradle.blueprint.configuration.kotlin
 import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
-import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.maven
 import org.gradle.kotlin.dsl.repositories
-import org.jetbrains.compose.compose
+import org.jetbrains.compose.ComposePlugin
 
 class DesktopAppConfigurationPlugin : Plugin<Project> {
 
@@ -52,10 +51,10 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
                 }
 
                 maybeCreate("desktopMain").dependencies {
-                    api(compose.runtime)
-                    api(compose.foundation)
-                    api(compose.material)
-                    implementation(compose.desktop.currentOs)
+                    api(libs.jetbrains.compose.runtime)
+                    api(libs.jetbrains.compose.foundation)
+                    api(libs.jetbrains.compose.material)
+                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add

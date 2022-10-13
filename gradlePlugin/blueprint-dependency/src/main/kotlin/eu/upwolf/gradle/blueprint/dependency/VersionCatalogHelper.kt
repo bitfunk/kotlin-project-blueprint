@@ -24,16 +24,16 @@ class DependencyHelper(
     override val project: Project
 ) : VersionCatalogHelper, Deps {
 
-    private fun findDependency(name: String): String {
-        return libs.findDependency(name).get().get().toString()
+    private fun findLibrary(name: String): String {
+        return libs.findLibrary(name).get().get().toString()
     }
 
     override val kotlin: Deps.Kotlin
         get() = object : Deps.Kotlin {
             override val core: String
-                get() = findDependency("kotlin-core")
+                get() = findLibrary("kotlin-core")
             override val android: String
-                get() = findDependency("kotlin-android")
+                get() = findLibrary("kotlin-android")
         }
 
     override val kotlinx: Deps.KotlinX
@@ -41,9 +41,9 @@ class DependencyHelper(
             override val coroutines: Deps.KotlinX.Coroutines
                 get() = object : Deps.KotlinX.Coroutines {
                     override val core: String
-                        get() = findDependency("kotlinx-coroutines-core")
+                        get() = findLibrary("kotlinx-coroutines-core")
                     override val android: String
-                        get() = findDependency("kotlinx-coroutines-android")
+                        get() = findLibrary("kotlinx-coroutines-android")
                 }
         }
 
@@ -52,55 +52,84 @@ class DependencyHelper(
             override val compose: Deps.AndroidX.Compose
                 get() = object : Deps.AndroidX.Compose {
                     override val compiler: String
-                        get() = findDependency("androidx-compose-compiler")
+                        get() = findLibrary("androidx-compose-compiler")
                     override val runtime: String
-                        get() = findDependency("androidx-compose-runtime")
+                        get() = findLibrary("androidx-compose-runtime")
                     override val foundation: String
-                        get() = findDependency("androidx-compose-foundation")
+                        get() = findLibrary("androidx-compose-foundation")
                     override val ui: String
-                        get() = findDependency("androidx-compose-ui")
+                        get() = findLibrary("androidx-compose-ui")
                     override val uiTooling: String
-                        get() = findDependency("androidx-compose-ui-uiTooling")
+                        get() = findLibrary("androidx-compose-ui-uiTooling")
                     override val uiToolingPreview: String
-                        get() = findDependency("androidx-compose-ui-uiToolingPreview")
+                        get() = findLibrary("androidx-compose-ui-uiToolingPreview")
                     override val material: String
-                        get() = findDependency("androidx-compose-material")
+                        get() = findLibrary("androidx-compose-material")
                     override val material3: String
-                        get() = findDependency("androidx-compose-material3")
+                        get() = findLibrary("androidx-compose-material3")
+                }
+            override val lifecycle: Deps.AndroidX.Lifecycle
+                get() = object : Deps.AndroidX.Lifecycle {
+                    override val viewmodel: String
+                        get() = findLibrary("androidx-lifecycle-viewmodel")
+                    override val viewmodelKtx: String
+                        get() = findLibrary("androidx-lifecycle-viewmodelKtx")
                 }
         }
+
+    override val jetbrains: Deps.JetBrains
+        get() = object : Deps.JetBrains {
+            override val compose: Deps.JetBrains.Compose
+                get() = object : Deps.JetBrains.Compose {
+                    override val compiler: String
+                        get() = findLibrary("jetbrains-compose-compiler")
+                    override val runtime: String
+                        get() = findLibrary("jetbrains-compose-runtime")
+                    override val foundation: String
+                        get() = findLibrary("jetbrains-compose-foundation")
+                    override val material: String
+                        get() = findLibrary("jetbrains-compose-material")
+                    override val materialIconsExtended: String
+                        get() = findLibrary("jetbrains-compose-material-icons-extended")
+                    override val material3: String
+                        get() = findLibrary("jetbrains-compose-material3")
+                    override val animation: String
+                        get() = findLibrary("jetbrains-compose-animation")
+                }
+        }
+
     override val decompose: Deps.Decompose
         get() = object : Deps.Decompose {
             override val core: String
-                get() = findDependency("decompose-core")
+                get() = findLibrary("decompose-core")
         }
 
     override val koin: Deps.Koin
         get() = object : Deps.Koin {
             override val core: String
-                get() = findDependency("koin-core")
+                get() = findLibrary("koin-core")
             override val test: String
-                get() = findDependency("koin-test")
+                get() = findLibrary("koin-test")
         }
 
     override val moko: Deps.Moko
         get() = object : Deps.Moko {
             override val resources: String
-                get() = findDependency("moko-resources")
+                get() = findLibrary("moko-resources")
         }
 
     override val test: Deps.Test
         get() = object : Deps.Test {
             override val junit: String
-                get() = findDependency("test-junit")
+                get() = findLibrary("test-junit")
             override val kotlin: Deps.Test.Kotlin
                 get() = object : Deps.Test.Kotlin {
                     override val core: String
-                        get() = findDependency("test-kotlin-core")
+                        get() = findLibrary("test-kotlin-core")
                     override val annotations: String
-                        get() = findDependency("test-kotlin-annotations")
+                        get() = findLibrary("test-kotlin-annotations")
                     override val junit: String
-                        get() = findDependency("test-kotlin-junit")
+                        get() = findLibrary("test-kotlin-junit")
                 }
         }
 }
@@ -158,6 +187,30 @@ interface Deps {
             val uiToolingPreview: String
             val material: String
             val material3: String
+        }
+
+        val lifecycle: Lifecycle
+
+        interface Lifecycle {
+            val viewmodel: String
+            val viewmodelKtx: String
+        }
+    }
+
+    val jetbrains: JetBrains
+
+    interface JetBrains {
+
+        val compose: Compose
+
+        interface Compose {
+            val compiler: String
+            val runtime: String
+            val foundation: String
+            val material: String
+            val materialIconsExtended: String
+            val material3: String
+            val animation: String
         }
     }
 

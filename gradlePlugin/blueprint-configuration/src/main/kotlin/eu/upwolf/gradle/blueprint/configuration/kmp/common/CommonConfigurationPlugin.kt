@@ -11,6 +11,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.gradle.kotlin.dsl.withType
+import org.jetbrains.compose.ComposePlugin
 import org.jetbrains.compose.compose
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -70,6 +71,10 @@ class CommonConfigurationPlugin : Plugin<Project> {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
+                val androidAndroidTest = maybeCreate("androidAndroidTest")
+                androidAndroidTest.dependencies {
+                    implementation("androidx.test:runner:1.4.0")
+                }
                 fixAndroidSourceSets(androidTest)
             }
         }
@@ -107,6 +112,8 @@ class CommonConfigurationPlugin : Plugin<Project> {
     }
 
     private fun setupWebTarget(project: Project) {
+        val libs = DependencyHelper(project)
+
         project.kotlin {
             project.kotlin {
                 js(IR) {
@@ -115,7 +122,8 @@ class CommonConfigurationPlugin : Plugin<Project> {
 
                 sourceSets {
                     maybeCreate("jsMain").dependencies {
-                        implementation(compose.web.core)
+                        api(libs.jetbrains.compose.runtime)
+                        implementation(ComposePlugin.Dependencies.web.core)
                     }
                     maybeCreate("jsTest").dependencies {
                         // nothing to add

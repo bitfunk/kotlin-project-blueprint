@@ -66,8 +66,7 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
         jvmTarget = "11"
 
         freeCompilerArgs = freeCompilerArgs + listOf(
-            "-Xopt-in=kotlin.RequiresOptIn",
-            "-Xopt-in=org.jetbrains.compose.ExperimentalComposeLibrary",
+            "-opt-in=kotlin.RequiresOptIn",
         )
     }
 }
@@ -127,6 +126,6 @@ tasks.check {
 }
 
 tasks.named<Wrapper>("wrapper") {
-    gradleVersion = "7.5.1"
+    gradleVersion = "7.5"
     distributionType = Wrapper.DistributionType.ALL
 }

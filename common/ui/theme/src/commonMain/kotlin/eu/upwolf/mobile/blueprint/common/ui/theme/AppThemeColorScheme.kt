@@ -34,6 +34,7 @@ class AppThemeColorScheme(
     onSurface: Color,
     surfaceVariant: Color,
     onSurfaceVariant: Color,
+    surfaceTint: Color,
     inverseSurface: Color,
     inverseOnSurface: Color,
     error: Color,
@@ -41,6 +42,8 @@ class AppThemeColorScheme(
     errorContainer: Color,
     onErrorContainer: Color,
     outline: Color,
+    outlineVariant: Color,
+    scrim: Color
 ) {
     var primary by mutableStateOf(primary, structuralEqualityPolicy())
         internal set
@@ -80,6 +83,8 @@ class AppThemeColorScheme(
         internal set
     var onSurfaceVariant by mutableStateOf(onSurfaceVariant, structuralEqualityPolicy())
         internal set
+    var surfaceTint by mutableStateOf(surfaceTint, structuralEqualityPolicy())
+        internal set
     var inverseSurface by mutableStateOf(inverseSurface, structuralEqualityPolicy())
         internal set
     var inverseOnSurface by mutableStateOf(inverseOnSurface, structuralEqualityPolicy())
@@ -93,6 +98,10 @@ class AppThemeColorScheme(
     var onErrorContainer by mutableStateOf(onErrorContainer, structuralEqualityPolicy())
         internal set
     var outline by mutableStateOf(outline, structuralEqualityPolicy())
+        internal set
+    var outlineVariant by mutableStateOf(outlineVariant, structuralEqualityPolicy())
+        internal set
+    var scrim by mutableStateOf(scrim, structuralEqualityPolicy())
         internal set
 
     fun copy(
@@ -115,6 +124,7 @@ class AppThemeColorScheme(
         onSurface: Color = this.onSurface,
         surfaceVariant: Color = this.surfaceVariant,
         onSurfaceVariant: Color = this.onSurfaceVariant,
+        surfaceTint: Color = this.surfaceTint,
         inverseSurface: Color = this.inverseSurface,
         inverseOnSurface: Color = this.inverseOnSurface,
         error: Color = this.error,
@@ -122,6 +132,8 @@ class AppThemeColorScheme(
         errorContainer: Color = this.errorContainer,
         onErrorContainer: Color = this.onErrorContainer,
         outline: Color = this.outline,
+        outlineVariant: Color = this.outlineVariant,
+        scrim: Color = this.scrim,
     ): AppThemeColorScheme = AppThemeColorScheme(
         primary = primary,
         onPrimary = onPrimary,
@@ -140,6 +152,7 @@ class AppThemeColorScheme(
         onBackground = onBackground,
         surface = surface,
         onSurface = onSurface,
+        surfaceTint = surfaceTint,
         surfaceVariant = surfaceVariant,
         onSurfaceVariant = onSurfaceVariant,
         inverseSurface = inverseSurface,
@@ -149,6 +162,8 @@ class AppThemeColorScheme(
         errorContainer = errorContainer,
         onErrorContainer = onErrorContainer,
         outline = outline,
+        outlineVariant = outlineVariant,
+        scrim = scrim,
     )
 
     fun update(other: AppThemeColorScheme) {
@@ -169,6 +184,7 @@ class AppThemeColorScheme(
         onBackground = other.onBackground
         surface = other.surface
         onSurface = other.onSurface
+        surfaceTint = other.surfaceTint
         surfaceVariant = other.surfaceVariant
         onSurfaceVariant = other.onSurfaceVariant
         inverseSurface = other.inverseSurface
@@ -178,6 +194,8 @@ class AppThemeColorScheme(
         errorContainer = other.errorContainer
         onErrorContainer = other.onErrorContainer
         outline = other.outline
+        outlineVariant = other.outlineVariant
+        scrim = other.scrim
     }
 
     override fun toString(): String {
@@ -199,6 +217,7 @@ class AppThemeColorScheme(
             "onBackground=$onBackground" +
             "surface=$surface" +
             "onSurface=$onSurface" +
+            "surfaceTint=$surfaceTint" +
             "surfaceVariant=$surfaceVariant" +
             "onSurfaceVariant=$onSurfaceVariant" +
             "inverseSurface=$inverseSurface" +
@@ -208,6 +227,8 @@ class AppThemeColorScheme(
             "errorContainer=$errorContainer" +
             "onErrorContainer=$onErrorContainer" +
             "outline=$outline" +
+            "outlineVariant=$outlineVariant" +
+            "scrim=$scrim" +
             ")"
     }
 }
@@ -232,6 +253,7 @@ val AppThemeColorSchemeLight = AppThemeColorScheme(
     onSurface = md_theme_light_onSurface,
     surfaceVariant = md_theme_light_surfaceVariant,
     onSurfaceVariant = md_theme_light_onSurfaceVariant,
+    surfaceTint = md_theme_light_surfaceTint,
     inverseSurface = md_theme_light_inverseSurface,
     inverseOnSurface = md_theme_light_inverseOnSurface,
     error = md_theme_light_error,
@@ -239,6 +261,8 @@ val AppThemeColorSchemeLight = AppThemeColorScheme(
     errorContainer = md_theme_light_errorContainer,
     onErrorContainer = md_theme_light_onErrorContainer,
     outline = md_theme_light_outline,
+    outlineVariant = md_theme_light_outlineVariant,
+    scrim = md_theme_light_scrim,
 )
 
 val AppThemeColorSchemeDark = AppThemeColorScheme(
@@ -263,11 +287,14 @@ val AppThemeColorSchemeDark = AppThemeColorScheme(
     onBackground = md_theme_dark_onBackground,
     surface = md_theme_dark_surface,
     onSurface = md_theme_dark_onSurface,
+    surfaceTint = md_theme_dark_surfaceTint,
     surfaceVariant = md_theme_dark_surfaceVariant,
     onSurfaceVariant = md_theme_dark_onSurfaceVariant,
     outline = md_theme_dark_outline,
     inverseOnSurface = md_theme_dark_inverseOnSurface,
     inverseSurface = md_theme_dark_inverseSurface,
+    outlineVariant = md_theme_dark_outlineVariant,
+    scrim = md_theme_dark_scrim,
 )
 
 /**
@@ -292,6 +319,7 @@ internal val DebugColorScheme = ColorScheme(
     onBackground = appThemeDebugColor,
     surface = appThemeDebugColor,
     onSurface = appThemeDebugColor,
+    surfaceTint = appThemeDebugColor,
     surfaceVariant = appThemeDebugColor,
     onSurfaceVariant = appThemeDebugColor,
     inverseSurface = appThemeDebugColor,
@@ -301,6 +329,8 @@ internal val DebugColorScheme = ColorScheme(
     errorContainer = appThemeDebugColor,
     onErrorContainer = appThemeDebugColor,
     outline = appThemeDebugColor,
+    // outlineVariant = appThemeDebugColor,
+    // scrim = appThemeDebugColor,
 )
 
 internal val LocalColorScheme = staticCompositionLocalOf<AppThemeColorScheme> { AppThemeColorSchemeLight }

@@ -17,3 +17,7 @@ kotlin {
         }
     }
 }
+
+android {
+    namespace = "eu.upwolf.mobile.blueprint.feature.home.component"
+}
