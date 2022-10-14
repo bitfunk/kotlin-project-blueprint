@@ -114,7 +114,7 @@ test-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine",
 test-kotlin-annotations = { module = "org.jetbrains.kotlin:kotlin-test-annotations-common", version.ref = "kotlin" }
 test-kotlin-core = { module = "org.jetbrains.kotlin:kotlin-test-common", version.ref = "kotlin" }
 test-kotlin-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
-test-robolectric = "org.robolectric:robolectric:4.5.1"
+test-robolectric = "org.robolectric:robolectric:4.9"
 
 [plugins]
 gradleBlueprintConfigurationAppAndroid = { id = "eu.upwolf.gradle.blueprint.configuration.app.android", version.ref = "blueprintConfiguration" }
