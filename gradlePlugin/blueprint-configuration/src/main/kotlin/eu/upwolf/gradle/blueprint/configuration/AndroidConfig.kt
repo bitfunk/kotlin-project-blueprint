@@ -23,5 +23,5 @@ object AndroidConfig {
     const val compileSdkVersion = 33
     const val targetSdkVersion = 33
 
-    const val resourcePrefix = "upwolf_blueprint_"
+    const val resourcePrefix = "bitfunk_blueprint_kmp_"
 }
