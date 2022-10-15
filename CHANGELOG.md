@@ -1,49 +1,33 @@
-= Changelog
-:link-repository: https://github.com/wmontwe/mobile-project-blueprint
-:doctype: article
-:toc: macro
-:toclevels: 1
-:toc-title:
-:icons: font
-:imagesdir: assets/images
-ifdef::env-github[]
-:warning-caption: :warning:
-:caution-caption: :fire:
-:important-caption: :exclamation:
-:note-caption: :paperclip:
-:tip-caption: :bulb:
-endif::[]
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
-The format is based on http://keepachangelog.com/en/1.0.0/[Keep a Changelog]
-and this project adheres to http://semver.org/spec/v2.0.0.html[Semantic Versioning].
+The format is based on [keep a changelog](http://keepachangelog.com/en/1.0.0/) and using following
+types of changes: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`, `Bumped`
+and `Migration`.
 
-[discrete]
-==== Versions
+This project adheres to [semantic versioning](http://semver.org/spec/v2.0.0.html).
 
-toc::[]
+## [Unreleased](https://github.com/wmontwe/blueprint-mobile-kmp/releases/latest)
 
-== link:{link-repository}/releases/latest[Unreleased]
+See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0...main)
 
-See link:{link-repository}/compare/v0.1.0...main[changeset]
+### Added
 
-=== Added
-
-=== Changed
+### Changed
 
 - Change JetBrains Compose dependencies to VersionCatalog
 - Change color scheme to add new surfaceTint, outlineVariant and scrim colors
 
-=== Removed
+### Removed
 
-=== Fixed
+### Fixed
 
 - Moko resources failing with Android Gradle Plugin 7.3.0 [Issue 384](https://github.com/icerockdev/moko-resources/issues/384) and [Issue 353](https://github.com/icerockdev/moko-resources/issues/353)
 
-=== Security
+### Security
 
-=== Bumped
+### Bumped
 
 - Android target API 31 -> 33
 - Gradle 7.2 -> 7.5
@@ -64,16 +48,16 @@ See link:{link-repository}/compare/v0.1.0...main[changeset]
 - SqlDelight 1.5.3 -> 1.5.4
 - Decompose 0.5.2 -> 0.8.0
 
-=== Deprecated
+### Deprecated
 
-=== Migration
+### Migration
 
-== link:{link-repository}/releases/tag/v1.0.0[1.0.0]
+## [1.0.0](https://github.com/wmontwe/blueprint-mobile-kmp/releases/tag/v0.0.1)
 
-See link:{link-repository}/compare/v0.1.0...v1.0.0[changeset]
+See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v0.1.0...v1.0.0)
 
 Experimental version 1.0.0. It is working but includes a lot of experiments and is not suitable as daily driver.
 
-== link:{link-repository}/releases/tag/v0.1.0[0.1.0]
+## [0.1.0](https://github.com/wmontwe/blueprint-mobile-kmp/releases/tag/v0.1.0)
 
 Initial release
