@@ -2,6 +2,8 @@
  * Copyright (c) 2021 Wolf-Martell Montwé. All rights reserved.
  */
 
+rootProject.name = "BlueprintMobileKmp"
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -47,5 +49,3 @@ include(
     ":feature:splash:resources",
     ":feature:splash:ui",
 )
-
-rootProject.name = "KotlinProjectBlueprint"
