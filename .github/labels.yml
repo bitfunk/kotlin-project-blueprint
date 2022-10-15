@@ -58,26 +58,26 @@
 # App
 - name: app-android
   description: App Android
-  color: 1664c0
+  color: 0f46a1
 - name: app-ios
   description: App iOS
-  color: 1664c0
+  color: 0f46a1
 - name: app-desktop
   description: App Desktop
-  color: 1664c0
+  color: 0f46a1
 - name: app-web
   description: App Web
-  color: 1664c0
-
-# Common
-- name: common
-  description: Common feature changes
-  color: a7983d
+  color: 0f46a1
 
 # Feature
 - name: feature
   description: Feature changes
   color: 26A763
+
+# Common
+- name: common
+  description: Common feature changes
+  color: a7983d
 
 # Library
 - name: library
