@@ -20,7 +20,8 @@ pluginManagement {
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
-// Gradle Plugin
+// Docs
+include("docs")
 
 // App
 include(
