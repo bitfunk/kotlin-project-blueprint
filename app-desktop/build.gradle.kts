@@ -16,7 +16,7 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-import eu.upwolf.gradle.blueprint.version.versionCleaned
+import eu.bitfunk.gradle.plugin.tool.versioning.versionCleaned
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 @Suppress("DSL_SCOPE_VIOLATION")

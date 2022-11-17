@@ -17,6 +17,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Documentation
 - MkDocs for generating project webpage
 - RenovateBot fo dependency updates
+- bitfunk versioning plugin to replace local project version plugin
 
 ### Changed
 

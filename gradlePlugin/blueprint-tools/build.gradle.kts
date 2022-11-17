@@ -16,9 +16,6 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-import eu.upwolf.gradle.blueprint.dependency.byEnv
-import eu.upwolf.gradle.blueprint.dependency.byProperty
-
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     `kotlin-dsl`
@@ -32,13 +29,6 @@ repositories {
     gradlePluginPortal()
     mavenCentral()
     google()
-    maven {
-        url = uri("https://maven.pkg.github.com/bitfunk/gradle-git-version")
-        credentials {
-            username = "githubPackageDownload.user".byProperty(project) ?: "GITHUB_PACKAGE_DOWNLOAD_USER".byEnv()
-            password = "githubPackageDownload.key".byProperty(project) ?: "GITHUB_PACKAGE_DOWNLOAD_KEY".byEnv()
-        }
-    }
 }
 
 // To make it available as direct dependency
@@ -59,11 +49,6 @@ gradlePlugin {
     plugins.register("eu.upwolf.gradle.blueprint.quality.detekt") {
         id = "eu.upwolf.gradle.blueprint.quality.detekt"
         implementationClass = "eu.upwolf.gradle.blueprint.quality.detekt.DetektConfigurationPlugin"
-    }
-    // Version
-    plugins.register("eu.upwolf.gradle.blueprint.version") {
-        id = "eu.upwolf.gradle.blueprint.version"
-        implementationClass = "eu.upwolf.gradle.blueprint.version.VersionConfigurationPlugin"
     }
 }
 
@@ -94,9 +79,6 @@ dependencies {
     // -> Spotless
     implementation(libs.gradleSpotlessPlugin)
     implementation(libs.gradleKtlintPlugin)
-
-    // Version
-    implementation(libs.gradleGitVersionPlugin)
 
     // Testing
     testImplementation(gradleTestKit())

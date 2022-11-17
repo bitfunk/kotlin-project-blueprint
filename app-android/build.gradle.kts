@@ -16,8 +16,8 @@
  * PERFORMANCE OF THIS SOFTWARE.
  */
 
-import eu.upwolf.gradle.blueprint.version.version
-import eu.upwolf.gradle.blueprint.version.versionCode
+import eu.bitfunk.gradle.plugin.tool.versioning.version
+import eu.bitfunk.gradle.plugin.tool.versioning.versionCode
 
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {

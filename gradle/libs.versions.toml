@@ -13,7 +13,6 @@ blueprintDependency = "1.0.0-SNAPSHOT"
 blueprintTools = "1.0.0-SNAPSHOT"
 decompose = "0.8.0"
 detekt = "1.21.0"
-gitVersion = "0.12.6"
 gradleVersionCatalogUpdate = "0.2.2"
 gradleVersionUpdate = "0.44.0"
 jacoco = "0.8.7"
@@ -30,6 +29,8 @@ moko-resources = "0.20.1"
 spotless = "6.11.0"
 sqlDelight = "1.5.4"
 junit-jupiter = "5.9.1"
+
+gradleBitfunkVersioning = "0.1.1"
 
 [libraries]
 accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
@@ -58,7 +59,6 @@ google-android-material = "com.google.android.material:material:1.7.0"
 gradleAndroidPlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 gradleBlueprintDependencyPlugin = { module = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency", version.ref = "blueprintDependency" }
 gradleDetektPlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
-gradleGitVersionPlugin = { module = "eu.upwolf.gradle.gitversion:gradle-git-version", version.ref = "gitVersion" }
 gradleJetbrainsApplePlugin = { module = "org.jetbrains.gradle.apple:applePlugin", version.ref = "jetbrainsAppleGradlePlugin" }
 gradleJetbrainsComposePlugin = { module = "org.jetbrains.compose:compose-gradle-plugin", version.ref = "jetbrainsCompose" }
 gradleKotlinPlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -133,6 +133,6 @@ gradleBlueprintConfigurationKmpFeature = { id = "eu.upwolf.gradle.blueprint.conf
 gradleBlueprintDependency = { id = "eu.upwolf.gradle.blueprint.dependency", version.ref = "blueprintDependency" }
 gradleBlueprintQualityDetekt = { id = "eu.upwolf.gradle.blueprint.quality.detekt", version.ref = "blueprintTools" }
 gradleBlueprintQualitySpotless = { id = "eu.upwolf.gradle.blueprint.quality.spotless", version.ref = "blueprintTools" }
-gradleBlueprintVersion = { id = "eu.upwolf.gradle.blueprint.version", version.ref = "blueprintTools" }
 gradleVersionCatalogUpdate = { id = "nl.littlerobots.version-catalog-update", version.ref = "gradleVersionCatalogUpdate" }
 gradleVersionUpdate = { id = "com.github.ben-manes.versions", version.ref = "gradleVersionUpdate" }
+gradleBitfunkVersioning = { id = "eu.bitfunk.gradle.plugin.tool.versioning", version.ref = "gradleBitfunkVersioning" }

@@ -46,7 +46,7 @@ plugins {
 
     alias(libs.plugins.gradleBlueprintQualitySpotless)
     alias(libs.plugins.gradleBlueprintQualityDetekt)
-    alias(libs.plugins.gradleBlueprintVersion)
+    alias(libs.plugins.gradleBitfunkVersioning)
 }
 
 allprojects {
