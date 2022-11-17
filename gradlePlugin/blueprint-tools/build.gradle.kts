@@ -41,15 +41,6 @@ gradlePlugin {
         id = "eu.upwolf.gradle.blueprint.publish"
         implementationClass = "eu.upwolf.gradle.blueprint.publish.PublishConfigurationPlugin"
     }
-    // Quality
-    plugins.register("eu.upwolf.gradle.blueprint.quality.spotless") {
-        id = "eu.upwolf.gradle.blueprint.quality.spotless"
-        implementationClass = "eu.upwolf.gradle.blueprint.quality.spotless.SpotlessConfigurationPlugin"
-    }
-    plugins.register("eu.upwolf.gradle.blueprint.quality.detekt") {
-        id = "eu.upwolf.gradle.blueprint.quality.detekt"
-        implementationClass = "eu.upwolf.gradle.blueprint.quality.detekt.DetektConfigurationPlugin"
-    }
 }
 
 java {
@@ -72,13 +63,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
 
 dependencies {
     implementation(libs.gradleBlueprintDependencyPlugin)
-
-    // Quality
-    // -> Detekt
-    implementation(libs.gradleDetektPlugin)
-    // -> Spotless
-    implementation(libs.gradleSpotlessPlugin)
-    implementation(libs.gradleKtlintPlugin)
 
     // Testing
     testImplementation(gradleTestKit())

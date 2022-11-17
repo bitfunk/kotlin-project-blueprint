@@ -44,8 +44,7 @@ buildscript {
 plugins {
     alias(libs.plugins.gradleBlueprintDependency)
 
-    alias(libs.plugins.gradleBlueprintQualitySpotless)
-    alias(libs.plugins.gradleBlueprintQualityDetekt)
+    alias(libs.plugins.gradleBitfunkQuality)
     alias(libs.plugins.gradleBitfunkVersioning)
 }
 
