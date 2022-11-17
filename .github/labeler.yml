@@ -10,10 +10,12 @@ dependencies:
 
 documentation:
   - docs/**/*
-  - README.adoc
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
   - LICENSE
-  - CHANGELOG.adoc
-  - CONTRIBUTION.adoc
+  - README.md
+  - SECURITY.md
 
 # App
 app-android:

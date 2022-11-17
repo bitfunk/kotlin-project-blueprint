@@ -5,14 +5,13 @@
 
 <!--- Describe your changes in detail -->
 
-## 📄 Motivation and Context
+## 📄 Motivation and context
 
 <!--- Why is this change required? What problem does it solve? -->
 <!--- If it fixes an open issue, please link to the issue here. -->
 <!--- If it is related to an open pull request, please link to the pull request here. -->
-
-* **Issue:** #1245
-* **Related:** #1, #2 (pull-request)
+<!-- - **Issue:** #1245 -->
+<!-- - **Related:** #1, #2 (pull-request) -->
 
 ## 📷 Screenshots (if appropriate):
 
@@ -24,9 +23,9 @@
 
 ### ✅ Checklist
 
-- [ ] My code follows the code style and naming conventions of this project.
-- [ ] I have updated the documentation (if appropriate).
-- [ ] I have updated the changelog accordingly.
-- [ ] I have read the **CONTRIBUTING** document.
-- [ ] I have added tests to cover my changes.
-- [ ] All new and existing tests passed.
+- [x] My code follows the code style and naming conventions of this project.
+- [x] I have updated the documentation (if appropriate).
+- [x] I have updated the changelog accordingly.
+- [x] I have read the **CONTRIBUTING** document.
+- [x] I have added tests to cover my changes.
+- [x] All new and existing tests passed.

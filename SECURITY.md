@@ -10,7 +10,7 @@ Versions currently being supported with security updates:
 
 ## Reporting a Vulnerability
 
-Please use the [GitHub Issues](https://github.com/bitfunk/kotlin-project-blueprint/issues) to report vulnerabilities.
+Please use the [GitHub Issues](https://github.com/bitfunk/blueprint-mobile-kmp/issues) to report vulnerabilities.
 
 When we receive a security bug report, we will:
 

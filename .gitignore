@@ -29,8 +29,5 @@ build-cache/
 captures/
 kotlin-js-store
 
-## Asciidoctor
-.asciidoctor/
-
 ## OS X Finder
 .DS_Store
