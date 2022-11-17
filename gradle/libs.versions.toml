@@ -1,5 +1,5 @@
 [versions]
-gradle = "7.5.1"
+gradle = "7.5"
 mkdocs = "2.4.0"
 androidGradlePlugin = "7.3.1"
 accompanist = "0.27.0"
