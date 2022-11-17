@@ -91,13 +91,6 @@ data class AppThemeTypography(
         lineHeight = 20.sp,
         letterSpacing = 0.1.sp,
     ),
-    val labelLarge: TextStyle = TextStyle(
-        fontFamily = Roboto,
-        fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        letterSpacing = 0.1.sp,
-    ),
     val bodyLarge: TextStyle = TextStyle(
         fontFamily = Roboto,
         fontWeight = FontWeight.W400,
@@ -118,6 +111,13 @@ data class AppThemeTypography(
         fontSize = 12.sp,
         lineHeight = 16.sp,
         letterSpacing = 0.4.sp,
+    ),
+    val labelLarge: TextStyle = TextStyle(
+        fontFamily = Roboto,
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
     ),
     val labelMedium: TextStyle = TextStyle(
         fontFamily = Roboto,
