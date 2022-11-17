@@ -65,7 +65,8 @@ private fun loadVectorResource(
     val key = ImageVectorCache.Key(theme, fileName)
     var imageVectorEntry = imageVectorCache[key]
     if (imageVectorEntry == null) {
-        @Suppress("ResourceType") val parser = assets.openXmlResourceParser(fileName)
+        @Suppress("ResourceType")
+        val parser = assets.openXmlResourceParser(fileName)
         if (parser.seekToStartTag().name != "vector") {
             throw IllegalArgumentException(errorMessage)
         }

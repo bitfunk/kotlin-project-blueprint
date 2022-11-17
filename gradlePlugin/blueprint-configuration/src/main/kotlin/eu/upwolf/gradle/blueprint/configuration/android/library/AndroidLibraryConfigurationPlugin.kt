@@ -24,7 +24,6 @@ import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 @Suppress("UnstableApiUsage")
 class AndroidLibraryConfigurationPlugin : Plugin<Project> {
@@ -54,7 +53,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
             }
 
             // FIXME
-            //resourcePrefix(AndroidConfig.resourcePrefix)
+            // resourcePrefix(AndroidConfig.resourcePrefix)
 
             buildTypes {
                 getByName("debug") {
@@ -105,7 +104,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                 resources {
                     excludes += setOf(
                         "META-INF/AL2.0",
-                        "META-INF/LGPL2.1",
+                        "META-INF/LGPL2.1"
                     )
                 }
             }

@@ -89,5 +89,4 @@ internal object AndroidVectorResources {
         intArrayOf(android.R.attr.name, android.R.attr.pathData)
     val STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_NAME = 0
     val STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_PATH_DATA = 1
-
 }

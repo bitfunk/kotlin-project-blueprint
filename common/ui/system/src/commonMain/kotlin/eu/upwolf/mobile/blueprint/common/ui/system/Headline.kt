@@ -24,7 +24,7 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 
 @Composable
 fun HeadlineSmall(
-    text: String,
+    text: String
 ) {
     Text(
         text = text,
@@ -35,7 +35,7 @@ fun HeadlineSmall(
 
 @Composable
 fun HeadlineMedium(
-    text: String,
+    text: String
 ) {
     Text(
         text = text,
@@ -46,7 +46,7 @@ fun HeadlineMedium(
 
 @Composable
 fun HeadlineLarge(
-    text: String,
+    text: String
 ) {
     Text(
         text = text,

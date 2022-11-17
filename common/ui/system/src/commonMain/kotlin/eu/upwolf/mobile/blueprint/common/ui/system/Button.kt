@@ -34,13 +34,13 @@ fun PrimaryButton(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = AppTheme.colorScheme.primary,
-            contentColor = AppTheme.colorScheme.onPrimary,
+            contentColor = AppTheme.colorScheme.onPrimary
         ),
         contentPadding = PaddingValues(
             start = AppTheme.dimension.spacingDouble,
             top = AppTheme.dimension.spacingSingle,
             end = AppTheme.dimension.spacingDouble,
-            bottom = AppTheme.dimension.spacingSingle,
+            bottom = AppTheme.dimension.spacingSingle
         )
     ) {
         Text(
@@ -59,13 +59,13 @@ fun SecondaryButton(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = AppTheme.colorScheme.secondary,
-            contentColor = AppTheme.colorScheme.onSecondary,
+            contentColor = AppTheme.colorScheme.onSecondary
         ),
         contentPadding = PaddingValues(
             start = AppTheme.dimension.spacingDouble,
             top = AppTheme.dimension.spacingSingle,
             end = AppTheme.dimension.spacingDouble,
-            bottom = AppTheme.dimension.spacingSingle,
+            bottom = AppTheme.dimension.spacingSingle
         )
     ) {
         Text(

@@ -26,18 +26,19 @@ about: Create a report to help us improve
 
 <!--- Provide a link to a live example, or an unambiguous set of steps to -->
 <!--- reproduce this bug. Include code to reproduce, if relevant -->
-1.
-2.
-3.
-4.
+
+1. step
+2. step
+3. step
 
 ## 📷 Screenshots
+
 <!-- If applicable, add screenshots to help explain your problem. -->
 
 ## 📱 Your Environment
 
 <!--- Include as many relevant details about the environment you experienced the bug in -->
 
-* Library/App Version used: <!-- e.g. 1.0.0 -->
-* Operating System and version (desktop or mobile): <!-- e.g. Android 12 -->
-* Device: <!-- e.g. Nexus 5 -->
+- Library/App Version used: <!-- e.g. 1.0.0 -->
+- Operating System and version (desktop or mobile): <!-- e.g. Android 12 -->
+- Device: <!-- e.g. Nexus 5 -->

@@ -35,7 +35,7 @@ fun HomePage(
     ) {
         PrimaryButton(
             text = "Exit",
-            onClick = onClick,
+            onClick = onClick
         )
     }
 }
