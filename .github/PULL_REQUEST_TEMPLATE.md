@@ -5,7 +5,7 @@
 
 <!--- Describe your changes in detail -->
 
-## 📄 Motivation and Context
+## 📄 Motivation and context
 
 <!--- Why is this change required? What problem does it solve? -->
 <!--- If it fixes an open issue, please link to the issue here. -->
@@ -23,9 +23,9 @@
 
 ### ✅ Checklist
 
-- [ ] My code follows the code style and naming conventions of this project.
-- [ ] I have updated the documentation (if appropriate).
-- [ ] I have updated the changelog accordingly.
-- [ ] I have read the **CONTRIBUTING** document.
-- [ ] I have added tests to cover my changes.
-- [ ] All new and existing tests passed.
+- [x] My code follows the code style and naming conventions of this project.
+- [x] I have updated the documentation (if appropriate).
+- [x] I have updated the changelog accordingly.
+- [x] I have read the **CONTRIBUTING** document.
+- [x] I have added tests to cover my changes.
+- [x] All new and existing tests passed.
