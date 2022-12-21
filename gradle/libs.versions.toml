@@ -28,7 +28,7 @@ sqlDelight = "1.5.4"
 junit-jupiter = "5.9.1"
 
 gradleBitfunkVersioning = "0.1.2"
-gradleBitfunkQuality = "0.1.1"
+gradleBitfunkQuality = "0.1.2"
 
 [libraries]
 accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
