@@ -48,7 +48,7 @@ fun ThemeOverview() {
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         ColorOverview()
 
@@ -152,7 +152,7 @@ private fun TypographyOverview() {
 @Composable
 private fun ColorSquare(
     color: Color,
-    name: String,
+    name: String
 ) {
     val borderColor = if (AppTheme.colorScheme.background == color) AppTheme.colorScheme.onBackground else color
 
@@ -183,7 +183,7 @@ private fun SizedLine(
     name: String
 ) {
     Row(
-        verticalAlignment = Alignment.CenterVertically,
+        verticalAlignment = Alignment.CenterVertically
     ) {
         Text(
             text = name,
@@ -204,11 +204,11 @@ private fun SizedLine(
 @Composable
 private fun TypographyText(
     typography: TextStyle,
-    name: String,
+    name: String
 ) {
     Text(
         text = name,
         color = AppTheme.colorScheme.primary,
-        style = typography,
+        style = typography
     )
 }

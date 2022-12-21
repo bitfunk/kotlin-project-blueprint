@@ -17,6 +17,8 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Documentation
 - MkDocs for generating project webpage
 - RenovateBot fo dependency updates
+- bitfunk versioning plugin to replace local project version plugin
+- bitfunk quality plugin to replace local detekt and spotless plugins
 
 ### Changed
 
@@ -63,6 +65,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Robolectric 4.5.1 -> 4.9
 - Coil Compose 1.3.2 -> 2.2.2
 - Android Desugar 1.0.9 -> 1.2.2
+- Bitfunk Versioning 0.1.1 -> 0.1.2
 
 ### Deprecated
 

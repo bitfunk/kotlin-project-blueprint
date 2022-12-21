@@ -31,7 +31,6 @@ import com.google.accompanist.insets.rememberInsetsPaddingValues
 import com.google.accompanist.insets.ui.TopAppBar
 import eu.upwolf.mobile.blueprint.android.R
 import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
-import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeDimension
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -61,12 +60,12 @@ fun AppScaffold(
 
 @Preview(
     name = "Light preview",
-    showBackground = true,
+    showBackground = true
 )
 @Preview(
     name = "Dark preview",
     showBackground = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    uiMode = Configuration.UI_MODE_NIGHT_YES
 )
 @Composable
 fun DefaultPreview() {

@@ -23,13 +23,13 @@ import com.arkivanov.decompose.router.RouterState
 import com.arkivanov.decompose.router.replaceCurrent
 import com.arkivanov.decompose.router.router
 import com.arkivanov.decompose.value.Value
+import eu.upwolf.mobile.blueprint.feature.home.component.HomeComponent
 import eu.upwolf.mobile.blueprint.feature.root.component.RootComponentContract.Child
 import eu.upwolf.mobile.blueprint.feature.root.component.RootComponentContract.Config
-import eu.upwolf.mobile.blueprint.feature.home.component.HomeComponent
 import eu.upwolf.mobile.blueprint.feature.splash.component.SplashComponent
 
 class RootComponent(
-    componentContext: ComponentContext,
+    componentContext: ComponentContext
 ) : RootComponentContract.Component, ComponentContext by componentContext {
 
     private val router = router<Config, Child>(
@@ -47,20 +47,24 @@ class RootComponent(
         }
 
     private fun splash(componentContext: ComponentContext): Child.Splash {
-        return Child.Splash(SplashComponent(
-            componentContext = componentContext,
-            onFinishedAction = {
-                router.replaceCurrent(Config.Home)
-            }
-        ))
+        return Child.Splash(
+            SplashComponent(
+                componentContext = componentContext,
+                onFinishedAction = {
+                    router.replaceCurrent(Config.Home)
+                }
+            )
+        )
     }
 
     private fun home(componentContext: ComponentContext): Child.Home {
-        return Child.Home(HomeComponent(
-            componentContext = componentContext,
-            onFinishedAction = {
-                router.replaceCurrent(Config.Splash)
-            }
-        ))
+        return Child.Home(
+            HomeComponent(
+                componentContext = componentContext,
+                onFinishedAction = {
+                    router.replaceCurrent(Config.Splash)
+                }
+            )
+        )
     }
 }

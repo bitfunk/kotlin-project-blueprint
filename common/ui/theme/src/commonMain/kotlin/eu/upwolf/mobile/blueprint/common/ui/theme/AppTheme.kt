@@ -38,7 +38,7 @@ fun AppThemeMain(
 
     AppTheme(
         colorScheme = colorScheme,
-        content = content,
+        content = content
     )
 }
 
@@ -81,7 +81,7 @@ fun AppTheme(
         colorScheme,
         dimension,
         typography,
-        size,
+        size
     ) {
         MaterialTheme(
             colorScheme = DebugColorScheme,
@@ -109,7 +109,7 @@ fun ProvideAppTheme(
         LocalColorScheme provides rememberedColorScheme,
         LocalDimension provides dimension,
         LocalTypography provides typography,
-        LocalSize provides size,
+        LocalSize provides size
     ) {
         content()
     }

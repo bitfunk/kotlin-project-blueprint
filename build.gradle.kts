@@ -44,9 +44,10 @@ buildscript {
 plugins {
     alias(libs.plugins.gradleBlueprintDependency)
 
-    alias(libs.plugins.gradleBlueprintQualitySpotless)
-    alias(libs.plugins.gradleBlueprintQualityDetekt)
-    alias(libs.plugins.gradleBlueprintVersion)
+    alias(libs.plugins.gradleBitfunkQuality)
+    alias(libs.plugins.gradleBitfunkVersioning)
+
+    id("jacoco-report-aggregation")
 }
 
 allprojects {
@@ -63,6 +64,17 @@ allprojects {
             }
         }
     }
+}
+
+reportConfig {
+    sonarProjectKey.set("bitfunk_blueprint-mobile-kmp")
+    sonarOrganization.set("bitfunk")
+    coverageReportSourceDirs.set(
+        listOf(
+            "$projectDir/plugin-development/build/reports/jacoco/testCodeCoverageReport",
+            "$projectDir/plugins/build/reports/jacoco/testCodeCoverageReport"
+        )
+    )
 }
 
 tasks.maybeCreate("clean", Delete::class.java).delete("build")

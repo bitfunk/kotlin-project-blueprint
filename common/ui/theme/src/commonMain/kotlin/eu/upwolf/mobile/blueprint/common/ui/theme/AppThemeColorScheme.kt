@@ -147,7 +147,7 @@ class AppThemeColorScheme(
         onErrorContainer: Color = this.onErrorContainer,
         outline: Color = this.outline,
         outlineVariant: Color = this.outlineVariant,
-        scrim: Color = this.scrim,
+        scrim: Color = this.scrim
     ): AppThemeColorScheme = AppThemeColorScheme(
         primary = primary,
         onPrimary = onPrimary,
@@ -177,7 +177,7 @@ class AppThemeColorScheme(
         onErrorContainer = onErrorContainer,
         outline = outline,
         outlineVariant = outlineVariant,
-        scrim = scrim,
+        scrim = scrim
     )
 
     fun update(other: AppThemeColorScheme) {
@@ -276,7 +276,7 @@ val AppThemeColorSchemeLight = AppThemeColorScheme(
     onErrorContainer = md_theme_light_onErrorContainer,
     outline = md_theme_light_outline,
     outlineVariant = md_theme_light_outlineVariant,
-    scrim = md_theme_light_scrim,
+    scrim = md_theme_light_scrim
 )
 
 val AppThemeColorSchemeDark = AppThemeColorScheme(
@@ -308,7 +308,7 @@ val AppThemeColorSchemeDark = AppThemeColorScheme(
     inverseOnSurface = md_theme_dark_inverseOnSurface,
     inverseSurface = md_theme_dark_inverseSurface,
     outlineVariant = md_theme_dark_outlineVariant,
-    scrim = md_theme_dark_scrim,
+    scrim = md_theme_dark_scrim
 )
 
 /**
@@ -342,7 +342,7 @@ internal val DebugColorScheme = ColorScheme(
     onError = appThemeDebugColor,
     errorContainer = appThemeDebugColor,
     onErrorContainer = appThemeDebugColor,
-    outline = appThemeDebugColor,
+    outline = appThemeDebugColor
     // outlineVariant = appThemeDebugColor,
     // scrim = appThemeDebugColor,
 )
