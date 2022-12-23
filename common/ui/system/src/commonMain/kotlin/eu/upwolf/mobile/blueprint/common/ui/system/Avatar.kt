@@ -59,7 +59,7 @@ object Avatar {
 @Composable
 fun Avatar(
     painter: Painter,
-    size: Avatar.Size = Avatar.Size.Medium,
+    size: Avatar.Size = Avatar.Size.Medium
 ) {
     Box(
         modifier = Modifier

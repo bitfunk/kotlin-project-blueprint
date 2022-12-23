@@ -17,6 +17,8 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Documentation
 - MkDocs for generating project webpage
 - RenovateBot fo dependency updates
+- bitfunk versioning plugin to replace local project version plugin
+- bitfunk quality plugin to replace local detekt and spotless plugins
 
 ### Changed
 
@@ -47,7 +49,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - AndroidX Test Orchestrator 1.4.1 -> 1.4.2
 - AndroidX Test Junit Ktx 1.1.3 -> 1.1.4
 - AndroidX Test Espresso 3.4.0 -> 3.5.0
-- Accompanist 0.20.3 -> 0.27.0
+- Accompanist 0.20.3 -> 0.27.1
 - Material 1.6.0-alpha01 -> 1.7.0
 - Kotlin 1.6.10 -> 1.7.20
 - Kotlin Coroutines 1.6.0 -> 1.6.4
@@ -63,6 +65,8 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Robolectric 4.5.1 -> 4.9
 - Coil Compose 1.3.2 -> 2.2.2
 - Android Desugar 1.0.9 -> 1.2.2
+- Bitfunk Versioning 0.1.1 -> 0.1.2
+- KakaoCup Compose 0.2.0 -> 0.2.1
 - MkDocs 2.4.0 -> 3.0.0
 
 ### Deprecated

@@ -124,9 +124,9 @@ Please refer to the [ISC License][license] for more information.
 
 ## Acknowledgements
 
-* [Best README Template](https://github.com/othneildrew/Best-README-Template)
-* [Issue and Pull Request Template](https://www.talater.com/open-source-templates/#/)
-* [Reaktive - Project configuration with Gradle Plugins](https://github.com/badoo/Reaktive)
-* [Jetpack Compose Theme by Jetsnack](https://github.com/android/compose-samples/tree/main/Jetsnack)
+- [Best README Template](https://github.com/othneildrew/Best-README-Template)
+- [Issue and Pull Request Template](https://www.talater.com/open-source-templates/#/)
+- [Reaktive - Project configuration with Gradle Plugins](https://github.com/badoo/Reaktive)
+- [Jetpack Compose Theme by Jetsnack](https://github.com/android/compose-samples/tree/main/Jetsnack)
 
 <!--readme-end-->

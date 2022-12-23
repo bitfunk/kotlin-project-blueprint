@@ -21,7 +21,6 @@ package eu.upwolf.gradle.blueprint.configuration.app.android
 import eu.upwolf.gradle.blueprint.configuration.AndroidConfig
 import eu.upwolf.gradle.blueprint.configuration.androidApp
 import eu.upwolf.gradle.blueprint.configuration.implementation
-import eu.upwolf.gradle.blueprint.configuration.setupKotlinCompatibility
 import eu.upwolf.gradle.blueprint.dependency.DependencyHelper
 import eu.upwolf.gradle.blueprint.dependency.VersionHelper
 import org.gradle.api.JavaVersion
@@ -112,7 +111,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
                 resources {
                     excludes += setOf(
                         "META-INF/AL2.0",
-                        "META-INF/LGPL2.1",
+                        "META-INF/LGPL2.1"
                     )
                 }
             }

@@ -29,7 +29,7 @@ data class AppThemeDimension(
     val spacingOneHalf: Dp = 12.dp,
     val spacingDouble: Dp = 16.dp,
     val spacingTriple: Dp = 24.dp,
-    val spacingQuadruple: Dp = 32.dp,
+    val spacingQuadruple: Dp = 32.dp
 )
 
 internal val LocalDimension = staticCompositionLocalOf { AppThemeDimension() }
