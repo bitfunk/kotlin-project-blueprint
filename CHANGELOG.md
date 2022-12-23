@@ -66,6 +66,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Coil Compose 1.3.2 -> 2.2.2
 - Android Desugar 1.0.9 -> 1.2.2
 - Bitfunk Versioning 0.1.1 -> 0.1.2
+- KakaoCup Compose 0.2.0 -> 0.2.1
 
 ### Deprecated
 
