@@ -67,6 +67,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Android Desugar 1.0.9 -> 1.2.2
 - Bitfunk Versioning 0.1.1 -> 0.1.2
 - KakaoCup Compose 0.2.0 -> 0.2.1
+- MkDocs 2.4.0 -> 3.0.0
 
 ### Deprecated
 
