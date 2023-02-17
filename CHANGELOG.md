@@ -40,7 +40,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Gradle 7.2 -> 7.5
 - Android Gradle Plugin 7.1.0 -> 7.3.1
 - Jetpack Compose 1.0.5 -> 1.3.1
-- Jetpack Compose Compiler 1.0.5 -> 1.3.2
+- Jetpack Compose Compiler 1.0.5 -> 1.3.2.3
 - Jetbrains Compose 1.0.1 -> 1.2.1
 - AndroidX AppCompat 1.4.2 -> 1.5.1
 - AndroidX CoreKtx 1.7.0 -> 1.9.0
