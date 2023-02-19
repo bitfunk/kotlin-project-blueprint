@@ -24,33 +24,33 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 
 @Composable
 fun HeadlineSmall(
-    text: String
+    text: String,
 ) {
     Text(
         text = text,
         color = AppTheme.colorScheme.onBackground,
-        style = AppTheme.typography.headlineSmall
+        style = AppTheme.typography.headlineSmall,
     )
 }
 
 @Composable
 fun HeadlineMedium(
-    text: String
+    text: String,
 ) {
     Text(
         text = text,
         color = AppTheme.colorScheme.onBackground,
-        style = AppTheme.typography.headlineMedium
+        style = AppTheme.typography.headlineMedium,
     )
 }
 
 @Composable
 fun HeadlineLarge(
-    text: String
+    text: String,
 ) {
     Text(
         text = text,
         color = AppTheme.colorScheme.onBackground,
-        style = AppTheme.typography.headlineLarge
+        style = AppTheme.typography.headlineLarge,
     )
 }

@@ -46,7 +46,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
                 testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testInstrumentationRunnerArguments += mapOf(
-                    "clearPackageData" to "true"
+                    "clearPackageData" to "true",
                 )
 
                 consumerProguardFiles("consumer-rules.pro")
@@ -63,7 +63,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                     isMinifyEnabled = false
                     proguardFiles(
                         getDefaultProguardFile("proguard-android-optimize.txt"),
-                        "proguard-rules.pro"
+                        "proguard-rules.pro",
                     )
                     matchingFallbacks += listOf("release")
                 }
@@ -104,7 +104,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
                 resources {
                     excludes += setOf(
                         "META-INF/AL2.0",
-                        "META-INF/LGPL2.1"
+                        "META-INF/LGPL2.1",
                     )
                 }
             }

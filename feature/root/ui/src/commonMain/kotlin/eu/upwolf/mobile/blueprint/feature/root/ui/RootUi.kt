@@ -33,7 +33,7 @@ import eu.upwolf.mobile.blueprint.feature.splash.ui.SplashContent
 fun RootContent(component: RootComponentContract.Component) {
     Children(
         routerState = component.routerState,
-        animation = childAnimation(fade())
+        animation = childAnimation(fade()),
     ) {
         when (val child = it.instance) {
             is Child.Splash -> SplashContent(component = child.component)

@@ -32,7 +32,7 @@ python {
         "mkdocs-redirects:1.2.0",
         "mkdocs-minify-plugin:0.5.0",
         "pygments:2.13.0",
-        "pymdown-extensions:9.5"
+        "pymdown-extensions:9.5",
     )
 }
 
@@ -52,7 +52,7 @@ mkdocs {
     strict = true
 
     extras = mapOf(
-        "version" to currentDocVersion
+        "version" to currentDocVersion,
     )
 }
 

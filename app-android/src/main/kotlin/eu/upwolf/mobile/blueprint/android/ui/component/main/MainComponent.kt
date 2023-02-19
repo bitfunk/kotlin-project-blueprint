@@ -22,7 +22,7 @@ import com.arkivanov.decompose.ComponentContext
 
 class MainComponent(
     componentContext: ComponentContext,
-    private val onBottomBarItem: () -> Unit
+    private val onBottomBarItem: () -> Unit,
 ) : MainContract, ComponentContext by componentContext {
 
     override fun onBottomBarItemClicked() {

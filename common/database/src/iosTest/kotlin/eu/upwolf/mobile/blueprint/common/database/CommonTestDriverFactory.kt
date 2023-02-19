@@ -25,7 +25,7 @@ actual object CommonTestDriverFactory : CommonDatabaseContract.DriverFactory {
     actual override suspend fun createDriver(schema: SqlDriver.Schema): SqlDriver {
         return NativeSqliteDriver(
             schema = schema,
-            name = CommonDatabaseContract.DATABASE_NAME
+            name = CommonDatabaseContract.DATABASE_NAME,
         )
     }
 }

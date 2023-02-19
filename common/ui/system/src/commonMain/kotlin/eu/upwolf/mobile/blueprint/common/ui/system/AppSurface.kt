@@ -26,11 +26,11 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 @Composable
 fun AppSurface(
     modifier: Modifier = Modifier,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     Surface(
         modifier = modifier,
         color = AppTheme.colorScheme.background,
-        content = content
+        content = content,
     )
 }

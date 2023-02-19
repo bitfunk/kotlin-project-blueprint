@@ -93,13 +93,13 @@ internal fun XmlPullParser.isAtEnd(): Boolean =
 internal fun AndroidVectorParser.createVectorImageBuilder(
     res: Resources,
     theme: Resources.Theme?,
-    attrs: AttributeSet
+    attrs: AttributeSet,
 ): ImageVector.Builder {
     val vectorAttrs = obtainAttributes(
         res,
         theme,
         attrs,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_TYPE_ARRAY,
     )
 
     // TODO (njawad) handle mirroring here
@@ -110,35 +110,35 @@ internal fun AndroidVectorParser.createVectorImageBuilder(
         vectorAttrs,
         "viewportWidth",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_VIEWPORT_WIDTH,
-        0.0f
+        0.0f,
     )
 
     val viewportHeight = getNamedFloat(
         vectorAttrs,
         "viewportHeight",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_VIEWPORT_HEIGHT,
-        0.0f
+        0.0f,
     )
 
     if (viewportWidth <= 0) {
         throw XmlPullParserException(
-            vectorAttrs.positionDescription + "<VectorGraphic> tag requires viewportWidth > 0"
+            vectorAttrs.positionDescription + "<VectorGraphic> tag requires viewportWidth > 0",
         )
     } else if (viewportHeight <= 0) {
         throw XmlPullParserException(
-            vectorAttrs.positionDescription + "<VectorGraphic> tag requires viewportHeight > 0"
+            vectorAttrs.positionDescription + "<VectorGraphic> tag requires viewportHeight > 0",
         )
     }
 
     val defaultWidth = getDimension(
         vectorAttrs,
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_WIDTH,
-        0.0f
+        0.0f,
     )
     val defaultHeight = getDimension(
         vectorAttrs,
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_HEIGHT,
-        0.0f
+        0.0f,
     )
 
     val tintColor = if (
@@ -157,7 +157,7 @@ internal fun AndroidVectorParser.createVectorImageBuilder(
                 vectorAttrs,
                 theme,
                 "tint",
-                AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_TINT
+                AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_TINT,
             )
             if (tintColorStateList != null) {
                 Color(tintColorStateList.defaultColor)
@@ -172,7 +172,7 @@ internal fun AndroidVectorParser.createVectorImageBuilder(
     val blendModeValue = getInt(
         vectorAttrs,
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_TINT_MODE,
-        -1
+        -1,
     )
     val tintBlendMode = if (blendModeValue != -1) {
         when (blendModeValue) {
@@ -201,7 +201,7 @@ internal fun AndroidVectorParser.createVectorImageBuilder(
         viewportWidth = viewportWidth,
         viewportHeight = viewportHeight,
         tintColor = tintColor,
-        tintBlendMode = tintBlendMode
+        tintBlendMode = tintBlendMode,
     )
 }
 
@@ -210,13 +210,13 @@ internal fun AndroidVectorParser.parsePath(
     res: Resources,
     theme: Resources.Theme?,
     attrs: AttributeSet,
-    builder: ImageVector.Builder
+    builder: ImageVector.Builder,
 ) {
     val a = obtainAttributes(
         res,
         theme,
         attrs,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH,
     )
 
     val hasPathData = TypedArrayUtils.hasAttribute(xmlParser, "pathData")
@@ -228,7 +228,7 @@ internal fun AndroidVectorParser.parsePath(
 
     val name: String = getString(
         a,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_NAME
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_NAME,
     ) ?: ""
 
     val pathStr = getString(a, AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_PATH_DATA)
@@ -240,26 +240,26 @@ internal fun AndroidVectorParser.parsePath(
         theme,
         "fillColor",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_FILL_COLOR,
-        0
+        0,
     )
     val fillAlpha = getNamedFloat(
         a,
         "fillAlpha",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_FILL_ALPHA,
-        1.0f
+        1.0f,
     )
     val lineCap = getNamedInt(
         a,
         "strokeLineCap",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_CAP,
-        -1
+        -1,
     )
     val strokeLineCap = getStrokeLineCap(lineCap, StrokeCap.Butt)
     val lineJoin = getNamedInt(
         a,
         "strokeLineJoin",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_LINE_JOIN,
-        -1
+        -1,
     )
     val strokeLineJoin =
         getStrokeLineJoin(lineJoin, StrokeJoin.Bevel)
@@ -267,52 +267,52 @@ internal fun AndroidVectorParser.parsePath(
         a,
         "strokeMiterLimit",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_MITER_LIMIT,
-        1.0f
+        1.0f,
     )
     val strokeColor = getNamedComplexColor(
         a,
         theme,
         "strokeColor",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_COLOR,
-        0
+        0,
     )
     val strokeAlpha = getNamedFloat(
         a,
         "strokeAlpha",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_ALPHA,
-        1.0f
+        1.0f,
     )
     val strokeLineWidth = getNamedFloat(
         a,
         "strokeWidth",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_STROKE_WIDTH,
-        1.0f
+        1.0f,
     )
 
     val trimPathEnd = getNamedFloat(
         a,
         "trimPathEnd",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_END,
-        1.0f
+        1.0f,
     )
     val trimPathOffset = getNamedFloat(
         a,
         "trimPathOffset",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_OFFSET,
-        0.0f
+        0.0f,
     )
     val trimPathStart = getNamedFloat(
         a,
         "trimPathStart",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_START,
-        0.0f
+        0.0f,
     )
 
     val fillRule = getNamedInt(
         a,
         "fillType",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_PATH_TRIM_PATH_FILLTYPE,
-        FILL_TYPE_WINDING
+        FILL_TYPE_WINDING,
     )
 
     a.recycle()
@@ -335,7 +335,7 @@ internal fun AndroidVectorParser.parsePath(
         strokeMiterLimit,
         trimPathStart,
         trimPathEnd,
-        trimPathOffset
+        trimPathOffset,
     )
 }
 
@@ -357,7 +357,7 @@ internal fun AndroidVectorParser.parseCurrentVectorNode(
     attrs: AttributeSet,
     theme: Resources.Theme? = null,
     builder: ImageVector.Builder,
-    nestedGroups: Int
+    nestedGroups: Int,
 ): Int {
     when (xmlParser.eventType) {
         XmlPullParser.START_TAG -> {
@@ -390,24 +390,24 @@ internal fun AndroidVectorParser.parseClipPath(
     res: Resources,
     theme: Resources.Theme?,
     attrs: AttributeSet,
-    builder: ImageVector.Builder
+    builder: ImageVector.Builder,
 ) {
     val a = obtainAttributes(
         res,
         theme,
         attrs,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH,
     )
 
     val name: String = getString(
         a,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_NAME
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_NAME,
     ) ?: ""
     val pathData = addPathNodes(
         getString(
             a,
-            AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_PATH_DATA
-        )
+            AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_CLIP_PATH_PATH_DATA,
+        ),
     )
     a.recycle()
 
@@ -416,7 +416,7 @@ internal fun AndroidVectorParser.parseClipPath(
     // <path> that comes after it in <group>.
     builder.addGroup(
         name = name,
-        clipPathData = pathData
+        clipPathData = pathData,
     )
 }
 
@@ -424,13 +424,13 @@ internal fun AndroidVectorParser.parseGroup(
     res: Resources,
     theme: Resources.Theme?,
     attrs: AttributeSet,
-    builder: ImageVector.Builder
+    builder: ImageVector.Builder,
 ) {
     val a = obtainAttributes(
         res,
         theme,
         attrs,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP,
     )
 
     // Account for any configuration changes.
@@ -444,18 +444,18 @@ internal fun AndroidVectorParser.parseGroup(
         a,
         "rotation",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_ROTATION,
-        DefaultRotation
+        DefaultRotation,
     )
 
     val pivotX = getFloat(
         a,
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_PIVOT_X,
-        DefaultPivotX
+        DefaultPivotX,
     )
     val pivotY = getFloat(
         a,
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_PIVOT_Y,
-        DefaultPivotY
+        DefaultPivotY,
     )
 
     // This is added in API 11
@@ -463,7 +463,7 @@ internal fun AndroidVectorParser.parseGroup(
         a,
         "scaleX",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_SCALE_X,
-        DefaultScaleX
+        DefaultScaleX,
     )
 
     // This is added in API 11
@@ -471,25 +471,25 @@ internal fun AndroidVectorParser.parseGroup(
         a,
         "scaleY",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_SCALE_Y,
-        DefaultScaleY
+        DefaultScaleY,
     )
 
     val translateX = getNamedFloat(
         a,
         "translateX",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_TRANSLATE_X,
-        DefaultTranslationX
+        DefaultTranslationX,
     )
     val translateY = getNamedFloat(
         a,
         "translateY",
         AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_TRANSLATE_Y,
-        DefaultTranslationY
+        DefaultTranslationY,
     )
 
     val name: String = getString(
         a,
-        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_NAME
+        AndroidVectorResources.STYLEABLE_VECTOR_DRAWABLE_GROUP_NAME,
     ) ?: ""
 
     a.recycle()
@@ -503,7 +503,7 @@ internal fun AndroidVectorParser.parseGroup(
         scaleY,
         translateX,
         translateY,
-        EmptyPath
+        EmptyPath,
     )
 }
 
@@ -522,7 +522,7 @@ internal fun XmlPullParser.seekToStartTag(): XmlPullParser {
 
 internal data class AndroidVectorParser(
     val xmlParser: XmlPullParser,
-    var config: Int = 0
+    var config: Int = 0,
 ) {
 
     private fun updateConfig(resConfig: Int) {
@@ -538,13 +538,13 @@ internal data class AndroidVectorParser(
         res: Resources,
         theme: Resources.Theme?,
         set: AttributeSet,
-        attrs: IntArray
+        attrs: IntArray,
     ): TypedArray {
         val typedArray = TypedArrayUtils.obtainAttributes(
             res,
             theme,
             set,
-            attrs
+            attrs,
         )
         updateConfig(typedArray.changingConfigurations)
         return typedArray
@@ -560,7 +560,7 @@ internal data class AndroidVectorParser(
         typedArray: TypedArray,
         attrName: String,
         @StyleableRes resId: Int,
-        defaultValue: Int
+        defaultValue: Int,
     ): Int {
         with(typedArray) {
             val result = TypedArrayUtils.getNamedInt(
@@ -568,7 +568,7 @@ internal data class AndroidVectorParser(
                 xmlParser,
                 attrName,
                 resId,
-                defaultValue
+                defaultValue,
             )
             updateConfig(changingConfigurations)
             return result
@@ -585,7 +585,7 @@ internal data class AndroidVectorParser(
         typedArray: TypedArray,
         attrName: String,
         @StyleableRes resId: Int,
-        defaultValue: Float
+        defaultValue: Float,
     ): Float {
         with(typedArray) {
             val result = TypedArrayUtils.getNamedFloat(
@@ -593,7 +593,7 @@ internal data class AndroidVectorParser(
                 xmlParser,
                 attrName,
                 resId,
-                defaultValue
+                defaultValue,
             )
             updateConfig(changingConfigurations)
             return result
@@ -608,7 +608,7 @@ internal data class AndroidVectorParser(
         with(typedArray) {
             val result = getFloat(
                 index,
-                defaultValue
+                defaultValue,
             )
             updateConfig(changingConfigurations)
             return result
@@ -662,7 +662,7 @@ internal data class AndroidVectorParser(
         theme: Resources.Theme?,
         attrName: String,
         @StyleableRes resId: Int,
-        @ColorInt defaultValue: Int
+        @ColorInt defaultValue: Int,
     ): ComplexColorCompat {
         with(typedArray) {
             val result = TypedArrayUtils.getNamedComplexColor(
@@ -671,7 +671,7 @@ internal data class AndroidVectorParser(
                 theme,
                 attrName,
                 resId,
-                defaultValue
+                defaultValue,
             )
             updateConfig(changingConfigurations)
             return result
@@ -688,7 +688,7 @@ internal data class AndroidVectorParser(
         typedArray: TypedArray,
         theme: Resources.Theme?,
         attrName: String,
-        @StyleableRes resId: Int
+        @StyleableRes resId: Int,
     ): ColorStateList? {
         with(typedArray) {
             val result = TypedArrayUtils.getNamedColorStateList(
@@ -696,7 +696,7 @@ internal data class AndroidVectorParser(
                 xmlParser,
                 theme,
                 attrName,
-                resId
+                resId,
             )
             updateConfig(changingConfigurations)
             return result

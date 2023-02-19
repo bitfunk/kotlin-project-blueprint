@@ -35,7 +35,7 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppScaffold(
-    content: @Composable (PaddingValues) -> Unit
+    content: @Composable (PaddingValues) -> Unit,
 ) {
     // val navController = rememberNavController()
 
@@ -43,29 +43,29 @@ fun AppScaffold(
         topBar = {
             TopAppBar(
                 contentPadding = rememberInsetsPaddingValues(
-                    insets = LocalWindowInsets.current.statusBars
+                    insets = LocalWindowInsets.current.statusBars,
                 ),
                 backgroundColor = AppTheme.colorScheme.primary,
                 title = {
                     Text(
                         text = stringResource(id = R.string.app_name),
-                        color = AppTheme.colorScheme.onPrimary
+                        color = AppTheme.colorScheme.onPrimary,
                     )
-                }
+                },
             )
         },
-        content = content
+        content = content,
     )
 }
 
 @Preview(
     name = "Light preview",
-    showBackground = true
+    showBackground = true,
 )
 @Preview(
     name = "Dark preview",
     showBackground = true,
-    uiMode = Configuration.UI_MODE_NIGHT_YES
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
 )
 @Composable
 fun DefaultPreview() {

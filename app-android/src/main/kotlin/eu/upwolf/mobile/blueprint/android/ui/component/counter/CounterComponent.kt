@@ -31,7 +31,7 @@ fun CounterUi(counter: Counter) {
 
     Column {
         Text(
-            text = state.count.toString()
+            text = state.count.toString(),
         )
 
         Button(onClick = counter::increment) {

@@ -49,8 +49,8 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
         target.setupKotlinCompatibility(
             listOf(
-                "-opt-in=kotlin.RequiresOptIn"
-            )
+                "-opt-in=kotlin.RequiresOptIn",
+            ),
         )
     }
 

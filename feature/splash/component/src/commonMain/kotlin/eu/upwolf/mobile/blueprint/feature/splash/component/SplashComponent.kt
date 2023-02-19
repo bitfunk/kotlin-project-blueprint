@@ -22,7 +22,7 @@ import com.arkivanov.decompose.ComponentContext
 
 class SplashComponent(
     componentContext: ComponentContext,
-    private val onFinishedAction: () -> Unit
+    private val onFinishedAction: () -> Unit,
 ) : SplashContract.Component, ComponentContext by componentContext {
 
     override fun onFinished() {

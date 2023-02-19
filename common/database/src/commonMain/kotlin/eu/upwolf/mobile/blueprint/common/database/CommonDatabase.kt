@@ -24,7 +24,7 @@ import com.squareup.sqldelight.db.SqlDriver
 // - add logger
 // - add background dispatcher
 class CommonDatabase(
-    private val driverProvider: suspend (SqlDriver.Schema) -> SqlDriver
+    private val driverProvider: suspend (SqlDriver.Schema) -> SqlDriver,
 ) : CommonDatabaseContract {
 
     private var database: CommonSqlDatabase? = null

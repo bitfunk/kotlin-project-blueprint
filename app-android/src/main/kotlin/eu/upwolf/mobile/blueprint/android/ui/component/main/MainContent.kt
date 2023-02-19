@@ -28,14 +28,14 @@ import androidx.compose.ui.Modifier
 @Composable
 fun MainContent(
     main: MainContract,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Box(
         modifier = modifier,
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Button(
-            onClick = main::onBottomBarItemClicked
+            onClick = main::onBottomBarItemClicked,
         ) {
             Text(text = "Go to Feature1")
         }

@@ -27,15 +27,15 @@ import eu.upwolf.mobile.blueprint.common.ui.system.PrimaryButton
 
 @Composable
 fun HomePage(
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
     ) {
         PrimaryButton(
             text = "Exit",
-            onClick = onClick
+            onClick = onClick,
         )
     }
 }

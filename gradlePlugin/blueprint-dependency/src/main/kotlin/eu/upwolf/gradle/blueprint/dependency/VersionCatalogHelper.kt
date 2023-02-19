@@ -36,7 +36,7 @@ internal interface VersionCatalogHelper {
 }
 
 class DependencyHelper(
-    override val project: Project
+    override val project: Project,
 ) : VersionCatalogHelper, Deps {
 
     private fun findLibrary(name: String): String {
@@ -155,7 +155,7 @@ class DependencyHelper(
 }
 
 class VersionHelper(
-    override val project: Project
+    override val project: Project,
 ) : VersionCatalogHelper, Versions {
 
     private fun findVersion(name: String): String {

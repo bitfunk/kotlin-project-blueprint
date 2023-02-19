@@ -43,18 +43,18 @@ internal val LocalImageVectorCache = staticCompositionLocalOf<ImageVectorCache> 
 
 @Composable
 fun ProvideImageVectorCache(
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
     var configuration by remember {
         mutableStateOf(
             context.resources.configuration,
-            neverEqualPolicy()
+            neverEqualPolicy(),
         )
     }
     val imageVectorCache = obtainImageVectorCache(context, configuration)
     CompositionLocalProvider(
-        LocalImageVectorCache provides imageVectorCache
+        LocalImageVectorCache provides imageVectorCache,
     ) {
         content()
     }
@@ -64,7 +64,7 @@ fun ProvideImageVectorCache(
 @Composable
 private fun obtainImageVectorCache(
     context: Context,
-    configuration: Configuration?
+    configuration: Configuration?,
 ): ImageVectorCache {
     val imageVectorCache = remember { ImageVectorCache() }
     var currentConfiguration = remember { configuration }

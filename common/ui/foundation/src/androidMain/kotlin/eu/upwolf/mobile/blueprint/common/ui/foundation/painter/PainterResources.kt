@@ -59,7 +59,7 @@ private fun loadVectorResource(
     theme: Resources.Theme,
     res: Resources,
     assets: AssetManager,
-    fileName: String
+    fileName: String,
 ): ImageVector {
     val imageVectorCache = LocalImageVectorCache.current
     val key = ImageVectorCache.Key(theme, fileName)
