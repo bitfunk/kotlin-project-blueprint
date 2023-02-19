@@ -27,7 +27,6 @@ build-cache/
 
 # Others
 captures/
-kotlin-js-store
 
 ## OS X Finder
 .DS_Store
