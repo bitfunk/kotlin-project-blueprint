@@ -137,7 +137,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
                 sourceSets {
                     maybeCreate("jsMain").dependencies {
                         api(libs.jetbrains.compose.runtime)
-                        implementation(ComposePlugin.Dependencies.web.core)
+                        implementation(ComposePlugin.WebDependencies.core)
                     }
                     maybeCreate("jsTest").dependencies {
                         // nothing to add

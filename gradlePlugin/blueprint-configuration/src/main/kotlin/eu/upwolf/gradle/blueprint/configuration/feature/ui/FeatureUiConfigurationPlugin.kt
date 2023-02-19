@@ -135,7 +135,7 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("desktopMain").dependencies {
-                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
+                    implementation(ComposePlugin.DesktopDependencies.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add
