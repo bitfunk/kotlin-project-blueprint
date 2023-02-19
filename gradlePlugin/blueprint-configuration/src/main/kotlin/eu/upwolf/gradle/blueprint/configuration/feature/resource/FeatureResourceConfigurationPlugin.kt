@@ -91,20 +91,9 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
         project.androidLibrary {
             sourceSets {
                 getByName("main") {
-                    kotlin.setSrcDirs(
-                        setOf(
-                            "src/androidMain/kotlin",
-                        ),
-                    )
-                    res.srcDir("src/androidMain/res")
                     // FIX for https://github.com/icerockdev/moko-resources/issues/384
                     // https://github.com/icerockdev/moko-resources/issues/353
                     res.srcDir(File(project.buildDir, "generated/moko/androidMain/res"))
-                    assets.setSrcDirs(
-                        setOf(
-                            "src/androidMain/assets",
-                        ),
-                    )
                 }
             }
         }

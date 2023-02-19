@@ -85,18 +85,7 @@ class AndroidLibraryConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 getByName("main") {
-                    java.setSrcDirs(setOf("src/androidMain/kotlin"))
                     res.setSrcDirs(setOf("src/androidMain/res", "src/commonMain/resources"))
-                }
-
-                getByName("test") {
-                    java.setSrcDirs(setOf("src/androidTest/kotlin"))
-                    res.setSrcDirs(setOf("src/androidTest/res"))
-                }
-
-                getByName("androidTest") {
-                    java.setSrcDirs(setOf("src/androidAndroidTest/kotlin"))
-                    res.setSrcDirs(setOf("src/androidAndroidTest/res"))
                 }
             }
 
