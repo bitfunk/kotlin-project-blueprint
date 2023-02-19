@@ -62,7 +62,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Ktor 1.6.2 -> 2.1.3
 - Koin 3.1.4 -> 3.3.1
 - Kotlin Serialization 1.2.2 -> 1.4.1
-- Robolectric 4.5.1 -> 4.9
+- Robolectric 4.5.1 -> 4.9.2
 - Coil Compose 1.3.2 -> 2.2.2
 - Android Desugar 1.0.9 -> 1.2.2
 - Bitfunk Versioning 0.1.1 -> 0.1.2
