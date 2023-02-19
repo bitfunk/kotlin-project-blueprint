@@ -40,36 +40,38 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Gradle 7.2 -> 8.0.1
 - Android Gradle Plugin 7.1.0 -> 7.4.1
 - Jetpack Compose 1.0.5 -> 1.3.1
-- Jetpack Compose Compiler 1.0.5 -> 1.3.2
-- Jetbrains Compose 1.0.1 -> 1.2.1
-- AndroidX AppCompat 1.4.2 -> 1.5.1
+- Jetpack Compose Compiler 1.0.5 -> 1.4.0
+- Jetbrains Compose 1.0.1 -> 1.3.0
+- AndroidX AppCompat 1.4.2 -> 1.6.1
 - AndroidX CoreKtx 1.7.0 -> 1.9.0
 - AndroidX Activity Compose 1.4.0 -> 1.6.1
 - AndroidX Test 1.4.0 -> 1.5.0
 - AndroidX Test Orchestrator 1.4.1 -> 1.4.2
-- AndroidX Test Junit Ktx 1.1.3 -> 1.1.4
-- AndroidX Test Espresso 3.4.0 -> 3.5.0
-- Accompanist 0.20.3 -> 0.27.1
-- Material 1.6.0-alpha01 -> 1.7.0
+- AndroidX Test Junit Ktx 1.1.3 -> 1.1.5
+- AndroidX Test Espresso 3.4.0 -> 3.5.1
+- Accompanist 0.20.3 -> 0.28.1
+- Material 1.6.0-alpha01 -> 1.8.0
 - Kotlin 1.6.10 -> 1.8.0
 - Kotlin Coroutines 1.6.0 -> 1.6.4
 - AndroidX Compose UI 1.1.1 -> 1.2.1
 - Kakaocup Compose 0.0.6 -> 0.2.0
 - Material Compose 1.1.0-rc03 -> 1.3.1
-- Material3 Compose 1.0.0-alpha04 -> 1.0.0-alpha14
-- SqlDelight 1.5.3 -> 1.5.4
+- Material3 Compose 1.0.0-alpha04 -> 1.0.1
+- SqlDelight 1.5.3 -> 1.5.5
 - Decompose 0.5.2 -> 0.8.0
 - Ktor 1.6.2 -> 2.1.3
-- Koin 3.1.4 -> 3.3.1
+- Koin 3.1.4 -> 3.3.3
 - Kotlin Serialization 1.2.2 -> 1.4.1
 - Robolectric 4.5.1 -> 4.9
 - Coil Compose 1.3.2 -> 2.2.2
 - Android Desugar 1.0.9 -> 1.2.2
-- Bitfunk Versioning 0.1.1 -> 0.1.2
-- KakaoCup Compose 0.2.0 -> 0.2.1
+- Bitfunk Versioning 0.1.1 -> 0.2.0
+- KakaoCup Compose 0.2.0 -> 0.2.2
 - MkDocs 2.4.0 -> 3.0.0
 - Bitfunk Quality 0.1.1 -> 0.2.0
-- Bitfunk Versioning 0.1.2 -> 0.2.0
+- Version Update 0.44.0 -> 0.45.0
+- JUnit Jupiter 5.9.1 -> 5.9.2 
+- Android Desugar 1.2.2 -> 2.0.2
 
 ### Deprecated
 

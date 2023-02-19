@@ -20,6 +20,7 @@
 
 package eu.upwolf.gradle.blueprint.dependency
 
+import eu.upwolf.gradle.blueprint.dependency.Deps.Test.AndroidX
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -145,6 +146,11 @@ class DependencyHelper(
                     override val junit: String
                         get() = findLibrary("test-kotlin-junit")
                 }
+            override val androidx: AndroidX
+                get() = object : Deps.Test.AndroidX {
+                    override val runner: String
+                        get() = findLibrary("test-androidx-runner")
+                }
         }
 }
 
@@ -254,10 +260,16 @@ interface Deps {
 
         val kotlin: Kotlin
 
+        val androidx: AndroidX
+
         interface Kotlin {
             val core: String
             val annotations: String
             val junit: String
+        }
+
+        interface AndroidX {
+            val runner: String
         }
     }
 }
