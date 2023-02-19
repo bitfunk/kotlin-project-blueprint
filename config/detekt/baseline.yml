@@ -68,5 +68,6 @@
     <ID>SwallowedException:PainterResources.kt$throwable: Throwable</ID>
     <ID>TooGenericExceptionCaught:PainterResources.kt$throwable: Throwable</ID>
     <ID>TopLevelPropertyNaming:PainterResources.kt$private const val errorMessage = "Only VectorDrawables and rasterized asset types are supported ex. PNG, JPG"</ID>
+    <ID>UseRequire:XmlVectorParser.kt$throw IllegalArgumentException("No path data available")</ID>
   </CurrentIssues>
 </SmellBaseline>

@@ -342,9 +342,9 @@ internal val DebugColorScheme = ColorScheme(
     onError = appThemeDebugColor,
     errorContainer = appThemeDebugColor,
     onErrorContainer = appThemeDebugColor,
-    outline = appThemeDebugColor
-    // outlineVariant = appThemeDebugColor,
-    // scrim = appThemeDebugColor,
+    outline = appThemeDebugColor,
+    outlineVariant = appThemeDebugColor,
+    scrim = appThemeDebugColor,
 )
 
 internal val LocalColorScheme = staticCompositionLocalOf<AppThemeColorScheme> { AppThemeColorSchemeLight }
