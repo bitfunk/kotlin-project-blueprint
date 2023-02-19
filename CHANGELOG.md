@@ -38,7 +38,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 
 - Android target API 31 -> 33
 - Gradle 7.2 -> 8.0.1
-- Android Gradle Plugin 7.1.0 -> 7.3.1
+- Android Gradle Plugin 7.1.0 -> 7.4.1
 - Jetpack Compose 1.0.5 -> 1.3.1
 - Jetpack Compose Compiler 1.0.5 -> 1.3.2
 - Jetbrains Compose 1.0.1 -> 1.2.1
@@ -51,7 +51,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - AndroidX Test Espresso 3.4.0 -> 3.5.0
 - Accompanist 0.20.3 -> 0.27.1
 - Material 1.6.0-alpha01 -> 1.7.0
-- Kotlin 1.6.10 -> 1.7.20
+- Kotlin 1.6.10 -> 1.8.0
 - Kotlin Coroutines 1.6.0 -> 1.6.4
 - AndroidX Compose UI 1.1.1 -> 1.2.1
 - Kakaocup Compose 0.0.6 -> 0.2.0
@@ -68,6 +68,8 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Bitfunk Versioning 0.1.1 -> 0.1.2
 - KakaoCup Compose 0.2.0 -> 0.2.1
 - MkDocs 2.4.0 -> 3.0.0
+- Bitfunk Quality 0.1.1 -> 0.2.0
+- Bitfunk Versioning 0.1.2 -> 0.2.0
 
 ### Deprecated
 

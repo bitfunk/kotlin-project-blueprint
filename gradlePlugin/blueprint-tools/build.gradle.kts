@@ -49,9 +49,6 @@ java {
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
-
     kotlinOptions {
         jvmTarget = "11"
 
