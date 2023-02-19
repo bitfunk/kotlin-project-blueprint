@@ -103,6 +103,6 @@ tasks.check {
 }
 
 tasks.named<Wrapper>("wrapper") {
-    gradleVersion = "7.5"
+    gradleVersion = "8.0.1"
     distributionType = Wrapper.DistributionType.ALL
 }
