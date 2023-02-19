@@ -42,15 +42,13 @@ kotlin {
                 implementation(libs.sqldelight.androidDriver)
             }
         }
-        androidTest {
-            dependencies {
-                implementation(libs.sqldelight.sqliteDriver)
-            }
+        val androidUnitTest = maybeCreate("androidUnitTest")
+        androidUnitTest.dependencies {
+            implementation(libs.sqldelight.sqliteDriver)
         }
-        androidAndroidTest {
-            dependencies {
-                implementation(libs.sqldelight.androidDriver)
-            }
+        val androidInstrumentedTest = maybeCreate("androidInstrumentedTest")
+        androidInstrumentedTest.dependencies {
+            implementation(libs.sqldelight.androidDriver)
         }
 
         jvmMain {

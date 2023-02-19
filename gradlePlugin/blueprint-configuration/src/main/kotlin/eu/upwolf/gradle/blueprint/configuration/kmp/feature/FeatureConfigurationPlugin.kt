@@ -65,11 +65,11 @@ class FeatureConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     // Nothing to add
                 }
-                val androidTest = maybeCreate("androidTest")
-                androidTest.dependencies {
+                val androidUnitTest = maybeCreate("androidUnitTest")
+                androidUnitTest.dependencies {
                     // Nothing to add
                 }
-                fixAndroidSourceSets(androidTest)
+                fixAndroidSourceSets(androidUnitTest)
             }
         }
     }

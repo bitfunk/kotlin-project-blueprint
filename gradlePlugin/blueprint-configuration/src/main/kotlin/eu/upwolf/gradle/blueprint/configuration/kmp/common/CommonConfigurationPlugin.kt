@@ -80,16 +80,16 @@ class CommonConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     // nothing to add
                 }
-                val androidTest = maybeCreate("androidTest")
-                androidTest.dependencies {
+                val androidUnitTest = maybeCreate("androidUnitTest")
+                androidUnitTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
-                val androidAndroidTest = maybeCreate("androidAndroidTest")
-                androidAndroidTest.dependencies {
+                val androidInstrumentedTest = maybeCreate("androidInstrumentedTest")
+                androidInstrumentedTest.dependencies {
                     implementation(libs.test.androidx.runner)
                 }
-                fixAndroidSourceSets(androidTest)
+                fixAndroidSourceSets(androidUnitTest)
             }
         }
     }

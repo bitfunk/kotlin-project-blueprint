@@ -105,7 +105,7 @@ class FeatureUiConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.lifecycle.viewmodel)
                     implementation(libs.androidx.lifecycle.viewmodelKtx)
                 }
-                val androidTest = maybeCreate("androidTest")
+                val androidTest = maybeCreate("androidUnitTest")
                 androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)

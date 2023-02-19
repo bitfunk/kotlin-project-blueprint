@@ -79,7 +79,7 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
                 androidMain.dependencies {
                     // nothing to add
                 }
-                val androidTest = maybeCreate("androidTest")
+                val androidTest = maybeCreate("androidUnitTest")
                 androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)

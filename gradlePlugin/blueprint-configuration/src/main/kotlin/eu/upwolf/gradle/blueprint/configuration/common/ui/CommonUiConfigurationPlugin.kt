@@ -102,7 +102,7 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.material3)
                     implementation(libs.androidx.compose.uiToolingPreview)
                 }
-                val androidTest = maybeCreate("androidTest")
+                val androidTest = maybeCreate("androidUnitTest")
                 androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
