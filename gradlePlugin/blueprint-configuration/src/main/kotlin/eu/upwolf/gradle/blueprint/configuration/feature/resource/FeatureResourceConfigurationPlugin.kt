@@ -127,6 +127,10 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
                 }
             }
         }
+
+        project.tasks.named("desktopProcessResources") {
+            dependsOn("generateMRdesktopMain")
+        }
     }
 
     private fun setupIosTarget(project: Project) {
@@ -147,6 +151,9 @@ class FeatureResourceConfigurationPlugin : Plugin<Project> {
                     // Nothing to add
                 }
             }
+        }
+        project.tasks.named("iosX64ProcessResources") {
+            dependsOn("generateMRiosX64Main")
         }
     }
 }
