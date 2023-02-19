@@ -33,6 +33,23 @@ android {
         versionCode = versionCode()
         versionName = version()
     }
+
+    testOptions {
+        managedDevices {
+            devices {
+                maybeCreate<com.android.build.api.dsl.ManagedVirtualDevice>("Pixel_2_API_30").apply {
+                    device = "Pixel 2"
+                    apiLevel = 30
+                    systemImageSource = "google-atd"
+                }
+            }
+            groups {
+                maybeCreate("android").apply {
+                    targetDevices.add(devices["Pixel_2_API_30"])
+                }
+            }
+        }
+    }
 }
 
 dependencies {
