@@ -37,7 +37,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 ### Bumped
 
 - Android target API 31 -> 33
-- Gradle 7.2 -> 7.5
+- Gradle 7.2 -> 8.0.1
 - Android Gradle Plugin 7.1.0 -> 7.3.1
 - Jetpack Compose 1.0.5 -> 1.3.1
 - Jetpack Compose Compiler 1.0.5 -> 1.3.2
