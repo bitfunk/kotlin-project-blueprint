@@ -59,7 +59,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Material3 Compose 1.0.0-alpha04 -> 1.0.1
 - SqlDelight 1.5.3 -> 1.5.5
 - Decompose 0.5.2 -> 0.8.0
-- Ktor 1.6.2 -> 2.1.3
+- Ktor 1.6.2 -> 2.2.3
 - Koin 3.1.4 -> 3.3.3
 - Kotlin Serialization 1.2.2 -> 1.4.1
 - Robolectric 4.5.1 -> 4.9
