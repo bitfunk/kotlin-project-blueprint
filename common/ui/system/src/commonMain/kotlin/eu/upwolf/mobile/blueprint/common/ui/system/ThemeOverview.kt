@@ -48,7 +48,7 @@ fun ThemeOverview() {
     Column(
         modifier = Modifier
             .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         ColorOverview()
 
@@ -73,7 +73,7 @@ private fun ColorOverview() {
     Spacer(modifier = Modifier.height(AppTheme.dimension.spacingDouble))
 
     Row(
-        horizontalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle)
+        horizontalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle),
     ) {
         // TODO colors
         ColorSquare(color = AppTheme.colorScheme.primary, "Primary")
@@ -89,7 +89,7 @@ private fun SpacingOverview() {
     Spacer(modifier = Modifier.height(AppTheme.dimension.spacingDouble))
 
     Column(
-        verticalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle)
+        verticalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle),
     ) {
         SizedLine(size = AppTheme.dimension.spacingQuarter, "Spacing Quarter")
         SizedLine(size = AppTheme.dimension.spacingHalf, "Spacing Half")
@@ -108,7 +108,7 @@ private fun SizeOverview() {
     Spacer(modifier = Modifier.height(AppTheme.dimension.spacingDouble))
 
     Column(
-        verticalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle)
+        verticalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle),
     ) {
         SizedLine(size = AppTheme.size.smaller, "Smaller")
         SizedLine(size = AppTheme.size.small, "Small")
@@ -125,7 +125,7 @@ private fun TypographyOverview() {
     Spacer(modifier = Modifier.height(AppTheme.dimension.spacingDouble))
 
     Column(
-        verticalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle)
+        verticalArrangement = Arrangement.spacedBy(AppTheme.dimension.spacingSingle),
     ) {
         TypographyText(AppTheme.typography.displayLarge, "Display Large")
         TypographyText(AppTheme.typography.displayMedium, "Display Medium")
@@ -152,19 +152,19 @@ private fun TypographyOverview() {
 @Composable
 private fun ColorSquare(
     color: Color,
-    name: String
+    name: String,
 ) {
     val borderColor = if (AppTheme.colorScheme.background == color) AppTheme.colorScheme.onBackground else color
 
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
             modifier = Modifier
                 .size(AppTheme.size.medium)
                 .clip(RoundedCornerShape(AppTheme.size.smaller))
                 .border(1.dp, borderColor, shape = RoundedCornerShape(AppTheme.size.smaller))
-                .background(color)
+                .background(color),
         )
 
         Spacer(modifier = Modifier.height(AppTheme.dimension.spacingHalf))
@@ -172,7 +172,7 @@ private fun ColorSquare(
         Text(
             text = name,
             color = AppTheme.colorScheme.onBackground,
-            style = AppTheme.typography.labelMedium
+            style = AppTheme.typography.labelMedium,
         )
     }
 }
@@ -180,23 +180,23 @@ private fun ColorSquare(
 @Composable
 private fun SizedLine(
     size: Dp,
-    name: String
+    name: String,
 ) {
     Row(
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
             text = name,
             modifier = Modifier.widthIn(min = 144.dp),
             color = AppTheme.colorScheme.onBackground,
-            style = AppTheme.typography.labelMedium
+            style = AppTheme.typography.labelMedium,
         )
 
         Box(
             modifier = Modifier
                 .width(size)
                 .height(AppTheme.dimension.spacingHalf)
-                .background(AppTheme.colorScheme.primary)
+                .background(AppTheme.colorScheme.primary),
         )
     }
 }
@@ -204,11 +204,11 @@ private fun SizedLine(
 @Composable
 private fun TypographyText(
     typography: TextStyle,
-    name: String
+    name: String,
 ) {
     Text(
         text = name,
         color = AppTheme.colorScheme.primary,
-        style = typography
+        style = typography,
     )
 }

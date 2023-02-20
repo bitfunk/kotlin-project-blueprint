@@ -49,9 +49,6 @@ java {
 }
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
-    sourceCompatibility = "11"
-    targetCompatibility = "11"
-
     kotlinOptions {
         jvmTarget = "11"
 
@@ -106,6 +103,6 @@ tasks.check {
 }
 
 tasks.named<Wrapper>("wrapper") {
-    gradleVersion = "7.5"
+    gradleVersion = "8.0.1"
     distributionType = Wrapper.DistributionType.ALL
 }

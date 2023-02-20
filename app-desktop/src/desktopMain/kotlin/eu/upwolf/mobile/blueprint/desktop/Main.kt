@@ -44,7 +44,7 @@ fun main() {
         Window(
             onCloseRequest = ::exitApplication,
             title = "Blueprint",
-            state = windowState
+            state = windowState,
         ) {
             MainApp {
                 RootContent(root)
@@ -56,6 +56,6 @@ fun main() {
 
 private fun createRootComponent(componentContext: ComponentContext): RootComponentContract.Component {
     return RootComponent(
-        componentContext = componentContext
+        componentContext = componentContext,
     )
 }

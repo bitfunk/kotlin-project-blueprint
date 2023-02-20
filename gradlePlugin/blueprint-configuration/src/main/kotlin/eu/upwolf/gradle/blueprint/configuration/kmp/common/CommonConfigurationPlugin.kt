@@ -57,7 +57,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
         }
 
         project.tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-            kotlinOptions.jvmTarget = "1.8"
+            kotlinOptions.jvmTarget = "11"
         }
     }
 
@@ -80,16 +80,16 @@ class CommonConfigurationPlugin : Plugin<Project> {
                 maybeCreate("androidMain").dependencies {
                     // nothing to add
                 }
-                val androidTest = maybeCreate("androidTest")
-                androidTest.dependencies {
+                val androidUnitTest = maybeCreate("androidUnitTest")
+                androidUnitTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
                 }
-                val androidAndroidTest = maybeCreate("androidAndroidTest")
-                androidAndroidTest.dependencies {
-                    implementation("androidx.test:runner:1.4.0")
+                val androidInstrumentedTest = maybeCreate("androidInstrumentedTest")
+                androidInstrumentedTest.dependencies {
+                    implementation(libs.test.androidx.runner)
                 }
-                fixAndroidSourceSets(androidTest)
+                fixAndroidSourceSets(androidUnitTest)
             }
         }
     }
@@ -137,7 +137,7 @@ class CommonConfigurationPlugin : Plugin<Project> {
                 sourceSets {
                     maybeCreate("jsMain").dependencies {
                         api(libs.jetbrains.compose.runtime)
-                        implementation(ComposePlugin.Dependencies.web.core)
+                        implementation(ComposePlugin.WebDependencies.core)
                     }
                     maybeCreate("jsTest").dependencies {
                         // nothing to add

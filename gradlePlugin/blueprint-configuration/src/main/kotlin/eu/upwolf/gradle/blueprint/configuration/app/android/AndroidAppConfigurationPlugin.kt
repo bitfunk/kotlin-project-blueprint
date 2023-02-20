@@ -57,7 +57,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
                 testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testInstrumentationRunnerArguments += mapOf(
-                    "clearPackageData" to "true"
+                    "clearPackageData" to "true",
                 )
             }
 
@@ -83,7 +83,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
 
                     proguardFiles(
                         getDefaultProguardFile("proguard-android.txt"),
-                        "proguard-rules.pro"
+                        "proguard-rules.pro",
                     )
                     matchingFallbacks += listOf("release")
                 }
@@ -111,7 +111,7 @@ class AndroidAppConfigurationPlugin : Plugin<Project> {
                 resources {
                     excludes += setOf(
                         "META-INF/AL2.0",
-                        "META-INF/LGPL2.1"
+                        "META-INF/LGPL2.1",
                     )
                 }
             }

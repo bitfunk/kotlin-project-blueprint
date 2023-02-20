@@ -44,8 +44,8 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
 
         target.setupKotlinCompatibility(
             listOf(
-                "-opt-in=kotlin.RequiresOptIn"
-            )
+                "-opt-in=kotlin.RequiresOptIn",
+            ),
         )
     }
 
@@ -68,7 +68,7 @@ class DesktopAppConfigurationPlugin : Plugin<Project> {
                     api(libs.jetbrains.compose.runtime)
                     api(libs.jetbrains.compose.foundation)
                     api(libs.jetbrains.compose.material)
-                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
+                    implementation(ComposePlugin.DesktopDependencies.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add

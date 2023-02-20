@@ -25,7 +25,7 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppThemeMain
 
 @Composable
 fun MainApp(
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     ProvideWindowInsets(windowInsetsAnimationsEnabled = true) {
         AppThemeMain {

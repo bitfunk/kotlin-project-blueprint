@@ -61,7 +61,7 @@ class WebAppConfigurationPlugin : Plugin<Project> {
             sourceSets {
                 maybeCreate("webMain").dependencies {
                     api(libs.jetbrains.compose.runtime)
-                    implementation(ComposePlugin.Dependencies.web.core)
+                    implementation(ComposePlugin.WebDependencies.core)
                 }
                 maybeCreate("webTest").dependencies {
                     // nothing to add

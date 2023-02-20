@@ -107,7 +107,7 @@ class PublishConfigurationPlugin : Plugin<Project> {
             project.signing {
                 useInMemoryPgpKeys(
                     SigningConfig.loadSigningKey(project),
-                    SigningConfig.loadSigningPassword(project)
+                    SigningConfig.loadSigningPassword(project),
                 )
                 sign(publicationsAll)
             }

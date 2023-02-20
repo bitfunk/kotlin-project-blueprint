@@ -29,7 +29,7 @@ internal class ImageVectorCache {
      */
     data class Key(
         val theme: Resources.Theme,
-        val id: String
+        val id: String,
     )
 
     /**
@@ -39,7 +39,7 @@ internal class ImageVectorCache {
      */
     data class ImageVectorEntry(
         val imageVector: ImageVector,
-        val configFlags: Int
+        val configFlags: Int,
     )
 
     private val map = HashMap<Key, WeakReference<ImageVectorEntry>>()

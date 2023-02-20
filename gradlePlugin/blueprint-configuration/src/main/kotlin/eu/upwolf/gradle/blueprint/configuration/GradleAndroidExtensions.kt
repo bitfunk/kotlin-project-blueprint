@@ -45,7 +45,7 @@ internal fun DependencyHandler.`androidTestImplementation`(dependencyNotation: A
     add("androidTestImplementation", dependencyNotation)
 
 internal fun NamedDomainObjectContainerScope<KotlinSourceSet>.fixAndroidSourceSets(
-    androidTest: KotlinSourceSet
+    androidTest: KotlinSourceSet,
 ) {
     val androidTestFixtures = maybeCreate("androidTestFixtures")
 

@@ -23,7 +23,7 @@ import eu.upwolf.mobile.blueprint.feature.home.component.HomeContract
 
 @Composable
 fun HomeContent(
-    component: HomeContract.Component
+    component: HomeContract.Component,
 ) {
     HomePage {
         component.onFinished()

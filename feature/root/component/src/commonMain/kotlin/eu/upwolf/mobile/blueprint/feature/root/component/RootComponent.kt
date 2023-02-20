@@ -29,13 +29,13 @@ import eu.upwolf.mobile.blueprint.feature.root.component.RootComponentContract.C
 import eu.upwolf.mobile.blueprint.feature.splash.component.SplashComponent
 
 class RootComponent(
-    componentContext: ComponentContext
+    componentContext: ComponentContext,
 ) : RootComponentContract.Component, ComponentContext by componentContext {
 
     private val router = router<Config, Child>(
         initialConfiguration = Config.Splash,
         handleBackButton = true,
-        childFactory = ::createChild
+        childFactory = ::createChild,
     )
 
     override val routerState: Value<RouterState<*, Child>> = router.state
@@ -52,8 +52,8 @@ class RootComponent(
                 componentContext = componentContext,
                 onFinishedAction = {
                     router.replaceCurrent(Config.Home)
-                }
-            )
+                },
+            ),
         )
     }
 
@@ -63,8 +63,8 @@ class RootComponent(
                 componentContext = componentContext,
                 onFinishedAction = {
                     router.replaceCurrent(Config.Splash)
-                }
-            )
+                },
+            ),
         )
     }
 }

@@ -34,7 +34,7 @@ import org.xmlpull.v1.XmlPullParserException
 internal fun loadVectorResourceInner(
     theme: Resources.Theme? = null,
     res: Resources,
-    parser: XmlResourceParser
+    parser: XmlResourceParser,
 ): ImageVectorCache.ImageVectorEntry {
     val attrs = Xml.asAttributeSet(parser)
     val resourceParser = AndroidVectorParser(parser)
@@ -47,7 +47,7 @@ internal fun loadVectorResourceInner(
             attrs,
             theme,
             builder,
-            nestedGroups
+            nestedGroups,
         )
         parser.next()
     }

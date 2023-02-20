@@ -41,26 +41,26 @@ fun DesignSystem() {
     val isDarkState = remember { mutableStateOf(false) }
 
     AppThemeMain(
-        darkTheme = isDarkState.value
+        darkTheme = isDarkState.value,
     ) {
         AppSurface(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
         ) {
             Column(
                 modifier = Modifier
                     .padding(AppTheme.dimension.spacingDouble),
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 HeadlineLarge(if (isDarkState.value) "Theme is Dark" else "Theme is Light")
 
                 Spacer(
-                    modifier = Modifier.height(AppTheme.dimension.spacingDouble)
+                    modifier = Modifier.height(AppTheme.dimension.spacingDouble),
                 )
 
                 ThemeSwitch(isDarkState.value) { isDarkState.value = !isDarkState.value }
 
                 Spacer(
-                    modifier = Modifier.height(AppTheme.dimension.spacingDouble)
+                    modifier = Modifier.height(AppTheme.dimension.spacingDouble),
                 )
 
                 ThemeOverview()

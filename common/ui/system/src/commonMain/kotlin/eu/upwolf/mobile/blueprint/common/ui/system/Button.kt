@@ -28,24 +28,24 @@ import eu.upwolf.mobile.blueprint.common.ui.theme.AppTheme
 @Composable
 fun PrimaryButton(
     text: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Button(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = AppTheme.colorScheme.primary,
-            contentColor = AppTheme.colorScheme.onPrimary
+            contentColor = AppTheme.colorScheme.onPrimary,
         ),
         contentPadding = PaddingValues(
             start = AppTheme.dimension.spacingDouble,
             top = AppTheme.dimension.spacingSingle,
             end = AppTheme.dimension.spacingDouble,
-            bottom = AppTheme.dimension.spacingSingle
-        )
+            bottom = AppTheme.dimension.spacingSingle,
+        ),
     ) {
         Text(
             text = text,
-            style = AppTheme.typography.labelMedium
+            style = AppTheme.typography.labelMedium,
         )
     }
 }
@@ -53,24 +53,24 @@ fun PrimaryButton(
 @Composable
 fun SecondaryButton(
     text: String,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Button(
         onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             backgroundColor = AppTheme.colorScheme.secondary,
-            contentColor = AppTheme.colorScheme.onSecondary
+            contentColor = AppTheme.colorScheme.onSecondary,
         ),
         contentPadding = PaddingValues(
             start = AppTheme.dimension.spacingDouble,
             top = AppTheme.dimension.spacingSingle,
             end = AppTheme.dimension.spacingDouble,
-            bottom = AppTheme.dimension.spacingSingle
-        )
+            bottom = AppTheme.dimension.spacingSingle,
+        ),
     ) {
         Text(
             text = text,
-            style = AppTheme.typography.labelMedium
+            style = AppTheme.typography.labelMedium,
         )
     }
 }

@@ -59,18 +59,18 @@ object Avatar {
 @Composable
 fun Avatar(
     painter: Painter,
-    size: Avatar.Size = Avatar.Size.Medium
+    size: Avatar.Size = Avatar.Size.Medium,
 ) {
     Box(
         modifier = Modifier
             .size(size.value)
-            .clip(CircleShape)
+            .clip(CircleShape),
     ) {
         Image(
             painter = painter,
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
-            contentScale = ContentScale.Crop
+            contentScale = ContentScale.Crop,
         )
     }
 }

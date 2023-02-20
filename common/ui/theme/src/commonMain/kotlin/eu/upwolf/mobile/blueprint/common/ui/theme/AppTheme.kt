@@ -28,7 +28,7 @@ import androidx.compose.runtime.remember
 @Composable
 fun AppThemeMain(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = if (darkTheme) {
         AppThemeColorSchemeDark
@@ -38,7 +38,7 @@ fun AppThemeMain(
 
     AppTheme(
         colorScheme = colorScheme,
-        content = content
+        content = content,
     )
 }
 
@@ -73,7 +73,7 @@ fun AppTheme(
     typography: AppThemeTypography = AppTheme.typography,
     dimension: AppThemeDimension = AppTheme.dimension,
     size: AppThemeSize = AppTheme.size,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     AppThemePlatformSetup()
 
@@ -81,12 +81,12 @@ fun AppTheme(
         colorScheme,
         dimension,
         typography,
-        size
+        size,
     ) {
         MaterialTheme(
             colorScheme = DebugColorScheme,
             // shapes = Shapes,
-            content = content
+            content = content,
         )
     }
 }
@@ -97,7 +97,7 @@ fun ProvideAppTheme(
     dimension: AppThemeDimension,
     typography: AppThemeTypography,
     size: AppThemeSize,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val rememberedColorScheme = remember {
         colorScheme.copy()
@@ -109,7 +109,7 @@ fun ProvideAppTheme(
         LocalColorScheme provides rememberedColorScheme,
         LocalDimension provides dimension,
         LocalTypography provides typography,
-        LocalSize provides size
+        LocalSize provides size,
     ) {
         content()
     }

@@ -41,7 +41,7 @@ include("docs")
 include(
     ":app-android",
     ":app-desktop",
-    ":app-ios",
+    // ":app-ios",
     // ":app-web",
 )
 

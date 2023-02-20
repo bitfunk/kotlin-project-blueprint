@@ -44,7 +44,7 @@ expect fun painterResource(resourcePath: String): Painter
 
 @Composable
 fun SplashPage(
-    onFinished: () -> Unit
+    onFinished: () -> Unit,
 ) {
     val scale = remember {
         Animatable(0f)
@@ -55,8 +55,8 @@ fun SplashPage(
             targetValue = 1f,
             animationSpec = spring(
                 dampingRatio = Spring.DampingRatioHighBouncy,
-                stiffness = Spring.StiffnessMediumLow
-            )
+                stiffness = Spring.StiffnessMediumLow,
+            ),
         )
         delay(DELAY)
         onFinished()
@@ -64,14 +64,14 @@ fun SplashPage(
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxSize(),
     ) {
         Image(
             painter = painterResource("drawable/splash_logo.xml"),
             contentDescription = stringResource(SplashResources.Strings.logoContentDescription()),
             modifier = Modifier
                 .size(AppTheme.size.larger)
-                .scale(scale.value)
+                .scale(scale.value),
         )
     }
 }

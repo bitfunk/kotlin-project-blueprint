@@ -25,14 +25,14 @@ import androidx.compose.ui.Alignment
 @Composable
 fun ThemeSwitch(
     isDark: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         PrimaryButton(
             text = "Switch to " + if (isDark) "light" else "dark",
-            onClick = onClick
+            onClick = onClick,
         )
     }
 }

@@ -49,8 +49,8 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
 
         target.setupKotlinCompatibility(
             listOf(
-                "-opt-in=kotlin.RequiresOptIn"
-            )
+                "-opt-in=kotlin.RequiresOptIn",
+            ),
         )
     }
 
@@ -102,7 +102,7 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
                     implementation(libs.androidx.compose.material3)
                     implementation(libs.androidx.compose.uiToolingPreview)
                 }
-                val androidTest = maybeCreate("androidTest")
+                val androidTest = maybeCreate("androidUnitTest")
                 androidTest.dependencies {
                     implementation(libs.test.kotlin.junit)
                     implementation(libs.test.junit)
@@ -132,7 +132,7 @@ class CommonUiConfigurationPlugin : Plugin<Project> {
 
             sourceSets {
                 maybeCreate("desktopMain").dependencies {
-                    implementation(ComposePlugin.Dependencies.desktop.currentOs)
+                    implementation(ComposePlugin.DesktopDependencies.currentOs)
                 }
                 maybeCreate("desktopTest").dependencies {
                     // nothing to add

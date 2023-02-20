@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
 
     private fun createRootComponent(componentContext: ComponentContext): RootComponentContract.Component {
         return RootComponent(
-            componentContext = componentContext
+            componentContext = componentContext,
         )
     }
 }

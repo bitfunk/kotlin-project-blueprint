@@ -23,7 +23,7 @@ import eu.upwolf.mobile.blueprint.feature.splash.component.SplashContract
 
 @Composable
 fun SplashContent(
-    component: SplashContract.Component
+    component: SplashContract.Component,
 ) {
     SplashPage {
         component.onFinished()

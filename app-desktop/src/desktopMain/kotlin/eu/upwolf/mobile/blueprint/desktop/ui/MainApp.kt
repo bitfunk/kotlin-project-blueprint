@@ -24,7 +24,7 @@ import androidx.compose.runtime.Composable
 @Preview
 @Composable
 fun MainApp(
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     content()
 }

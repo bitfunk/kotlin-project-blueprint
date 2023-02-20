@@ -72,8 +72,8 @@ reportConfig {
     coverageReportSourceDirs.set(
         listOf(
             "$projectDir/plugin-development/build/reports/jacoco/testCodeCoverageReport",
-            "$projectDir/plugins/build/reports/jacoco/testCodeCoverageReport"
-        )
+            "$projectDir/plugins/build/reports/jacoco/testCodeCoverageReport",
+        ),
     )
 }
 
