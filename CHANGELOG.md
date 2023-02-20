@@ -72,6 +72,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - Version Update 0.44.0 -> 0.45.0
 - JUnit Jupiter 5.9.1 -> 5.9.2
 - Android Desugar 1.2.2 -> 2.0.2
+- Jetbrains Apple Plugin 212.4638.14-0.15 -> 222.3345.143-0.19
 
 ### Deprecated
 
