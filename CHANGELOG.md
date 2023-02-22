@@ -60,7 +60,6 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - SqlDelight 1.5.3 -> 1.5.5
 - Decompose 0.5.2 -> 0.8.0
 - Ktor 1.6.2 -> 2.2.3
-- Koin 3.1.4 -> 3.3.3
 - Koin 3.1.4 -> 3.4.2
 - Kotlin Serialization 1.2.2 -> 1.4.1
 - Robolectric 4.5.1 -> 4.9
@@ -70,7 +69,7 @@ See [changeset](https://github.com/wmontwe/blueprint-mobile-kmp/compare/v1.0.0..
 - KakaoCup Compose 0.2.0 -> 0.2.2
 - MkDocs 2.4.0 -> 3.0.0
 - Bitfunk Quality 0.1.1 -> 0.2.0
-- Version Update 0.44.0 -> 0.45.0
+- Version Update 0.44.0 -> 0.46.0
 - JUnit Jupiter 5.9.1 -> 5.9.2
 - Android Desugar 1.2.2 -> 2.0.2
 - Jetbrains Apple Plugin 212.4638.14-0.15 -> 222.3345.143-0.19
