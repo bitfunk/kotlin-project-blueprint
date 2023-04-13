@@ -52,7 +52,7 @@ coil-compose = "io.coil-kt:coil-compose:2.2.2"
 decompose-core = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
 decompose-extensionJetpackCompose = { module = "com.arkivanov.decompose:extensions-compose-jetpack", version.ref = "decompose" }
 decompose-extensionJetbrainsCompose = { module = "com.arkivanov.decompose:extensions-compose-jetbrains", version.ref = "decompose" }
-essenty-lifecycle = "com.arkivanov.essenty:lifecycle:0.2.2"
+essenty-lifecycle = "com.arkivanov.essenty:lifecycle:1.1.0"
 google-android-material = "com.google.android.material:material:1.8.0"
 gradleAndroidPlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 gradleBlueprintDependencyPlugin = { module = "eu.upwolf.gradle.blueprint.dependency:blueprint-dependency", version.ref = "blueprintDependency" }
