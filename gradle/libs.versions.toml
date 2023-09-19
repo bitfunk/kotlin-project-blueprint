@@ -95,7 +95,7 @@ sqldelight-coroutinesExtensions = { module = "com.squareup.sqldelight:coroutines
 sqldelight-nativeDriver = { module = "com.squareup.sqldelight:native-driver", version.ref = "sqlDelight" }
 sqldelight-runtime = { module = "com.squareup.sqldelight:runtime", version.ref = "sqlDelight" }
 sqldelight-sqliteDriver = { module = "com.squareup.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
-test-android-kakaocup-compose = "io.github.kakaocup:compose:0.2.2"
+test-android-kakaocup-compose = "io.github.kakaocup:compose:0.2.3"
 test-androidx-compose-ui-junit4 = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "androidx-compose-ui" }
 test-androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
 test-androidx-espresso-intents = { module = "androidx.test.espresso:espresso-intents", version.ref = "androidx-test-espresso" }
