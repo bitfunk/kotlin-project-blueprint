@@ -34,7 +34,7 @@ gradleBitfunkQuality = "0.2.0"
 accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
 accompanist-insetsUi = { module = "com.google.accompanist:accompanist-insets-ui", version.ref = "accompanist" }
 accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
-android-desugar = "com.android.tools:desugar_jdk_libs:2.0.2"
+android-desugar = "com.android.tools:desugar_jdk_libs:2.0.4"
 androidx-core-ktx = "androidx.core:core-ktx:1.9.0"
 androidx-activityCompose = "androidx.activity:activity-compose:1.6.1"
 androidx-appCompat = "androidx.appcompat:appcompat:1.6.1"
